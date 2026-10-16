@@ -10,7 +10,10 @@ const nunito = Nunito({
 });
 
 export const metadata: Metadata = {
-  title: 'Guest Guide | Apartment Matea',
+  title: {
+    default: 'Guest Guide | Apartment Matea',
+    template: '%s | Apartment Matea',
+  },
   robots: {
     index: false,
     follow: false,
