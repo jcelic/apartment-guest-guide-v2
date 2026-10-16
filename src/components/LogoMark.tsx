@@ -1,4 +1,4 @@
-export const LogoMark = () => {
+const LogoMark = () => {
   return (
     <div className="flex size-10 items-center justify-center rounded-xl bg-white text-deep">
       <svg viewBox="0 0 64 64" className="size-full" aria-hidden="true">
@@ -10,3 +10,5 @@ export const LogoMark = () => {
     </div>
   );
 };
+
+export default LogoMark;

@@ -1,5 +1,5 @@
 import { Moon } from 'lucide-react';
-import { LogoMark } from './LogoMark';
+import LogoMark from './LogoMark';
 
 const Header = () => {
   return (
@@ -12,14 +12,14 @@ const Header = () => {
       <button
         type="button"
         aria-label="Toggle dark mode"
-        className="flex size-11 cursor-pointer items-center justify-center rounded-2xl bg-white/15 transition-colors duration-200 hover:bg-white/20"
+        className="flex size-11 cursor-pointer items-center justify-center rounded-2xl bg-white/15 transition-colors duration-200 hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
       >
-        <Moon size={20} strokeWidth={1.8} />
+        <Moon className="size-5" />
       </button>
       <button
         type="button"
-        aria-label="Change language"
-        className="h-11 cursor-pointer rounded-2xl bg-white/15 px-3 text-sm font-bold transition-colors duration-200 hover:bg-white/20"
+        aria-label="Change language (EN)"
+        className="h-11 cursor-pointer rounded-2xl bg-white/15 px-3 text-sm font-bold transition-colors duration-200 hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
       >
         EN
       </button>
