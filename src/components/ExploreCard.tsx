@@ -14,7 +14,7 @@ const ExploreCard = () => {
           src="/sea-organ.webp"
           alt="Aerial view of the Zadar waterfront with the Sea Organ and the Greeting to the Sun"
           fill
-          sizes="100vw"
+          sizes="(min-width: 576px) 536px, calc(100vw - 40px)"
           className="object-cover object-[50%_75%]"
         />
       </div>
