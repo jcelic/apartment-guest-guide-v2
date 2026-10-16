@@ -9,6 +9,7 @@ import {
   WashingMachine,
   Wifi,
 } from 'lucide-react';
+import ExploreCard from '@/components/ExploreCard';
 import GuideRow from '@/components/GuideRow';
 import GuideSection from '@/components/GuideSection';
 import GuideTile from '@/components/GuideTile';
@@ -128,6 +129,10 @@ const Page = () => {
             highlighted
           />
         </div>
+      </GuideSection>
+
+      <GuideSection title="Around you">
+        <ExploreCard />
       </GuideSection>
     </main>
   );
