@@ -6,7 +6,7 @@ import { toast } from 'sonner';
 import DoorCodesDialog from './DoorCodesDialog';
 import QuickAction from './QuickAction';
 
-const WIFI_PASSWORD = 'YOUR_WIFI_PASSWORD';
+const WIFI_PASSWORD = 'example-password';
 const WHATSAPP_URL = 'https://wa.me/YOUR_PHONE_NUMBER';
 
 const QuickActions = () => {
