@@ -18,6 +18,9 @@
   --accent-ink: #164c80;
   --deep: #13304f;
 
+  --danger: #b4231b;
+  --danger-soft: #fbe5e3;
+
   --ui-shadow-card: 0 1px 2px rgb(20 33 46 / 4%), 0 8px 24px rgb(20 33 46 / 6%);
 }
 
@@ -37,6 +40,9 @@
   --accent-ink: #a8cbef;
   --deep: #14283f;
 
+  --danger: #f29b92;
+  --danger-soft: #3a2224;
+
   --ui-shadow-card: none;
 }
 
@@ -55,6 +61,9 @@
   --color-accent-soft: var(--accent-soft);
   --color-accent-ink: var(--accent-ink);
   --color-deep: var(--deep);
+
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
 
   --shadow-card: var(--ui-shadow-card);
 }

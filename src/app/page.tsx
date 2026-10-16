@@ -3,6 +3,7 @@ import {
   DoorOpen,
   ListChecks,
   LogOut,
+  Phone,
   Search,
   SquareParking,
   Tv,
@@ -126,13 +127,23 @@ const Page = () => {
             title="Check-out checklist"
             description="6 quick things before 10:00"
             href="/check-out"
-            highlighted
+            variant="highlighted"
           />
         </div>
       </GuideSection>
 
       <GuideSection title="Around you">
         <ExploreCard />
+
+        <div className="overflow-hidden rounded-3xl border border-line bg-surface">
+          <GuideRow
+            icon={<Phone />}
+            title="Emergency · 112"
+            description="Numbers, 24/7 pharmacy, hospital"
+            href="/emergency"
+            variant="emergency"
+          />
+        </div>
       </GuideSection>
     </main>
   );

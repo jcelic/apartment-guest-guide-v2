@@ -2,12 +2,21 @@ import type { ReactNode } from 'react';
 import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
 
+type GuideRowVariant = 'default' | 'highlighted' | 'emergency';
+
 type GuideRowProps = {
   icon: ReactNode;
   title: string;
   description: string;
   href: string;
-  highlighted?: boolean;
+  variant?: GuideRowVariant;
+};
+
+const iconColors: Record<GuideRowVariant, string> = {
+  default:
+    'bg-accent-soft text-accent transition-colors duration-200 group-hover:bg-surface',
+  highlighted: 'bg-foreground text-surface',
+  emergency: 'bg-danger-soft text-danger',
 };
 
 const GuideRow = ({
@@ -15,7 +24,7 @@ const GuideRow = ({
   title,
   description,
   href,
-  highlighted = false,
+  variant = 'default',
 }: GuideRowProps) => {
   return (
     <Link
@@ -23,11 +32,7 @@ const GuideRow = ({
       className="group flex cursor-pointer items-center gap-4 p-4 transition-colors duration-200 hover:bg-accent-soft focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent"
     >
       <span
-        className={`flex size-12 shrink-0 items-center justify-center rounded-2xl [&_svg]:size-6 ${
-          highlighted
-            ? 'bg-foreground text-surface'
-            : 'bg-accent-soft text-accent transition-colors duration-200 group-hover:bg-surface'
-        }`}
+        className={`flex size-12 shrink-0 items-center justify-center rounded-2xl [&_svg]:size-6 ${iconColors[variant]}`}
       >
         {icon}
       </span>
