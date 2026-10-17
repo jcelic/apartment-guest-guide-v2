@@ -54,7 +54,7 @@ const EssentialsList = ({ groups }: EssentialsListProps) => {
                       alt=""
                       fill
                       placeholder="blur"
-                      sizes="64px"
+                      sizes="128px"
                       className="object-cover"
                     />
                   </span>
