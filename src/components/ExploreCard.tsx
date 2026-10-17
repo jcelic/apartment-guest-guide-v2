@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import seaOrgan from '@/assets/home/sea-organ.webp';
 
 const highlights = ['3 beaches', '6 restaurants', '8 sights'];
 
@@ -9,11 +10,12 @@ const ExploreCard = () => {
       href="/explore"
       className="block overflow-hidden rounded-3xl bg-deep text-white transition-colors duration-200 hover:bg-deep/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
     >
-      <div className="relative aspect-[12/5] bg-white/10">
+      <div className="relative aspect-12/5 bg-white/10">
         <Image
-          src="/sea-organ.webp"
+          src={seaOrgan}
           alt="Aerial view of the Zadar waterfront with the Sea Organ and the Greeting to the Sun"
           fill
+          placeholder="blur"
           sizes="(min-width: 576px) 536px, calc(100vw - 40px)"
           className="object-cover object-[50%_75%]"
         />
