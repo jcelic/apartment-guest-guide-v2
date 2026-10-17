@@ -73,7 +73,7 @@ const Lightbox = ({ photos, initialIndex, onClose }: LightboxProps) => {
         }
         className="flex h-full snap-x snap-mandatory [scrollbar-width:none] overflow-x-auto overscroll-contain [&::-webkit-scrollbar]:hidden"
       >
-        {photos.map((photo) => (
+        {photos.map((photo, index) => (
           <figure
             key={photo.src.src}
             onClick={(e) => {
@@ -81,13 +81,23 @@ const Lightbox = ({ photos, initialIndex, onClose }: LightboxProps) => {
             }}
             className="flex h-full w-full shrink-0 snap-center flex-col items-center justify-center gap-4 px-4 py-20 sm:px-20"
           >
-            <Image
-              src={photo.src}
-              alt=""
-              placeholder="blur"
-              sizes="100vw"
-              className="h-auto max-h-[70dvh] w-auto max-w-full rounded-3xl object-contain shadow-2xl"
-            />
+            <div
+              className="relative overflow-hidden rounded-3xl shadow-2xl"
+              style={{
+                width: `min(100%, calc(70dvh * ${photo.src.width / photo.src.height}))`,
+                aspectRatio: `${photo.src.width} / ${photo.src.height}`,
+              }}
+            >
+              <Image
+                src={photo.src}
+                alt=""
+                fill
+                placeholder="blur"
+                loading={Math.abs(index - initialIndex) <= 1 ? 'eager' : 'lazy'}
+                sizes="100vw"
+                className="object-cover"
+              />
+            </div>
             <figcaption className="max-w-md text-center text-lg text-white/85">
               {photo.caption}
             </figcaption>
