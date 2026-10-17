@@ -21,7 +21,7 @@ const TvPage = () => {
         </p>
 
         <div className="mt-6 rounded-3xl border border-line bg-surface p-4">
-          <div className="flex aspect-[16/10] flex-col items-center justify-center gap-2 rounded-2xl bg-line text-sm font-bold text-muted">
+          <div className="flex aspect-16/10 flex-col items-center justify-center gap-2 rounded-2xl bg-line text-sm font-bold text-muted">
             <ImageIcon className="size-6" />
             Photo of both remotes
           </div>

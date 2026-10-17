@@ -8,7 +8,7 @@ type StepProps = {
 
 const Step = ({ number, title, children }: StepProps) => {
   return (
-    <li className="relative flex gap-4 before:absolute before:top-12 before:-bottom-4 before:left-[21px] before:w-0.5 before:bg-line last:before:hidden">
+    <li className="relative flex gap-4 before:absolute before:top-12 before:-bottom-4 before:left-5.25 before:w-0.5 before:bg-line last:before:hidden">
       <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-accent font-extrabold text-on-accent">
         {number}
       </span>
