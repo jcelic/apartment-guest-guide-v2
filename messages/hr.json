@@ -40,6 +40,14 @@
     "lockboxTitle": "2 · Kutija s ključem",
     "lockboxText": "Na zidu pored vrata apartmana"
   },
+  "LanguageMenu": {
+    "title": "Jezik",
+    "close": "Zatvori izbornik jezika",
+    "names": {
+      "en": "Engleski",
+      "hr": "Hrvatski"
+    }
+  },
   "Photos": {
     "stripTitle": "{label} · {count, plural, one {# fotografija} few {# fotografije} other {# fotografija}}",
     "stripAria": "{label}: fotografije",

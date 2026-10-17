@@ -40,6 +40,14 @@
     "lockboxTitle": "2 · Key lockbox",
     "lockboxText": "On the wall next to the apartment door"
   },
+  "LanguageMenu": {
+    "title": "Language",
+    "close": "Close language menu",
+    "names": {
+      "en": "English",
+      "hr": "Croatian"
+    }
+  },
   "Photos": {
     "stripTitle": "{label} · {count} photos",
     "stripAria": "{label} photos",
