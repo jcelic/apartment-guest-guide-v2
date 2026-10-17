@@ -1,0 +1,566 @@
+{
+  "Metadata": {
+    "defaultTitle": "Vodič za goste | Apartment Matea",
+    "titleTemplate": "%s | Apartment Matea"
+  },
+  "Common": {
+    "backToHome": "Natrag na početnu",
+    "toggleTheme": "Uključi ili isključi tamni način",
+    "changeLanguage": "Promijeni jezik ({language})",
+    "messageOnWhatsApp": "Pišite nam na WhatsApp",
+    "directions": "Upute",
+    "directionsTo": "Upute do: {place}",
+    "call": "Nazovite",
+    "keyButton": "tipka s ključem",
+    "wifiCopied": "Lozinka za Wi-Fi je kopirana",
+    "copyFailed": "Kopiranje nije uspjelo. Lozinka: {password}",
+    "copyPassword": "Kopiraj lozinku"
+  },
+  "Header": {
+    "name": "Apartment Matea",
+    "city": "Zadar"
+  },
+  "StayInfo": {
+    "checkIn": "Dolazak",
+    "checkOut": "Odlazak",
+    "floor": "Kat",
+    "floorValue": "3."
+  },
+  "QuickActions": {
+    "copyWifi": "Kopiraj Wi-Fi",
+    "doorCodes": "Šifre za ulaz",
+    "messageUs": "Pišite nam"
+  },
+  "DoorCodes": {
+    "title": "Šifre za ulaz",
+    "close": "Zatvori prozor sa šiframa",
+    "intro": "Trebat će vam obje šifre, ovim redoslijedom.",
+    "buildingTitle": "1 · Ulaz u zgradu",
+    "buildingText": "Tipkovnica na ulazu u zgradu",
+    "lockboxTitle": "2 · Kutija s ključem",
+    "lockboxText": "Na zidu pored vrata apartmana"
+  },
+  "Photos": {
+    "stripTitle": "{label} · {count, plural, one {# fotografija} few {# fotografije} other {# fotografija}}",
+    "stripAria": "{label}: fotografije",
+    "open": "Otvori fotografiju: {caption}",
+    "openNumbered": "Otvori fotografiju {number}: {caption}"
+  },
+  "Lightbox": {
+    "viewer": "Pregled fotografija",
+    "close": "Zatvori pregled fotografija",
+    "previous": "Prethodna fotografija",
+    "next": "Sljedeća fotografija"
+  },
+  "StepCarousel": {
+    "steps": "Koraci",
+    "stepOf": "Korak {current} od {total}",
+    "progress": "Napredak",
+    "back": "Natrag",
+    "next": "Sljedeći korak",
+    "allSteps": "Svi koraci"
+  },
+  "Checklist": {
+    "checkOutBy": "Odlazak do",
+    "nextGuests": "Sljedeći gosti stižu istog dana — hvala što apartman napuštate na vrijeme.",
+    "doneCount": "Dovršeno: {done} od {total}",
+    "progress": "Napredak popisa"
+  },
+  "ExploreList": {
+    "categories": "Kategorije"
+  },
+  "ExploreCard": {
+    "title": "Istražite Zadar",
+    "text": "Plaže, hrana i znamenitosti koje preporučujemo.",
+    "imageAlt": "Pogled iz zraka na zadarsku rivu s Morskim orguljama i Pozdravom Suncu",
+    "beaches": "{count, plural, one {# plaža} few {# plaže} other {# plaža}}",
+    "restaurants": "{count, plural, one {# restoran} few {# restorana} other {# restorana}}",
+    "sights": "{count, plural, one {# znamenitost} few {# znamenitosti} other {# znamenitosti}}"
+  },
+  "Home": {
+    "eyebrow": "Vodič za vaš boravak",
+    "welcome": "Dobro došli",
+    "welcomeName": "Dobro došli, {name}",
+    "subtitle": "Sve za vaš boravak na jednom mjestu.",
+    "gettingHere": "Kako doći",
+    "inTheApartment": "U apartmanu",
+    "aroundYou": "U blizini",
+    "arrival": {
+      "title": "Dolazak",
+      "description": "Ulaz u zgradu, kutija s ključem, 3 koraka"
+    },
+    "parking": {
+      "title": "Parking",
+      "description": "Besplatno uz karticu apartmana"
+    },
+    "wifi": {
+      "title": "Wi-Fi",
+      "description": "Mreža i lozinka"
+    },
+    "essentials": {
+      "title": "Potrepštine",
+      "description": "Gdje se što nalazi"
+    },
+    "tv": {
+      "title": "TV",
+      "description": "Netflix, EON"
+    },
+    "coffee": {
+      "title": "Kava",
+      "description": "Dolce Gusto, 10 koraka"
+    },
+    "dishwasher": {
+      "title": "Perilica posuđa",
+      "description": "Programi P1–P4"
+    },
+    "houseRules": {
+      "title": "Kućni red",
+      "description": "Vrijeme mira"
+    },
+    "checkOut": {
+      "title": "Prije odlaska",
+      "description": "6 kratkih zadataka prije 10:00"
+    },
+    "emergency": {
+      "title": "Hitni slučajevi · 112",
+      "description": "Brojevi, ljekarna 0–24, bolnica"
+    }
+  },
+  "Arrival": {
+    "pageTitle": "Dolazak",
+    "eyebrow": "3 jednostavna koraka",
+    "title": "Kako ući",
+    "subtitle": "Od ulice do vašeg apartmana za samo nekoliko minuta.",
+    "checkInTitle": "Dolazak od 14:00",
+    "checkInText": "Ako apartman bude spreman ranije, javit ćemo vam.",
+    "mapAlt": "Pogled iz zraka na zgradu s pješačkim putem od ulice do ulaza",
+    "mapLink": "Example Street 1 · Upute",
+    "step1Title": "Uđite u zgradu",
+    "step1Text": "Ulaz je s unutarnje strane zgrade, a ne s ulice.",
+    "entrancePath": "Put do ulaza",
+    "entranceCode": "Šifra za ulaz",
+    "step2Title": "Pronađite apartman",
+    "step2Text": "3. kat — kad izađete iz dizala, skrenite desno, vrata su odmah pored. Ime na vratima: <strong>Surname</strong>.",
+    "wayToDoor": "Put do vrata",
+    "keyLockbox": "Kutija s ključem",
+    "step3Title": "Javite nam da ste stigli",
+    "step3Text": "Molimo vas da nam se javite kad uđete. Vrijeme dolaska trebamo za službenu prijavu gostiju (eVisitor).",
+    "parkingLink": "Dolazite autom? Pogledajte parking",
+    "photos": {
+      "exterior1": "Pronađite ovu zgradu.",
+      "exterior2": "Zgrada iz drugog kuta.",
+      "exterior3": "Prošetajte do bočnog ulaza.",
+      "path1": "Uđite kroz ovaj prilaz.",
+      "path2": "Nastavite ravno.",
+      "path3": "Ulaz je u dvorištu.",
+      "path4": "Kroz ova vrata uđite u zgradu.",
+      "path5": "Na tipkovnici upišite šifru za ulaz.",
+      "apartment1": "Nakon ulaska u zgradu krenite prema dizalu.",
+      "apartment2": "Dizalom se popnite na treći kat.",
+      "apartment3": "Kad izađete iz dizala, skrenite desno. Vrata apartmana su pored dizala.",
+      "apartment4": "Potražite ova vrata apartmana.",
+      "apartment5": "Potražite ime „Surname” na vratima apartmana.",
+      "apartment6": "Kutija s ključem nalazi se na zidu pored vrata apartmana."
+    }
+  },
+  "CheckOut": {
+    "pageTitle": "Odlazak",
+    "goodbyeTitle": "Za kraj, javite nam da ste otišli",
+    "goodbyeText": "Pošaljite nam poruku kad odete kako bismo mogli početi s čišćenjem.",
+    "items": {
+      "ac": {
+        "title": "Isključite klimu",
+        "text": "Ugasite klima-uređaj."
+      },
+      "windows": {
+        "title": "Zatvorite prozore i vrata terase",
+        "text": "Provjerite sve prozore i vrata terase."
+      },
+      "lights": {
+        "title": "Ugasite svjetla",
+        "text": "U svim prostorijama."
+      },
+      "door": {
+        "title": "Zaključajte vrata",
+        "text": "Provjerite je li apartman zaključan."
+      },
+      "key": {
+        "title": "Vratite ključ",
+        "text": "U kutiju s ključem, a zatim okrenite brojčanike kako šifra ne bi ostala vidljiva."
+      },
+      "parking": {
+        "title": "Ostavite parkirnu karticu",
+        "text": "U poštanski sandučić — tek nakon što izađete s parkirališta."
+      }
+    }
+  },
+  "Coffee": {
+    "pageTitle": "Aparat za kavu",
+    "title": "Napravite kavu",
+    "subtitle": "Dolce Gusto · prođite kroz 10 kratkih koraka.",
+    "waterTitle": "Spremnik za vodu",
+    "waterText": "Gurnite ga do kraja. Mali mjehurići zraka na dnu znače da je dobro sjeo — inače voda neće poteći.",
+    "milkTitle": "Cappuccino i Chococino",
+    "milkText": "Koristite dvije kapsule: prvo mlijeko, pričekajte zeleno svjetlo, zatim kavu ili čokoladu.",
+    "steps": {
+      "power": {
+        "title": "Uključite aparat",
+        "text": "Pritisnite tipku za uključivanje. Svjetlo će treptati crveno dok se aparat zagrijava."
+      },
+      "ready": {
+        "title": "Pričekajte zeleno svjetlo",
+        "text": "Kad svjetlo postane zeleno, aparat je spreman."
+      },
+      "holderOut": {
+        "title": "Izvadite držač kapsule",
+        "text": "Podignite gornji poklopac i izvucite držač kapsule."
+      },
+      "capsule": {
+        "title": "Umetnite kapsulu",
+        "text": "Stavite kapsulu za kavu u držač."
+      },
+      "holderIn": {
+        "title": "Vratite držač",
+        "text": "Gurnite držač kapsule natrag u aparat i zatvorite gornji poklopac."
+      },
+      "water": {
+        "title": "Odaberite količinu vode",
+        "text": "Pomaknite birač gore ili dolje tako da odgovara broju crtica na kapsuli."
+      },
+      "cup": {
+        "title": "Postavite šalicu",
+        "text": "Stavite šalicu ispod izljeva za kavu."
+      },
+      "brew": {
+        "title": "Pripremite kavu",
+        "text": "Pomaknite ručicu na crvenu stranu za topla pića. Aparat će se sam zaustaviti."
+      },
+      "readyAgain": {
+        "title": "Ponovno pričekajte zeleno svjetlo",
+        "text": "Pričekajte da tipka za uključivanje postane zelena prije nego što izvadite držač kapsule."
+      },
+      "cleanUp": {
+        "title": "Izvadite iskorištenu kapsulu",
+        "text": "Podignite gornji poklopac, izvadite držač kapsule i bacite iskorištenu kapsulu. Ne ostavljajte iskorištene kapsule u aparatu."
+      }
+    }
+  },
+  "Dishwasher": {
+    "pageTitle": "Perilica posuđa",
+    "title": "Pokrenite perilicu posuđa",
+    "subtitle": "Jedna kapsula, tri tipke.",
+    "step1Title": "Dodajte jednu kapsulu",
+    "step1Text": "Stavite jednu kapsulu u pretinac za deterdžent i zatvorite poklopac. Kapsule su ispod sudopera.",
+    "capsule": "Kapsula",
+    "step2Title": "Uključite perilicu",
+    "step2Text": "Pritisnite tipku za uključivanje <button>1</button>.",
+    "step2Alt": "Tipka za uključivanje perilice, označena brojem 1",
+    "step3Title": "Odaberite program",
+    "step3Text": "Pritišćite PROGR. <button>2</button> dok ne dođete do željenog programa, pogledajte popis ispod.",
+    "step3Alt": "Tipka za odabir programa, označena brojem 2",
+    "step4Title": "Pokrenite i zatvorite",
+    "step4Text": "Pritisnite START <button>3</button>, zatim zatvorite vrata.",
+    "step4Alt": "Tipka START, označena brojem 3",
+    "step5Title": "Kad pranje završi",
+    "step5Text": "Držite START <start>3</start> nekoliko sekundi da poništite program, zatim pritisnite tipku za uključivanje <power>1</power> da isključite perilicu.",
+    "whichProgram": "Koji program?",
+    "recommended": "Preporučeno",
+    "manualTitle": "Detaljne upute (PDF)",
+    "manualText": "Ostali programi · papirnati primjerak u kuhinjskom ormariću",
+    "photos": {
+      "capsules": "Kapsule su ispod sudopera.",
+      "compartment1": "Stavite jednu kapsulu u pretinac za deterdžent.",
+      "compartment2": "Zatvorite poklopac prije pokretanja perilice."
+    },
+    "programs": {
+      "P1": {
+        "name": "Intenzivni · 75°C",
+        "use": "Jako prljavo posuđe"
+      },
+      "P2": {
+        "name": "Univerzalni · 50–60°C",
+        "use": "Za većinu pranja"
+      },
+      "P3": {
+        "name": "ECO · 45°C",
+        "use": "Štedi energiju"
+      },
+      "P4": {
+        "name": "Brzi",
+        "use": "Brzo pranje"
+      }
+    }
+  },
+  "Emergency": {
+    "pageTitle": "Pomoć i hitni slučajevi",
+    "title": "Trebate pomoć?",
+    "anyEmergency": "Za sve hitne slučajeve",
+    "emergencyText": "Policija, hitna pomoć i vatrogasci — jedan broj za sve.",
+    "call112": "Nazovite 112",
+    "callingFrom": "Zovete iz apartmana?",
+    "address": "Example Street 1, Zadar · 3. kat",
+    "medicalNearby": "Liječnička pomoć u blizini",
+    "somethingWrong": "Nešto ne radi u apartmanu?",
+    "messageHost": "Pišite domaćinu",
+    "messageHostText": "Kvar uređaja, ostali ste bez ključa, curenje vode — putem WhatsAppa",
+    "numbers": {
+      "ambulance": "Hitna pomoć",
+      "police": "Policija",
+      "fire": "Vatrogasci"
+    },
+    "medical": {
+      "pharmacy": {
+        "name": "Ljekarna Jadran",
+        "status": "Otvoreno 0–24",
+        "text": "Otvoreno danju i noću, uključujući vikende i praznike. Dostupni su lijekovi na recept i bez recepta."
+      },
+      "hospital": {
+        "name": "Hitni prijem",
+        "status": "Opća bolnica Zadar",
+        "text": "Za hitna medicinska stanja koja zahtijevaju žurno liječenje u Općoj bolnici Zadar."
+      },
+      "clinic": {
+        "name": "Turistička ambulanta",
+        "status": "Za tegobe koje nisu hitne · i vikendom",
+        "text": "Liječnička pomoć za turiste i posjetitelje s nehitnim zdravstvenim tegobama, uključujući vikende i praznike."
+      }
+    }
+  },
+  "Essentials": {
+    "pageTitle": "Potrepštine",
+    "title": "Gdje je što?",
+    "subtitle": "Dodirnite stavku i vidjet ćete fotografiju mjesta gdje se nalazi.",
+    "groups": {
+      "kitchen": "Kuhinja",
+      "bathroom": "Kupaonica",
+      "hallway": "Hodnik",
+      "livingRoom": "Dnevni boravak"
+    },
+    "items": {
+      "ironingBoard": {
+        "title": "Daska za glačanje",
+        "text": "Iza kuhinjskih vrata, pored kante za smeće."
+      },
+      "manuals": {
+        "title": "Upute za uređaje",
+        "text": "U lijevom kuhinjskom ormariću."
+      },
+      "hairDryer": {
+        "title": "Sušilo za kosu",
+        "text": "U kupaonici, u srednjoj ladici ispod umivaonika."
+      },
+      "capsules": {
+        "title": "Kapsule za perilicu rublja",
+        "text": "U kupaonici, u prvoj ladici ispod umivaonika."
+      },
+      "iron": {
+        "title": "Glačalo",
+        "text": "U ormaru u hodniku pored kupaonice, s lijeve strane."
+      },
+      "towels": {
+        "title": "Dodatni ručnici",
+        "text": "U ormaru u hodniku pored kupaonice, s desne strane."
+      },
+      "firstAid": {
+        "title": "Kutija prve pomoći",
+        "text": "U TV komodi, s desne strane, iza staklenih vrata."
+      }
+    }
+  },
+  "Explore": {
+    "pageTitle": "Istražite Zadar",
+    "title": "Naše preporuke u Zadru",
+    "subtitle": "Mjesta koja bismo preporučili i svojim prijateljima.",
+    "categories": {
+      "beaches": "Plaže",
+      "food": "Hrana i piće",
+      "sights": "Znamenitosti",
+      "stores": "Trgovine"
+    },
+    "places": {
+      "kolovare": {
+        "name": "Plaža Kolovare",
+        "badge": "14 min pješice",
+        "text": "Najpopularnija gradska plaža s kristalno čistim morem, hladovinom i kafićima u blizini."
+      },
+      "borik": {
+        "name": "Plaža Borik",
+        "badge": "13 min autom",
+        "text": "Plaža idealna za obitelji, s plitkim morem, restoranima u blizini i mnogo sadržaja."
+      },
+      "uskok": {
+        "name": "Plaža Uskok",
+        "badge": "13 min autom",
+        "text": "Živahna plaža na Puntamici, omiljena za kupanje, sunčanje i beach barove."
+      },
+      "butler": {
+        "name": "Butler Gourmet & Cocktails",
+        "badge": "Kokteli i večera",
+        "text": "Moderan restoran i koktel-bar s elegantnim ambijentom i kreativnim jelima."
+      },
+      "harbor": {
+        "name": "Harbor CookHouse",
+        "badge": "Restoran uz more",
+        "text": "Popularan restoran uz more, poznat po odličnim burgerima, steakovima i koktelima."
+      },
+      "bruschetta": {
+        "name": "Bruschetta",
+        "badge": "Mediteranska kuhinja",
+        "text": "Jedan od najpoznatijih zadarskih restorana, s mediteranskom kuhinjom uz more."
+      },
+      "fosa": {
+        "name": "Foša",
+        "badge": "Vrhunska kuhinja",
+        "text": "Restoran vrhunske kuhinje uz povijesne gradske zidine i lučicu."
+      },
+      "kantuna": {
+        "name": "4 Kantuna",
+        "badge": "Dalmatinska kuhinja",
+        "text": "Tradicionalni dalmatinski restoran s domaćim jelima u srcu Staroga grada."
+      },
+      "garden": {
+        "name": "The Garden Lounge",
+        "badge": "Kokteli uz zalazak",
+        "text": "Savršeno mjesto za koktele uz zalazak sunca i panoramski pogled na more."
+      },
+      "seaOrgan": {
+        "name": "Morske orgulje",
+        "badge": "Obavezno posjetiti",
+        "text": "Jedinstvena arhitektonska instalacija koja uz pomoć valova stvara glazbu."
+      },
+      "greetingSun": {
+        "name": "Pozdrav Suncu",
+        "badge": "Za zalazak sunca",
+        "text": "Svjetlosna instalacija na solarni pogon koju je najljepše doživjeti u sumrak."
+      },
+      "donat": {
+        "name": "Crkva sv. Donata",
+        "badge": "Povijesni spomenik",
+        "text": "Simbol Zadra i jedna od najvažnijih predromaničkih crkava u Hrvatskoj."
+      },
+      "forum": {
+        "name": "Rimski forum",
+        "badge": "Antičke ruševine",
+        "text": "Najveći rimski forum na istočnoj obali Jadrana."
+      },
+      "peoplesSquare": {
+        "name": "Narodni trg",
+        "badge": "Centar grada",
+        "text": "Povijesno srce Zadra, okruženo kafićima i svakodnevnim životom."
+      },
+      "kalelarga": {
+        "name": "Kalelarga",
+        "badge": "Stari grad",
+        "text": "Najpoznatija zadarska ulica i središte gradskog života."
+      },
+      "cathedral": {
+        "name": "Katedrala sv. Stošije",
+        "badge": "Katedrala",
+        "text": "Najveća katedrala u Dalmaciji, sa zvonikom s kojeg se pruža pogled na grad."
+      },
+      "landGate": {
+        "name": "Kopnena vrata",
+        "badge": "Povijesna vrata",
+        "text": "Povijesni ulaz u Stari grad i dio mletačkih utvrda Zadra."
+      },
+      "supernova": {
+        "name": "Supernova Zadar",
+        "badge": "Trgovački centar",
+        "text": "Najveći trgovački centar u Zadru, sa supermarketom, kafićima, McDonald’som i mnogo trgovina."
+      },
+      "lidl": {
+        "name": "Lidl",
+        "badge": "Svakodnevna kupnja",
+        "text": "Popularan supermarket za namirnice, piće i sve što treba za svaki dan."
+      },
+      "kaufland": {
+        "name": "Kaufland",
+        "badge": "Velik izbor",
+        "text": "Velik supermarket s namirnicama, potrepštinama za kućanstvo i svježim proizvodima."
+      },
+      "cityGalleria": {
+        "name": "City Galleria",
+        "badge": "Kupovina i tržnica",
+        "text": "Trgovački centar s trgovinama, kafićima i lokalnom tržnicom."
+      },
+      "farmacia": {
+        "name": "Farmacia City Galleria",
+        "badge": "Bez recepta",
+        "text": "Za lijekove protiv bolova, vitamine, kozmetiku, kreme za sunčanje i ostale svakodnevne potrepštine. Lijekovi na recept nisu dostupni."
+      }
+    }
+  },
+  "HouseRules": {
+    "pageTitle": "Kućni red",
+    "title": "Kućni red",
+    "subtitle": "Nekoliko jednostavnih pravila da svi budu zadovoljni.",
+    "checkIn": "Dolazak",
+    "from": "od",
+    "checkOut": "Odlazak",
+    "by": "do",
+    "timesNote": "Tako imamo dovoljno vremena pripremiti apartman za sljedeće goste.",
+    "quietHours": "Vrijeme mira",
+    "quietText": "Ovo je stambena zgrada sa stalnim stanarima — buka se čuje u hodniku, na stubištu i u dizalu.",
+    "afternoon": "Popodne",
+    "night": "Noću",
+    "kidsNote": "Putujete s djecom? Molimo vas da pripazite na trčanje i glasnu igru u hodniku i dizalu.",
+    "inTheApartment": "U apartmanu",
+    "rules": {
+      "smoking": {
+        "title": "Zabranjeno pušenje u apartmanu",
+        "text": "Na terasi slobodno možete pušiti."
+      },
+      "door": {
+        "title": "Držite vrata zaključanima",
+        "text": "Čak i kad ste unutra."
+      },
+      "breaks": {
+        "title": "Javite nam ako se nešto pokvari",
+        "text": "Bez brige — samo nam javite što prije."
+      }
+    }
+  },
+  "Parking": {
+    "pageTitle": "Parking",
+    "title": "Parking",
+    "guestsOnly": "Samo za goste",
+    "guestsOnlyText": "Detalji o parkingu dostupni su gostima u pravoj verziji vodiča."
+  },
+  "Tv": {
+    "pageTitle": "TV",
+    "title": "Gledanje televizije",
+    "subtitle": "Imate dva daljinska upravljača — evo za što služi svaki.",
+    "photoPlaceholder": "Fotografija oba daljinska upravljača",
+    "smallRemote": "Mali daljinski",
+    "smallRemoteText": "Za sve: uključivanje, aplikacije, Netflix",
+    "largeRemote": "Veliki daljinski",
+    "largeRemoteText": "Samo unutar EON-a",
+    "step1Title": "Uključite televizor",
+    "step1Text": "Pritisnite tipku za uključivanje na malom daljinskom.",
+    "step2Title": "Streaming",
+    "step2Text": "Odaberite aplikaciju na početnom zaslonu.",
+    "step3Title": "TV programi (EON)",
+    "step3Text": "Odaberite ikonu HDMI da otvorite EON — programi uživo i EON videoteka."
+  },
+  "Wifi": {
+    "pageTitle": "Wi-Fi",
+    "title": "Spojite se na internet",
+    "subtitle": "Kopirajte lozinku i spojite se.",
+    "apartmentWifi": "Wi-Fi u apartmanu",
+    "network": "Mreža",
+    "password": "Lozinka",
+    "cantConnect": "Ne možete se spojiti?",
+    "cantConnectText": "Ponovno pokrenite router koji se nalazi odmah iza televizora. Pritisnite crnu tipku sa stražnje strane da ga isključite, pričekajte 10 sekundi pa je ponovno pritisnite. Pričekajte nekoliko minuta da se ponovno spoji.",
+    "stillNotWorking": "I dalje ne radi? Pišite nam"
+  },
+  "NoAccess": {
+    "pageTitle": "Nema pristupa",
+    "title": "Ovaj link nije aktivan",
+    "text": "Otvorite osobni link koji smo vam poslali."
+  },
+  "ThankYou": {
+    "pageTitle": "Hvala",
+    "title": "Hvala vam na boravku",
+    "text": "Nadamo se da ste uživali u Zadru i bit će nam drago ponovno vas ugostiti."
+  }
+}
