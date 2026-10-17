@@ -6,6 +6,13 @@ information, Wi-Fi details and apartment essentials.
 This is the public version of the project. Wi-Fi details, door codes, the
 address, parking details and most of the photos are replaced with placeholders.
 
+## Live demo
+
+[Open the demo guide](https://apartment-guest-demo.vercel.app/guide/641fb53929264c97bf8a29a811f10529)
+
+The link includes a public demo token, so it opens straight into the guide.
+Without a token, the site shows the no-access page.
+
 ## Screenshots
 
 <p align="center">
