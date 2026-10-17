@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { ArrowLeft, Moon } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
+import ThemeToggle from './ThemeToggle';
 
 type PageHeaderProps = {
   title: string;
@@ -19,13 +20,7 @@ const PageHeader = ({ title }: PageHeaderProps) => {
 
         <p className="ml-2 flex-1 truncate text-lg font-extrabold">{title}</p>
 
-        <button
-          type="button"
-          aria-label="Toggle dark mode"
-          className="flex size-11 cursor-pointer items-center justify-center rounded-2xl border border-line bg-surface transition-colors duration-200 hover:bg-surface-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
-        >
-          <Moon className="size-5" />
-        </button>
+        <ThemeToggle className="flex size-11 cursor-pointer items-center justify-center rounded-2xl border border-line bg-surface transition-colors duration-200 hover:bg-surface-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent" />
         <button
           type="button"
           aria-label="Change language (EN)"

@@ -1,5 +1,5 @@
-import { Moon } from 'lucide-react';
 import LogoMark from './LogoMark';
+import ThemeToggle from './ThemeToggle';
 
 const Header = () => {
   return (
@@ -9,13 +9,7 @@ const Header = () => {
         <p className="text-base font-bold">Apartment Matea</p>
         <p className="text-base font-semibold text-white/80">Zadar</p>
       </div>
-      <button
-        type="button"
-        aria-label="Toggle dark mode"
-        className="flex size-11 cursor-pointer items-center justify-center rounded-2xl bg-white/15 transition-colors duration-200 hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-      >
-        <Moon className="size-5" />
-      </button>
+      <ThemeToggle className="flex size-11 cursor-pointer items-center justify-center rounded-2xl bg-white/15 transition-colors duration-200 hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white" />
       <button
         type="button"
         aria-label="Change language (EN)"

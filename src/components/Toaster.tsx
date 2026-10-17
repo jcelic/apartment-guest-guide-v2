@@ -1,11 +1,15 @@
 'use client';
 
 import { CircleAlert, CircleCheck, Info } from 'lucide-react';
+import { useTheme } from 'next-themes';
 import { Toaster as Sonner } from 'sonner';
 
 const Toaster = () => {
+  const { resolvedTheme } = useTheme();
+
   return (
     <Sonner
+      theme={resolvedTheme === 'dark' ? 'dark' : 'light'}
       position="top-center"
       className="max-[600px]:w-auto!"
       icons={{
