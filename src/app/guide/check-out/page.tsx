@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { MessageCircle } from 'lucide-react';
 import CheckoutChecklist from '@/components/CheckoutChecklist';
 import PageHeader from '@/components/PageHeader';
+import PageTransition from '@/components/PageTransition';
 
 export const metadata: Metadata = {
   title: 'Check-out',
@@ -42,7 +43,7 @@ const items = [
 
 const CheckoutPage = () => {
   return (
-    <>
+    <PageTransition>
       <PageHeader title="Check-out" />
 
       <main className="mx-auto w-full max-w-xl flex-1 px-5 pt-6 pb-10">
@@ -65,7 +66,7 @@ const CheckoutPage = () => {
           </a>
         </div>
       </main>
-    </>
+    </PageTransition>
   );
 };
 

@@ -60,7 +60,7 @@ const Lightbox = ({ photos, initialIndex, onClose }: LightboxProps) => {
       aria-label="Photo viewer"
       onClose={onClose}
       onKeyDown={onKeyDown}
-      className="m-0 h-dvh max-h-none w-full max-w-none bg-transparent p-0 text-white backdrop:bg-black/90 backdrop:backdrop-blur-sm"
+      className="m-0 h-dvh max-h-none w-full max-w-none bg-transparent p-0 text-white opacity-0 transition-[opacity,display,overlay] transition-discrete duration-200 backdrop:bg-black/0 backdrop:backdrop-blur-sm backdrop:transition-[background-color,display,overlay] backdrop:transition-discrete backdrop:duration-200 open:opacity-100 open:backdrop:bg-black/90 motion-reduce:transition-none motion-reduce:backdrop:transition-none starting:open:opacity-0 starting:open:backdrop:bg-black/0"
     >
       <div
         ref={scrollerRef}
@@ -71,7 +71,7 @@ const Lightbox = ({ photos, initialIndex, onClose }: LightboxProps) => {
             ),
           )
         }
-        className="flex h-full snap-x snap-mandatory [scrollbar-width:none] overflow-x-auto overscroll-contain [&::-webkit-scrollbar]:hidden"
+        className="flex h-full scale-100 snap-x snap-mandatory [scrollbar-width:none] overflow-x-auto overscroll-contain transition-[scale] duration-300 ease-out motion-reduce:transition-none starting:scale-95 [&::-webkit-scrollbar]:hidden"
       >
         {photos.map((photo, index) => (
           <figure

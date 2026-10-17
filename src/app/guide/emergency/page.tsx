@@ -12,6 +12,7 @@ import jadranPharmacy from '@/assets/emergency/jadran-pharmacy.webp';
 import touristClinic from '@/assets/emergency/tourist-clinic.webp';
 import PageHeader from '@/components/PageHeader';
 import PhotoButton from '@/components/PhotoButton';
+import PageTransition from '@/components/PageTransition';
 
 export const metadata: Metadata = {
   title: 'Help & emergency',
@@ -55,7 +56,7 @@ const photos = medical.map((place) => ({
 
 const EmergencyPage = () => {
   return (
-    <>
+    <PageTransition>
       <PageHeader title="Help & emergency" />
 
       <main className="mx-auto w-full max-w-xl flex-1 px-5 pt-6 pb-10">
@@ -178,7 +179,7 @@ const EmergencyPage = () => {
           <ChevronRight className="size-5 shrink-0 text-muted" />
         </a>
       </main>
-    </>
+    </PageTransition>
   );
 };
 

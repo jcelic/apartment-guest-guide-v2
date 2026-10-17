@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { ImageIcon } from 'lucide-react';
 import PageHeader from '@/components/PageHeader';
+import PageTransition from '@/components/PageTransition';
 
 export const metadata: Metadata = {
   title: 'TV',
@@ -10,7 +11,7 @@ const apps = ['YouTube', 'Netflix', 'HBO Max'];
 
 const TvPage = () => {
   return (
-    <>
+    <PageTransition>
       <PageHeader title="TV" />
 
       <main className="mx-auto w-full max-w-xl flex-1 px-5 pt-6 pb-10">
@@ -91,7 +92,7 @@ const TvPage = () => {
           </li>
         </ol>
       </main>
-    </>
+    </PageTransition>
   );
 };
 

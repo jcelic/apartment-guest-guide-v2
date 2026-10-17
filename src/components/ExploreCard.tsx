@@ -8,6 +8,7 @@ const ExploreCard = () => {
   return (
     <Link
       href="/guide/explore"
+      transitionTypes={['nav-forward']}
       className="block overflow-hidden rounded-3xl bg-deep text-white transition-colors duration-200 hover:bg-deep/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
     >
       <div className="relative aspect-12/5 bg-white/10">

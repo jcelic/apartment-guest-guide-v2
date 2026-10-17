@@ -23,6 +23,7 @@ import supernova from '@/assets/explore/supernova.webp';
 import uskok from '@/assets/explore/uskok.webp';
 import ExploreList from '@/components/ExploreList';
 import PageHeader from '@/components/PageHeader';
+import PageTransition from '@/components/PageTransition';
 
 export const metadata: Metadata = {
   title: 'Explore Zadar',
@@ -212,7 +213,7 @@ const categories = [
 
 const ExplorePage = () => {
   return (
-    <>
+    <PageTransition>
       <PageHeader title="Explore Zadar" />
 
       <main className="mx-auto w-full max-w-xl flex-1 px-5 pt-6 pb-10">
@@ -222,7 +223,7 @@ const ExplorePage = () => {
 
         <ExploreList categories={categories} />
       </main>
-    </>
+    </PageTransition>
   );
 };
 

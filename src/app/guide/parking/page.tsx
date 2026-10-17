@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { LockKeyhole } from 'lucide-react';
 import PageHeader from '@/components/PageHeader';
+import PageTransition from '@/components/PageTransition';
 
 export const metadata: Metadata = {
   title: 'Parking',
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
 
 const ParkingPage = () => {
   return (
-    <>
+    <PageTransition>
       <PageHeader title="Parking" />
 
       <main className="mx-auto w-full max-w-xl flex-1 px-5 pt-6 pb-10">
@@ -27,7 +28,7 @@ const ParkingPage = () => {
           </div>
         </div>
       </main>
-    </>
+    </PageTransition>
   );
 };
 

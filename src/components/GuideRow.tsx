@@ -29,6 +29,7 @@ const GuideRow = ({
   return (
     <Link
       href={href}
+      transitionTypes={['nav-forward']}
       className="group flex cursor-pointer items-center gap-4 p-4 transition-colors duration-200 hover:bg-accent-soft focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent"
     >
       <span

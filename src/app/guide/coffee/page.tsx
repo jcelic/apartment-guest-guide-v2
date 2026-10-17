@@ -10,6 +10,7 @@ import startHot from '@/assets/coffee/start-hot.webp';
 import waterLevel from '@/assets/coffee/water-level.webp';
 import PageHeader from '@/components/PageHeader';
 import StepCarousel from '@/components/StepCarousel';
+import PageTransition from '@/components/PageTransition';
 
 export const metadata: Metadata = {
   title: 'Coffee maker',
@@ -70,7 +71,7 @@ const steps = [
 
 const CoffeePage = () => {
   return (
-    <>
+    <PageTransition>
       <PageHeader title="Coffee maker" />
 
       <main className="mx-auto w-full max-w-xl flex-1 px-5 pt-6 pb-10">
@@ -112,7 +113,7 @@ const CoffeePage = () => {
 
         <StepCarousel steps={steps} />
       </main>
-    </>
+    </PageTransition>
   );
 };
 

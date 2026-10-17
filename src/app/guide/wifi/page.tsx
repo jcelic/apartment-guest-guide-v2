@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { ChevronRight, Router, Wifi } from 'lucide-react';
 import CopyPasswordButton from '@/components/CopyPasswordButton';
 import PageHeader from '@/components/PageHeader';
+import PageTransition from '@/components/PageTransition';
 
 export const metadata: Metadata = {
   title: 'Wi-Fi',
@@ -12,7 +13,7 @@ const WIFI_PASSWORD = 'example-password';
 
 const WifiPage = () => {
   return (
-    <>
+    <PageTransition>
       <PageHeader title="Wi-Fi" />
 
       <main className="mx-auto w-full max-w-xl flex-1 px-5 pt-6 pb-10">
@@ -76,7 +77,7 @@ const WifiPage = () => {
           <ChevronRight className="size-5" />
         </a>
       </main>
-    </>
+    </PageTransition>
   );
 };
 

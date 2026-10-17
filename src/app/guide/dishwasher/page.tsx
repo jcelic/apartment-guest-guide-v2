@@ -10,6 +10,7 @@ import panel2 from '@/assets/dishwasher/panel2.png';
 import panel3 from '@/assets/dishwasher/panel3.png';
 import PageHeader from '@/components/PageHeader';
 import PhotoStrip from '@/components/PhotoStrip';
+import PageTransition from '@/components/PageTransition';
 
 export const metadata: Metadata = {
   title: 'Dishwasher',
@@ -49,7 +50,7 @@ const ButtonNumber = ({ children }: { children: ReactNode }) => {
 
 const DishwasherPage = () => {
   return (
-    <>
+    <PageTransition>
       <PageHeader title="Dishwasher" />
 
       <main className="mx-auto w-full max-w-xl flex-1 px-5 pt-6 pb-10">
@@ -206,7 +207,7 @@ const DishwasherPage = () => {
           <ExternalLink className="size-5 shrink-0 text-muted" />
         </a>
       </main>
-    </>
+    </PageTransition>
   );
 };
 

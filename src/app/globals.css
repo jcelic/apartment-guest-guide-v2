@@ -100,3 +100,56 @@
     letter-spacing: -0.02em;
   }
 }
+
+::view-transition {
+  pointer-events: none;
+}
+
+::view-transition-old(.nav-forward) {
+  --page-offset: -60px;
+  animation:
+    150ms ease-in both page-fade reverse,
+    400ms ease-in-out both page-slide reverse;
+}
+
+::view-transition-new(.nav-forward) {
+  --page-offset: 60px;
+  animation:
+    210ms ease-out 150ms both page-fade,
+    400ms ease-in-out both page-slide;
+}
+
+::view-transition-old(.nav-back) {
+  --page-offset: 60px;
+  animation:
+    150ms ease-in both page-fade reverse,
+    400ms ease-in-out both page-slide reverse;
+}
+
+::view-transition-new(.nav-back) {
+  --page-offset: -60px;
+  animation:
+    210ms ease-out 150ms both page-fade,
+    400ms ease-in-out both page-slide;
+}
+
+@keyframes page-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes page-slide {
+  from {
+    translate: var(--page-offset);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(*),
+  ::view-transition-new(*),
+  ::view-transition-group(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
+}

@@ -26,6 +26,7 @@ import map from '@/assets/arrival/map.webp';
 import PageHeader from '@/components/PageHeader';
 import PhotoStrip from '@/components/PhotoStrip';
 import Step from '@/components/Step';
+import PageTransition from '@/components/PageTransition';
 
 export const metadata: Metadata = {
   title: 'Arrival',
@@ -69,7 +70,7 @@ const lockboxPhotos = [
 
 const ArrivalPage = () => {
   return (
-    <>
+    <PageTransition>
       <PageHeader title="Arrival" />
 
       <main className="mx-auto w-full max-w-xl flex-1 px-5 pt-6 pb-10">
@@ -183,13 +184,14 @@ const ArrivalPage = () => {
 
         <Link
           href="/guide/parking"
+          transitionTypes={['nav-forward']}
           className="mt-6 flex items-center justify-center gap-2 rounded-2xl bg-accent-soft p-4 font-bold text-accent-ink transition-colors duration-200 hover:bg-line focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
         >
           Arriving by car? See parking
           <ChevronRight className="size-5" />
         </Link>
       </main>
-    </>
+    </PageTransition>
   );
 };
 

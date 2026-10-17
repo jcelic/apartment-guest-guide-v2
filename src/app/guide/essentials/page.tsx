@@ -8,6 +8,7 @@ import towels from '@/assets/essentials/towels.webp';
 import washingMachineCapsules from '@/assets/essentials/washing-machine-capsules.webp';
 import EssentialsList from '@/components/EssentialsList';
 import PageHeader from '@/components/PageHeader';
+import PageTransition from '@/components/PageTransition';
 
 export const metadata: Metadata = {
   title: 'Essentials',
@@ -73,7 +74,7 @@ const groups = [
 
 const EssentialsPage = () => {
   return (
-    <>
+    <PageTransition>
       <PageHeader title="Essentials" />
 
       <main className="mx-auto w-full max-w-xl flex-1 px-5 pt-6 pb-10">
@@ -85,7 +86,7 @@ const EssentialsPage = () => {
 
         <EssentialsList groups={groups} />
       </main>
-    </>
+    </PageTransition>
   );
 };
 

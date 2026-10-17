@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Check, Moon, Sun, X } from 'lucide-react';
 import PageHeader from '@/components/PageHeader';
+import PageTransition from '@/components/PageTransition';
 
 export const metadata: Metadata = {
   title: 'House rules',
@@ -26,7 +27,7 @@ const rules = [
 
 const HouseRulesPage = () => {
   return (
-    <>
+    <PageTransition>
       <PageHeader title="House rules" />
 
       <main className="mx-auto w-full max-w-xl flex-1 px-5 pt-6 pb-10">
@@ -129,7 +130,7 @@ const HouseRulesPage = () => {
           ))}
         </ul>
       </main>
-    </>
+    </PageTransition>
   );
 };
 
