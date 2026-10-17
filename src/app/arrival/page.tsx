@@ -160,7 +160,7 @@ const ArrivalPage = () => {
             </div>
           </Step>
 
-          <Step number={3} title="Let us know you're in">
+          <Step number={3} title="Let us know you're in" variant="success">
             <p className="text-muted">
               Please let us know when you&apos;re in. We need your check-in time
               for the official guest registration (eVisitor).
@@ -170,7 +170,7 @@ const ArrivalPage = () => {
               href="https://wa.me/YOUR_PHONE_NUMBER"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex h-14 items-center justify-center gap-2 rounded-2xl bg-accent font-bold text-on-accent transition-colors duration-200 hover:bg-accent-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+              className="flex h-14 items-center justify-center gap-2 rounded-2xl bg-success-soft font-bold text-success transition-colors duration-200 hover:bg-success/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
             >
               <MessageCircle className="size-5" />
               Message us on WhatsApp

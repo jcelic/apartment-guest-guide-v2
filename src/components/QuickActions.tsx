@@ -40,6 +40,7 @@ const QuickActions = () => {
           icon={<MessageCircle />}
           label="Message us"
           href={WHATSAPP_URL}
+          variant="success"
         />
       </div>
 

@@ -70,7 +70,7 @@ const WifiPage = () => {
           href="https://wa.me/YOUR_PHONE_NUMBER"
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-6 flex items-center justify-center gap-2 rounded-2xl bg-accent-soft p-4 font-bold text-accent-ink transition-colors duration-200 hover:bg-line focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+          className="mt-6 flex items-center justify-center gap-2 rounded-2xl bg-success-soft p-4 font-bold text-success transition-colors duration-200 hover:bg-success/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
         >
           Still not working? Message us
           <ChevronRight className="size-5" />
