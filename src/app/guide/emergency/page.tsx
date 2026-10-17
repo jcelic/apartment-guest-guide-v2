@@ -37,7 +37,7 @@ const medical = [
     status: 'Zadar General Hospital',
     text: 'For urgent medical situations requiring immediate treatment at Zadar General Hospital.',
     mapsUrl:
-      'https://maps.google.com/?q=Objedinjeni+hitni+bolnicki+prijem+OB+Zadar',
+      'https://www.google.com/maps/search/?api=1&query=Objedinjeni+hitni+bolnički+prijem,+Ul.+Bože+Peričića+5,+Zadar',
     image: emergencyDepartment,
   },
   {
