@@ -182,7 +182,7 @@ const ArrivalPage = () => {
         </ol>
 
         <Link
-          href="/parking"
+          href="/guide/parking"
           className="mt-6 flex items-center justify-center gap-2 rounded-2xl bg-accent-soft p-4 font-bold text-accent-ink transition-colors duration-200 hover:bg-line focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
         >
           Arriving by car? See parking

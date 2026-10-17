@@ -11,7 +11,7 @@ const PageHeader = ({ title }: PageHeaderProps) => {
     <header className="sticky top-0 z-20 border-b border-line bg-background/90 backdrop-blur-md">
       <div className="mx-auto flex max-w-xl items-center gap-2 p-4">
         <Link
-          href="/"
+          href="/guide"
           aria-label="Back to home"
           className="flex size-11 shrink-0 items-center justify-center rounded-2xl border border-line bg-surface transition-colors duration-200 hover:bg-surface-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
         >

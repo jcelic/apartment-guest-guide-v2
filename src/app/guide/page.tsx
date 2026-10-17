@@ -10,6 +10,7 @@ import {
   WashingMachine,
   Wifi,
 } from 'lucide-react';
+import { cookies } from 'next/headers';
 import ExploreCard from '@/components/ExploreCard';
 import GuideRow from '@/components/GuideRow';
 import GuideSection from '@/components/GuideSection';
@@ -17,8 +18,12 @@ import GuideTile from '@/components/GuideTile';
 import Header from '@/components/Header';
 import QuickActions from '@/components/QuickActions';
 import StayInfo from '@/components/StayInfo';
+import { SESSION_COOKIE, readSession } from '@/lib/session';
 
-const Page = () => {
+const Page = async () => {
+  const cookieStore = await cookies();
+  const session = await readSession(cookieStore.get(SESSION_COOKIE)?.value);
+
   return (
     <main className="flex-1 pb-10">
       <section className="bg-deep pb-16 text-white">
@@ -31,7 +36,7 @@ const Page = () => {
             </p>
 
             <h1 className="mt-3 text-4xl font-extrabold sm:text-5xl">
-              Welcome, Ana
+              {session?.name ? `Welcome, ${session.name}` : 'Welcome'}
             </h1>
 
             <p className="mt-3 text-lg text-white/85">
@@ -58,7 +63,7 @@ const Page = () => {
                 icon={<DoorOpen />}
                 title="Arrival"
                 description="Building entry, lockbox, 3 steps"
-                href="/arrival"
+                href="/guide/arrival"
               />
             </li>
             <li>
@@ -66,7 +71,7 @@ const Page = () => {
                 icon={<SquareParking />}
                 title="Parking"
                 description="Free with the apartment card"
-                href="/parking"
+                href="/guide/parking"
               />
             </li>
           </ul>
@@ -79,7 +84,7 @@ const Page = () => {
                 icon={<Wifi />}
                 title="Wi-Fi"
                 description="Network & password"
-                href="/wifi"
+                href="/guide/wifi"
               />
             </li>
             <li>
@@ -87,7 +92,7 @@ const Page = () => {
                 icon={<Search />}
                 title="Essentials"
                 description="Where is everything"
-                href="/essentials"
+                href="/guide/essentials"
               />
             </li>
             <li>
@@ -95,7 +100,7 @@ const Page = () => {
                 icon={<Tv />}
                 title="TV"
                 description="Netflix, EON"
-                href="/tv"
+                href="/guide/tv"
               />
             </li>
             <li>
@@ -103,7 +108,7 @@ const Page = () => {
                 icon={<Coffee />}
                 title="Coffee"
                 description="Dolce Gusto, 10 steps"
-                href="/coffee"
+                href="/guide/coffee"
               />
             </li>
             <li>
@@ -111,7 +116,7 @@ const Page = () => {
                 icon={<WashingMachine />}
                 title="Dishwasher"
                 description="Programs P1–P4"
-                href="/dishwasher"
+                href="/guide/dishwasher"
               />
             </li>
             <li>
@@ -119,7 +124,7 @@ const Page = () => {
                 icon={<ListChecks />}
                 title="House rules"
                 description="Quiet hours"
-                href="/house-rules"
+                href="/guide/house-rules"
               />
             </li>
           </ul>
@@ -129,7 +134,7 @@ const Page = () => {
               icon={<LogOut />}
               title="Check-out checklist"
               description="6 quick things before 10:00"
-              href="/check-out"
+              href="/guide/check-out"
               variant="highlighted"
             />
           </div>
@@ -143,7 +148,7 @@ const Page = () => {
               icon={<Phone />}
               title="Emergency · 112"
               description="Numbers, 24/7 pharmacy, hospital"
-              href="/emergency"
+              href="/guide/emergency"
               variant="emergency"
             />
           </div>
