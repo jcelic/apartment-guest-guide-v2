@@ -147,7 +147,10 @@ const ArrivalPage = () => {
             <p className="text-muted">
               3rd floor — turn right out of the elevator, the door is right next
               to it. Name on the door:{' '}
-              <strong className="font-extrabold text-foreground">Surname</strong>.
+              <strong className="font-extrabold text-foreground">
+                Surname
+              </strong>
+              .
             </p>
 
             <PhotoStrip label="Way to the door" photos={doorPhotos} />

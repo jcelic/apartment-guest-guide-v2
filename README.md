@@ -1,11 +1,14 @@
 # Apartment Matea Guest Guide
 
-A private guest guide for Apartment Matea in Zadar, with arrival
+A guest guide for Apartment Matea in Zadar, with arrival
 instructions, parking information, Wi-Fi details and apartment essentials.
+
+This is the public version of the project. Wi-Fi details, door codes, the
+address, parking details and all photos are replaced with placeholders.
 
 ## Tech stack
 
-- Next.js — App Router
+- Next.js
 - TypeScript
 - Tailwind CSS
 
@@ -24,17 +27,3 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000).
-
-## Formatting
-
-Format all files:
-
-```bash
-npm run format
-```
-
-Check formatting without changing files:
-
-```bash
-npm run format:check
-```
