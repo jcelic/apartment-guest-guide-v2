@@ -30,7 +30,7 @@ const ExploreCard = () => {
           {highlights.map((highlight) => (
             <li
               key={highlight}
-              className="rounded-full bg-white/15 px-3 py-1.5 text-sm font-bold"
+              className="rounded-xl bg-white/15 px-3 py-1.5 text-sm font-bold"
             >
               {highlight}
             </li>
