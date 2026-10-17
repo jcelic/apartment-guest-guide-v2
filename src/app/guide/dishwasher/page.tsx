@@ -2,6 +2,8 @@ import type { ReactNode } from 'react';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import { ExternalLink, FileText } from 'lucide-react';
+import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import capsules from '@/assets/dishwasher/capsules.webp';
 import compartment1 from '@/assets/dishwasher/compartment1.webp';
 import compartment2 from '@/assets/dishwasher/compartment2.webp';
@@ -12,33 +14,24 @@ import PageHeader from '@/components/PageHeader';
 import PhotoStrip from '@/components/PhotoStrip';
 import PageTransition from '@/components/PageTransition';
 
-export const metadata: Metadata = {
-  title: 'Dishwasher',
+export const generateMetadata = async (): Promise<Metadata> => {
+  const t = await getTranslations('Dishwasher');
+
+  return { title: t('pageTitle') };
 };
 
 const capsulePhotos = [
-  { src: capsules, caption: 'Capsules are under the sink.' },
-  {
-    src: compartment1,
-    caption: 'Place one capsule in the detergent compartment.',
-  },
-  {
-    src: compartment2,
-    caption: 'Close the lid before starting the dishwasher.',
-  },
-];
+  { id: 'capsules', src: capsules },
+  { id: 'compartment1', src: compartment1 },
+  { id: 'compartment2', src: compartment2 },
+] as const;
 
 const programs = [
-  { code: 'P1', name: 'Intensive · 75°C', use: 'Very dirty dishes' },
-  {
-    code: 'P2',
-    name: 'Universal · 50–60°C',
-    use: 'Most loads',
-    recommended: true,
-  },
-  { code: 'P3', name: 'ECO · 45°C', use: 'Energy-saving' },
-  { code: 'P4', name: 'Rapid', use: 'Quick wash' },
-];
+  { code: 'P1' },
+  { code: 'P2', recommended: true },
+  { code: 'P3' },
+  { code: 'P4' },
+] as const;
 
 const ButtonNumber = ({ children }: { children: ReactNode }) => {
   return (
@@ -48,15 +41,26 @@ const ButtonNumber = ({ children }: { children: ReactNode }) => {
   );
 };
 
+const buttonNumber = (chunks: ReactNode) => (
+  <ButtonNumber>{chunks}</ButtonNumber>
+);
+
 const DishwasherPage = () => {
+  const t = useTranslations('Dishwasher');
+
+  const photos = capsulePhotos.map((photo) => ({
+    src: photo.src,
+    caption: t(`photos.${photo.id}`),
+  }));
+
   return (
     <PageTransition>
-      <PageHeader title="Dishwasher" />
+      <PageHeader title={t('pageTitle')} />
 
       <main className="mx-auto w-full max-w-xl flex-1 px-5 pt-6 pb-10">
-        <h1 className="text-4xl font-extrabold">Run the dishwasher</h1>
+        <h1 className="text-4xl font-extrabold">{t('title')}</h1>
 
-        <p className="mt-2 text-muted">One capsule, three buttons.</p>
+        <p className="mt-2 text-muted">{t('subtitle')}</p>
 
         <ol
           role="list"
@@ -67,13 +71,10 @@ const DishwasherPage = () => {
               1
             </span>
             <div className="min-w-0 flex-1">
-              <h2 className="text-lg font-extrabold">Add one capsule</h2>
-              <p className="mt-1 text-muted">
-                Put one capsule in the detergent compartment and close the lid.
-                Capsules are under the sink.
-              </p>
+              <h2 className="text-lg font-extrabold">{t('step1Title')}</h2>
+              <p className="mt-1 text-muted">{t('step1Text')}</p>
               <div className="mt-4">
-                <PhotoStrip label="Capsule" photos={capsulePhotos} />
+                <PhotoStrip label={t('capsule')} photos={photos} />
               </div>
             </div>
           </li>
@@ -83,13 +84,13 @@ const DishwasherPage = () => {
               2
             </span>
             <div className="min-w-0 flex-1">
-              <h2 className="text-lg font-extrabold">Turn it on</h2>
+              <h2 className="text-lg font-extrabold">{t('step2Title')}</h2>
               <p className="mt-1 text-muted">
-                Press the power button <ButtonNumber>1</ButtonNumber>.
+                {t.rich('step2Text', { button: buttonNumber })}
               </p>
               <Image
                 src={panel1}
-                alt="Dishwasher power button, marked 1"
+                alt={t('step2Alt')}
                 placeholder="blur"
                 sizes="(min-width: 576px) 420px, calc(100vw - 120px)"
                 className="mt-3 h-auto w-full rounded-xl"
@@ -102,14 +103,13 @@ const DishwasherPage = () => {
               3
             </span>
             <div className="min-w-0 flex-1">
-              <h2 className="text-lg font-extrabold">Choose a program</h2>
+              <h2 className="text-lg font-extrabold">{t('step3Title')}</h2>
               <p className="mt-1 text-muted">
-                Press PROGR. <ButtonNumber>2</ButtonNumber> until you reach the
-                program you want, see the list below.
+                {t.rich('step3Text', { button: buttonNumber })}
               </p>
               <Image
                 src={panel2}
-                alt="Dishwasher program button, marked 2"
+                alt={t('step3Alt')}
                 placeholder="blur"
                 sizes="(min-width: 576px) 420px, calc(100vw - 120px)"
                 className="mt-3 h-auto w-full rounded-xl"
@@ -122,13 +122,13 @@ const DishwasherPage = () => {
               4
             </span>
             <div className="min-w-0 flex-1">
-              <h2 className="text-lg font-extrabold">Start and close</h2>
+              <h2 className="text-lg font-extrabold">{t('step4Title')}</h2>
               <p className="mt-1 text-muted">
-                Press START <ButtonNumber>3</ButtonNumber>, then close the door.
+                {t.rich('step4Text', { button: buttonNumber })}
               </p>
               <Image
                 src={panel3}
-                alt="Dishwasher start button, marked 3"
+                alt={t('step4Alt')}
                 placeholder="blur"
                 sizes="(min-width: 576px) 420px, calc(100vw - 120px)"
                 className="mt-3 h-auto w-full rounded-xl"
@@ -141,50 +141,55 @@ const DishwasherPage = () => {
               5
             </span>
             <div className="min-w-0 flex-1">
-              <h2 className="text-lg font-extrabold">
-                When it&apos;s finished
-              </h2>
+              <h2 className="text-lg font-extrabold">{t('step5Title')}</h2>
               <p className="mt-1 text-muted">
-                Hold START <ButtonNumber>3</ButtonNumber> for a few seconds to
-                reset, then press power <ButtonNumber>1</ButtonNumber> to switch
-                off.
+                {t.rich('step5Text', {
+                  start: buttonNumber,
+                  power: buttonNumber,
+                })}
               </p>
             </div>
           </li>
         </ol>
 
         <h2 className="mt-8 text-xs font-bold tracking-wider text-muted uppercase">
-          Which program?
+          {t('whichProgram')}
         </h2>
 
         <ul
           role="list"
           className="mt-3 divide-y divide-line rounded-3xl border border-line bg-surface"
         >
-          {programs.map((program) => (
-            <li key={program.code} className="flex items-center gap-4 p-4">
-              <span
-                className={`flex size-12 shrink-0 items-center justify-center rounded-2xl font-extrabold ${
-                  program.recommended
-                    ? 'bg-accent text-on-accent'
-                    : 'bg-surface-2'
-                }`}
-              >
-                {program.code}
-              </span>
+          {programs.map((program) => {
+            const recommended = 'recommended' in program;
 
-              <div className="min-w-0 flex-1">
-                <p className="font-extrabold">{program.name}</p>
-                <p className="mt-0.5 text-sm text-muted">{program.use}</p>
-              </div>
-
-              {program.recommended && (
-                <span className="text-xs font-bold tracking-wider text-accent uppercase">
-                  Recommended
+            return (
+              <li key={program.code} className="flex items-center gap-4 p-4">
+                <span
+                  className={`flex size-12 shrink-0 items-center justify-center rounded-2xl font-extrabold ${
+                    recommended ? 'bg-accent text-on-accent' : 'bg-surface-2'
+                  }`}
+                >
+                  {program.code}
                 </span>
-              )}
-            </li>
-          ))}
+
+                <div className="min-w-0 flex-1">
+                  <p className="font-extrabold">
+                    {t(`programs.${program.code}.name`)}
+                  </p>
+                  <p className="mt-0.5 text-sm text-muted">
+                    {t(`programs.${program.code}.use`)}
+                  </p>
+                </div>
+
+                {recommended && (
+                  <span className="text-xs font-bold tracking-wider text-accent uppercase">
+                    {t('recommended')}
+                  </span>
+                )}
+              </li>
+            );
+          })}
         </ul>
 
         <a
@@ -198,9 +203,9 @@ const DishwasherPage = () => {
           </span>
 
           <span className="min-w-0 flex-1">
-            <span className="block font-extrabold">Full manual (PDF)</span>
+            <span className="block font-extrabold">{t('manualTitle')}</span>
             <span className="mt-0.5 block text-sm text-muted">
-              Other programs · paper copy in the kitchen cabinet
+              {t('manualText')}
             </span>
           </span>
 

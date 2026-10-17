@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState, type KeyboardEvent } from 'react';
 import Image, { type StaticImageData } from 'next/image';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 export type Photo = {
   src: StaticImageData;
@@ -16,6 +17,7 @@ type LightboxProps = {
 };
 
 const Lightbox = ({ photos, initialIndex, onClose }: LightboxProps) => {
+  const t = useTranslations('Lightbox');
   const dialogRef = useRef<HTMLDialogElement>(null);
   const scrollerRef = useRef<HTMLDivElement>(null);
   const [current, setCurrent] = useState(initialIndex);
@@ -57,7 +59,7 @@ const Lightbox = ({ photos, initialIndex, onClose }: LightboxProps) => {
   return (
     <dialog
       ref={dialogRef}
-      aria-label="Photo viewer"
+      aria-label={t('viewer')}
       onClose={onClose}
       onKeyDown={onKeyDown}
       className="m-0 h-dvh max-h-none w-full max-w-none bg-transparent p-0 text-white opacity-0 transition-[opacity,display,overlay] transition-discrete duration-200 backdrop:bg-black/0 backdrop:backdrop-blur-sm backdrop:transition-[background-color,display,overlay] backdrop:transition-discrete backdrop:duration-200 open:opacity-100 open:backdrop:bg-black/90 motion-reduce:transition-none motion-reduce:backdrop:transition-none starting:open:opacity-0 starting:open:backdrop:bg-black/0"
@@ -114,7 +116,7 @@ const Lightbox = ({ photos, initialIndex, onClose }: LightboxProps) => {
 
         <button
           type="button"
-          aria-label="Close photo viewer"
+          aria-label={t('close')}
           onClick={onClose}
           className="pointer-events-auto flex size-11 cursor-pointer items-center justify-center rounded-full bg-white/15 transition-colors duration-200 hover:bg-white/25 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
         >
@@ -126,7 +128,7 @@ const Lightbox = ({ photos, initialIndex, onClose }: LightboxProps) => {
         <>
           <button
             type="button"
-            aria-label="Previous photo"
+            aria-label={t('previous')}
             onClick={() => goTo(current - 1)}
             disabled={current === 0}
             className="absolute top-1/2 left-4 hidden size-12 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-white/15 transition duration-200 hover:bg-white/25 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white disabled:pointer-events-none disabled:opacity-0 sm:flex"
@@ -135,7 +137,7 @@ const Lightbox = ({ photos, initialIndex, onClose }: LightboxProps) => {
           </button>
           <button
             type="button"
-            aria-label="Next photo"
+            aria-label={t('next')}
             onClick={() => goTo(current + 1)}
             disabled={current === photos.length - 1}
             className="absolute top-1/2 right-4 hidden size-12 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-white/15 transition duration-200 hover:bg-white/25 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white disabled:pointer-events-none disabled:opacity-0 sm:flex"

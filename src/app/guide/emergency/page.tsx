@@ -7,6 +7,8 @@ import {
   Phone,
   TriangleAlert,
 } from 'lucide-react';
+import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import emergencyDepartment from '@/assets/emergency/emergency-department.webp';
 import jadranPharmacy from '@/assets/emergency/jadran-pharmacy.webp';
 import touristClinic from '@/assets/emergency/tourist-clinic.webp';
@@ -14,73 +16,77 @@ import PageHeader from '@/components/PageHeader';
 import PhotoButton from '@/components/PhotoButton';
 import PageTransition from '@/components/PageTransition';
 
-export const metadata: Metadata = {
-  title: 'Help & emergency',
+export const generateMetadata = async (): Promise<Metadata> => {
+  const t = await getTranslations('Emergency');
+
+  return { title: t('pageTitle') };
 };
 
 const numbers = [
-  { name: 'Ambulance', number: '194' },
-  { name: 'Police', number: '192' },
-  { name: 'Fire', number: '193' },
-];
+  { id: 'ambulance', number: '194' },
+  { id: 'police', number: '192' },
+  { id: 'fire', number: '193' },
+] as const;
 
-const medical = [
+const medicalPlaces = [
   {
-    name: 'Jadran Pharmacy',
-    status: 'Open 24/7',
-    text: 'Open day and night, including weekends and public holidays. Prescription and non-prescription medication available.',
+    id: 'pharmacy',
     mapsUrl: 'https://maps.google.com/?q=Ljekarna+Jadran+Zadar',
     image: jadranPharmacy,
   },
   {
-    name: 'Emergency Department',
-    status: 'Zadar General Hospital',
-    text: 'For urgent medical situations requiring immediate treatment at Zadar General Hospital.',
+    id: 'hospital',
     mapsUrl:
       'https://www.google.com/maps/search/?api=1&query=Objedinjeni+hitni+bolnički+prijem,+Ul.+Bože+Peričića+5,+Zadar',
     image: emergencyDepartment,
   },
   {
-    name: 'Tourist Clinic',
-    status: 'Non-urgent care, weekends too',
-    text: 'Medical care for tourists and visitors with non-emergency health concerns, including weekends and public holidays.',
+    id: 'clinic',
     mapsUrl: 'https://maps.app.goo.gl/L7vfsTueeBXGpgeUA',
     image: touristClinic,
   },
-];
-
-const photos = medical.map((place) => ({
-  src: place.image,
-  caption: `${place.name} · ${place.text}`,
-}));
+] as const;
 
 const EmergencyPage = () => {
+  const t = useTranslations('Emergency');
+  const tCommon = useTranslations('Common');
+
+  const medical = medicalPlaces.map((place) => ({
+    ...place,
+    name: t(`medical.${place.id}.name`),
+    status: t(`medical.${place.id}.status`),
+    text: t(`medical.${place.id}.text`),
+  }));
+
+  const photos = medical.map((place) => ({
+    src: place.image,
+    caption: `${place.name} · ${place.text}`,
+  }));
+
   return (
     <PageTransition>
-      <PageHeader title="Help & emergency" />
+      <PageHeader title={t('pageTitle')} />
 
       <main className="mx-auto w-full max-w-xl flex-1 px-5 pt-6 pb-10">
-        <h1 className="text-4xl font-extrabold">Need help?</h1>
+        <h1 className="text-4xl font-extrabold">{t('title')}</h1>
 
         <section className="mt-6 rounded-3xl bg-danger p-6 text-on-danger">
           <div className="flex items-start justify-between gap-4">
             <h2 className="text-sm font-bold tracking-wider text-on-danger/80 uppercase">
-              Any emergency
+              {t('anyEmergency')}
             </h2>
             <TriangleAlert className="size-7 shrink-0" />
           </div>
 
           <p className="mt-2 text-7xl font-extrabold tabular-nums">112</p>
-          <p className="mt-3 text-on-danger/90">
-            Police, ambulance and fire — English spoken.
-          </p>
+          <p className="mt-3 text-on-danger/90">{t('emergencyText')}</p>
 
           <a
             href="tel:112"
             className="mt-5 flex h-14 items-center justify-center gap-2 rounded-2xl bg-surface font-bold text-danger transition-colors duration-200 hover:bg-surface-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-surface"
           >
             <Phone className="size-5" />
-            Call 112
+            {t('call112')}
           </a>
         </section>
 
@@ -91,11 +97,15 @@ const EmergencyPage = () => {
                 href={`tel:${item.number}`}
                 className="flex h-full flex-col items-center rounded-3xl border border-line bg-surface px-2 py-4 text-center transition-colors duration-200 hover:bg-accent-soft focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
               >
-                <span className="text-sm text-muted">{item.name}</span>
+                <span className="text-sm text-muted">
+                  {t(`numbers.${item.id}`)}
+                </span>
                 <span className="mt-1 text-3xl font-extrabold tabular-nums">
                   {item.number}
                 </span>
-                <span className="mt-1 text-sm font-bold text-danger">Call</span>
+                <span className="mt-1 text-sm font-bold text-danger">
+                  {tCommon('call')}
+                </span>
               </a>
             </li>
           ))}
@@ -108,16 +118,14 @@ const EmergencyPage = () => {
 
           <div className="min-w-0 flex-1">
             <h2 className="text-xs font-bold tracking-wider text-muted uppercase">
-              Calling from the apartment?
+              {t('callingFrom')}
             </h2>
-            <p className="mt-0.5 font-extrabold">
-              Example Street 1, Zadar · 3rd floor
-            </p>
+            <p className="mt-0.5 font-extrabold">{t('address')}</p>
           </div>
         </div>
 
         <h2 className="mt-8 text-xs font-bold tracking-wider text-muted uppercase">
-          Medical help nearby
+          {t('medicalNearby')}
         </h2>
 
         <ul
@@ -125,7 +133,7 @@ const EmergencyPage = () => {
           className="mt-3 divide-y divide-line rounded-3xl border border-line bg-surface"
         >
           {medical.map((place, index) => (
-            <li key={place.name} className="flex items-center gap-4 p-4">
+            <li key={place.id} className="flex items-center gap-4 p-4">
               <PhotoButton
                 photos={photos}
                 index={index}
@@ -146,7 +154,7 @@ const EmergencyPage = () => {
                 href={place.mapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label={`Directions to ${place.name}`}
+                aria-label={tCommon('directionsTo', { place: place.name })}
                 className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-accent-soft text-accent transition-colors duration-200 hover:bg-line focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
               >
                 <Navigation className="size-5" />
@@ -156,7 +164,7 @@ const EmergencyPage = () => {
         </ul>
 
         <h2 className="mt-8 text-xs font-bold tracking-wider text-muted uppercase">
-          Something wrong in the apartment?
+          {t('somethingWrong')}
         </h2>
 
         <a
@@ -170,9 +178,9 @@ const EmergencyPage = () => {
           </span>
 
           <span className="min-w-0 flex-1">
-            <span className="block font-extrabold">Message your host</span>
+            <span className="block font-extrabold">{t('messageHost')}</span>
             <span className="mt-0.5 block text-sm text-muted">
-              Broken appliance, locked out, leaks — via WhatsApp
+              {t('messageHostText')}
             </span>
           </span>
 

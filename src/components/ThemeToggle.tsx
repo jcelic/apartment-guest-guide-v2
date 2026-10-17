@@ -1,6 +1,7 @@
 'use client';
 
 import { Moon, Sun } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
 
 type ThemeToggleProps = {
@@ -8,6 +9,7 @@ type ThemeToggleProps = {
 };
 
 const ThemeToggle = ({ className }: ThemeToggleProps) => {
+  const t = useTranslations('Common');
   const { resolvedTheme, setTheme } = useTheme();
 
   const onToggle = () => {
@@ -17,7 +19,7 @@ const ThemeToggle = ({ className }: ThemeToggleProps) => {
   return (
     <button
       type="button"
-      aria-label="Toggle dark mode"
+      aria-label={t('toggleTheme')}
       onClick={onToggle}
       className={className}
     >

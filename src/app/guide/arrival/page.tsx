@@ -8,6 +8,8 @@ import {
   MapPin,
   MessageCircle,
 } from 'lucide-react';
+import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import exterior1 from '@/assets/arrival/exterior1.webp';
 import exterior2 from '@/assets/arrival/exterior2.webp';
 import exterior3 from '@/assets/arrival/exterior3.webp';
@@ -28,61 +30,59 @@ import PhotoStrip from '@/components/PhotoStrip';
 import Step from '@/components/Step';
 import PageTransition from '@/components/PageTransition';
 
-export const metadata: Metadata = {
-  title: 'Arrival',
+export const generateMetadata = async (): Promise<Metadata> => {
+  const t = await getTranslations('Arrival');
+
+  return { title: t('pageTitle') };
 };
 
 const entrancePhotos = [
-  { src: exterior1, caption: 'Locate this building.' },
-  { src: exterior2, caption: 'Another view of the building.' },
-  { src: exterior3, caption: 'Walk to the side entrance.' },
-  { src: path1, caption: 'Enter through this driveway.' },
-  { src: path2, caption: 'Continue straight ahead.' },
-  { src: path3, caption: 'The entrance is in the courtyard.' },
-  { src: path4, caption: 'Use this door to enter the building.' },
-  { src: path5, caption: 'Enter the access code on the keypad.' },
-];
+  { id: 'exterior1', src: exterior1 },
+  { id: 'exterior2', src: exterior2 },
+  { id: 'exterior3', src: exterior3 },
+  { id: 'path1', src: path1 },
+  { id: 'path2', src: path2 },
+  { id: 'path3', src: path3 },
+  { id: 'path4', src: path4 },
+  { id: 'path5', src: path5 },
+] as const;
 
 const doorPhotos = [
-  {
-    src: apartment1,
-    caption: 'After entering the building, walk towards the elevator.',
-  },
-  { src: apartment2, caption: 'Take the elevator to the third floor.' },
-  {
-    src: apartment3,
-    caption:
-      'When you exit the elevator, turn right. The apartment door is next to the elevator.',
-  },
-  { src: apartment4, caption: 'Look for this apartment door.' },
-  {
-    src: apartment5,
-    caption: 'Look for the name "Surname" on the apartment door.',
-  },
-];
+  { id: 'apartment1', src: apartment1 },
+  { id: 'apartment2', src: apartment2 },
+  { id: 'apartment3', src: apartment3 },
+  { id: 'apartment4', src: apartment4 },
+  { id: 'apartment5', src: apartment5 },
+] as const;
 
-const lockboxPhotos = [
-  {
-    src: apartment6,
-    caption: 'The lockbox is mounted on the wall next to the apartment door.',
-  },
-];
+const lockboxPhotos = [{ id: 'apartment6', src: apartment6 }] as const;
+
+type ArrivalPhoto = (
+  typeof entrancePhotos | typeof doorPhotos | typeof lockboxPhotos
+)[number];
 
 const ArrivalPage = () => {
+  const t = useTranslations('Arrival');
+  const tCommon = useTranslations('Common');
+
+  const withCaptions = (photos: ReadonlyArray<ArrivalPhoto>) =>
+    photos.map((photo) => ({
+      src: photo.src,
+      caption: t(`photos.${photo.id}`),
+    }));
+
   return (
     <PageTransition>
-      <PageHeader title="Arrival" />
+      <PageHeader title={t('pageTitle')} />
 
       <main className="mx-auto w-full max-w-xl flex-1 px-5 pt-6 pb-10">
         <p className="text-sm font-bold tracking-wider text-accent uppercase">
-          3 easy steps
+          {t('eyebrow')}
         </p>
 
-        <h1 className="mt-2 text-4xl font-extrabold">Getting in</h1>
+        <h1 className="mt-2 text-4xl font-extrabold">{t('title')}</h1>
 
-        <p className="mt-2 text-muted">
-          From the street to your apartment in just a few minutes.
-        </p>
+        <p className="mt-2 text-muted">{t('subtitle')}</p>
 
         <div className="mt-6 flex items-center gap-4 rounded-3xl border border-line bg-surface p-4">
           <span className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-accent-soft text-accent [&_svg]:size-6">
@@ -90,17 +90,15 @@ const ArrivalPage = () => {
           </span>
 
           <div>
-            <p className="font-extrabold">Check-in from 14:00</p>
-            <p className="mt-0.5 text-sm text-muted">
-              If it&apos;s ready earlier, we&apos;ll message you.
-            </p>
+            <p className="font-extrabold">{t('checkInTitle')}</p>
+            <p className="mt-0.5 text-sm text-muted">{t('checkInText')}</p>
           </div>
         </div>
 
         <div className="relative mt-4 overflow-hidden rounded-3xl bg-line">
           <Image
             src={map}
-            alt="Aerial view of the building with the walking route from the street to the entrance"
+            alt={t('mapAlt')}
             placeholder="blur"
             sizes="(min-width: 576px) 536px, calc(100vw - 40px)"
             className="h-auto w-full"
@@ -113,28 +111,28 @@ const ArrivalPage = () => {
             className="absolute bottom-4 left-4 flex items-center gap-2 rounded-2xl bg-surface px-4 py-3 font-bold transition-colors duration-200 hover:bg-surface-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
           >
             <MapPin className="size-5" />
-            Example Street 1 · Directions
+            {t('mapLink')}
           </a>
         </div>
 
         <ol role="list" className="mt-8 space-y-4">
-          <Step number={1} title="Enter the building">
-            <p className="text-muted">
-              The entrance is on the inner side of the building, not on the
-              street side.
-            </p>
+          <Step number={1} title={t('step1Title')}>
+            <p className="text-muted">{t('step1Text')}</p>
 
-            <PhotoStrip label="Entrance path" photos={entrancePhotos} />
+            <PhotoStrip
+              label={t('entrancePath')}
+              photos={withCaptions(entrancePhotos)}
+            />
 
             <div>
               <h3 className="text-xs font-bold tracking-wider text-muted uppercase">
-                Entrance code
+                {t('entranceCode')}
               </h3>
               <p className="mt-3 flex items-center gap-2 rounded-2xl bg-accent-soft px-5 py-4 text-3xl leading-none font-extrabold tracking-wider tabular-nums">
                 <span>00</span>
                 <span
                   role="img"
-                  aria-label="key button"
+                  aria-label={tCommon('keyButton')}
                   className="inline-flex size-9 items-center justify-center rounded-xl border border-line bg-surface text-accent"
                 >
                   <KeyRound className="size-5" />
@@ -144,31 +142,35 @@ const ArrivalPage = () => {
             </div>
           </Step>
 
-          <Step number={2} title="Find the apartment">
+          <Step number={2} title={t('step2Title')}>
             <p className="text-muted">
-              3rd floor — turn right out of the elevator, the door is right next
-              to it. Name on the door:{' '}
-              <strong className="font-extrabold text-foreground">
-                Surname
-              </strong>
-              .
+              {t.rich('step2Text', {
+                strong: (chunks) => (
+                  <strong className="font-extrabold text-foreground">
+                    {chunks}
+                  </strong>
+                ),
+              })}
             </p>
 
-            <PhotoStrip label="Way to the door" photos={doorPhotos} />
+            <PhotoStrip
+              label={t('wayToDoor')}
+              photos={withCaptions(doorPhotos)}
+            />
 
             <div>
-              <PhotoStrip label="Key lockbox" photos={lockboxPhotos} />
+              <PhotoStrip
+                label={t('keyLockbox')}
+                photos={withCaptions(lockboxPhotos)}
+              />
               <p className="mt-3 flex items-center gap-2 rounded-2xl bg-accent-soft px-5 py-4 text-3xl leading-none font-extrabold tracking-wider tabular-nums">
                 <span>0000</span>
               </p>
             </div>
           </Step>
 
-          <Step number={3} title="Let us know you're in" variant="success">
-            <p className="text-muted">
-              Please let us know when you&apos;re in. We need your check-in time
-              for the official guest registration (eVisitor).
-            </p>
+          <Step number={3} title={t('step3Title')} variant="success">
+            <p className="text-muted">{t('step3Text')}</p>
 
             <a
               href="https://wa.me/YOUR_PHONE_NUMBER"
@@ -177,7 +179,7 @@ const ArrivalPage = () => {
               className="flex h-14 items-center justify-center gap-2 rounded-2xl bg-success-soft font-bold text-success transition-colors duration-200 hover:bg-success/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
             >
               <MessageCircle className="size-5" />
-              Message us on WhatsApp
+              {tCommon('messageOnWhatsApp')}
             </a>
           </Step>
         </ol>
@@ -187,7 +189,7 @@ const ArrivalPage = () => {
           transitionTypes={['nav-forward']}
           className="mt-6 flex items-center justify-center gap-2 rounded-2xl bg-accent-soft p-4 font-bold text-accent-ink transition-colors duration-200 hover:bg-line focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
         >
-          Arriving by car? See parking
+          {t('parkingLink')}
           <ChevronRight className="size-5" />
         </Link>
       </main>

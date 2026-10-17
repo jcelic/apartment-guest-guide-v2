@@ -1,4 +1,6 @@
 import type { Metadata } from 'next';
+import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import firstAid from '@/assets/essentials/first-aid.webp';
 import hairDryer from '@/assets/essentials/hair-dryer.webp';
 import iron from '@/assets/essentials/iron.webp';
@@ -10,79 +12,60 @@ import EssentialsList from '@/components/EssentialsList';
 import PageHeader from '@/components/PageHeader';
 import PageTransition from '@/components/PageTransition';
 
-export const metadata: Metadata = {
-  title: 'Essentials',
+export const generateMetadata = async (): Promise<Metadata> => {
+  const t = await getTranslations('Essentials');
+
+  return { title: t('pageTitle') };
 };
 
-const groups = [
+const groupItems = [
   {
-    name: 'Kitchen',
+    id: 'kitchen',
     items: [
-      {
-        title: 'Ironing board',
-        text: 'Behind the kitchen door, next to the trash bin.',
-        image: ironingBoard,
-      },
-      {
-        title: 'Appliance manuals',
-        text: 'In the left-side kitchen cabinet.',
-        image: manuals,
-      },
+      { id: 'ironingBoard', image: ironingBoard },
+      { id: 'manuals', image: manuals },
     ],
   },
   {
-    name: 'Bathroom',
+    id: 'bathroom',
     items: [
-      {
-        title: 'Hair dryer',
-        text: 'In the bathroom, in the middle drawer under the sink.',
-        image: hairDryer,
-      },
-      {
-        title: 'Washing machine capsules',
-        text: 'In the bathroom, in the first drawer under the sink.',
-        image: washingMachineCapsules,
-      },
+      { id: 'hairDryer', image: hairDryer },
+      { id: 'capsules', image: washingMachineCapsules },
     ],
   },
   {
-    name: 'Hallway',
+    id: 'hallway',
     items: [
-      {
-        title: 'Iron',
-        text: 'In the hallway cabinet next to the bathroom, on the left side.',
-        image: iron,
-      },
-      {
-        title: 'Extra towels',
-        text: 'In the hallway cabinet next to the bathroom, on the right side.',
-        image: towels,
-      },
+      { id: 'iron', image: iron },
+      { id: 'towels', image: towels },
     ],
   },
   {
-    name: 'Living room',
-    items: [
-      {
-        title: 'First aid kit',
-        text: 'Inside the TV stand, on the right side, behind the glass door.',
-        image: firstAid,
-      },
-    ],
+    id: 'livingRoom',
+    items: [{ id: 'firstAid', image: firstAid }],
   },
-];
+] as const;
 
 const EssentialsPage = () => {
+  const t = useTranslations('Essentials');
+
+  const groups = groupItems.map((group) => ({
+    name: t(`groups.${group.id}`),
+    items: group.items.map((item) => ({
+      title: t(`items.${item.id}.title`),
+      text: t(`items.${item.id}.text`),
+      image: item.image,
+    })),
+  }));
+
   return (
     <PageTransition>
-      <PageHeader title="Essentials" />
+      <PageHeader title={t('pageTitle')} />
 
       <main className="mx-auto w-full max-w-xl flex-1 px-5 pt-6 pb-10">
-        <h1 className="text-4xl font-extrabold">Where is everything?</h1>
+        <h1 className="text-4xl font-extrabold">{t('title')}</h1>
 
-        <p className="mt-2 text-muted">
-          Tap an item to see a photo of exactly where it is.
-        </p>
+        <p className="mt-2 text-muted">{t('subtitle')}</p>
 
         <EssentialsList groups={groups} />
       </main>

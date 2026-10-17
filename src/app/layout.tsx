@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import { Nunito } from 'next/font/google';
+import { NextIntlClientProvider } from 'next-intl';
+import { getLocale, getTranslations } from 'next-intl/server';
 import { ThemeProvider } from 'next-themes';
 import Toaster from '@/components/Toaster';
 import './globals.css';
@@ -10,34 +12,42 @@ const nunito = Nunito({
   display: 'swap',
 });
 
-export const metadata: Metadata = {
-  title: {
-    default: 'Guest Guide | Apartment Matea',
-    template: '%s | Apartment Matea',
-  },
-  robots: {
-    index: false,
-    follow: false,
-  },
+export const generateMetadata = async (): Promise<Metadata> => {
+  const t = await getTranslations('Metadata');
+
+  return {
+    title: {
+      default: t('defaultTitle'),
+      template: t('titleTemplate'),
+    },
+    robots: {
+      index: false,
+      follow: false,
+    },
+  };
 };
 
-const RootLayout = ({ children }: LayoutProps<'/'>) => {
+const RootLayout = async ({ children }: LayoutProps<'/'>) => {
+  const locale = await getLocale();
+
   return (
     <html
-      lang="en"
+      lang={locale}
       className={`${nunito.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <body className="flex min-h-full flex-col">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-          <Toaster />
-        </ThemeProvider>
+        <NextIntlClientProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+            <Toaster />
+          </ThemeProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

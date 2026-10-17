@@ -2,6 +2,7 @@
 
 import { useSyncExternalStore } from 'react';
 import { Check } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 type ChecklistItem = {
   id: string;
@@ -47,6 +48,7 @@ const saveDone = (done: string[]) => {
 };
 
 const CheckoutChecklist = ({ items }: CheckoutChecklistProps) => {
+  const t = useTranslations('Checklist');
   const done: string[] = JSON.parse(
     useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot),
   );
@@ -65,19 +67,17 @@ const CheckoutChecklist = ({ items }: CheckoutChecklistProps) => {
     <>
       <section className="rounded-3xl bg-deep p-6 text-white">
         <h1 className="text-sm font-bold tracking-wider text-blue-200 uppercase">
-          Check-out by
+          {t('checkOutBy')}
         </h1>
         <p className="mt-2 text-6xl font-extrabold tabular-nums">10:00</p>
-        <p className="mt-3 text-white/85">
-          Next guests arrive the same day — thank you for leaving on time.
-        </p>
+        <p className="mt-3 text-white/85">{t('nextGuests')}</p>
 
         <p className="mt-5 text-sm font-bold">
-          {doneCount} of {items.length} done
+          {t('doneCount', { done: doneCount, total: items.length })}
         </p>
         <div
           role="progressbar"
-          aria-label="Checklist progress"
+          aria-label={t('progress')}
           aria-valuemin={0}
           aria-valuemax={items.length}
           aria-valuenow={doneCount}

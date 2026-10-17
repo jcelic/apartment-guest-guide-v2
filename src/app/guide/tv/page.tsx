@@ -1,43 +1,49 @@
 import type { Metadata } from 'next';
 import { ImageIcon } from 'lucide-react';
+import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import PageHeader from '@/components/PageHeader';
 import PageTransition from '@/components/PageTransition';
 
-export const metadata: Metadata = {
-  title: 'TV',
+export const generateMetadata = async (): Promise<Metadata> => {
+  const t = await getTranslations('Tv');
+
+  return { title: t('pageTitle') };
 };
 
 const apps = ['YouTube', 'Netflix', 'HBO Max'];
 
 const TvPage = () => {
+  const t = useTranslations('Tv');
+
   return (
     <PageTransition>
-      <PageHeader title="TV" />
+      <PageHeader title={t('pageTitle')} />
 
       <main className="mx-auto w-full max-w-xl flex-1 px-5 pt-6 pb-10">
-        <h1 className="text-4xl font-extrabold">Watching TV</h1>
+        <h1 className="text-4xl font-extrabold">{t('title')}</h1>
 
-        <p className="mt-2 text-muted">
-          Two remotes, two jobs. Here&apos;s which is which.
-        </p>
+        <p className="mt-2 text-muted">{t('subtitle')}</p>
 
         <div className="mt-6 rounded-3xl border border-line bg-surface p-4">
           <div className="flex aspect-16/10 flex-col items-center justify-center gap-2 rounded-2xl bg-line text-sm font-bold text-muted">
             <ImageIcon className="size-6" />
-            Photo of both remotes
+            {t('photoPlaceholder')}
           </div>
 
           <dl className="mt-3 grid grid-cols-2 gap-3">
             <div className="rounded-2xl bg-surface-2 p-4">
-              <dt className="font-extrabold">Small remote</dt>
+              <dt className="font-extrabold">{t('smallRemote')}</dt>
               <dd className="mt-0.5 text-sm text-muted">
-                Everything: power, apps, Netflix
+                {t('smallRemoteText')}
               </dd>
             </div>
 
             <div className="rounded-2xl bg-surface-2 p-4">
-              <dt className="font-extrabold">Large remote</dt>
-              <dd className="mt-0.5 text-sm text-muted">Only inside EON</dd>
+              <dt className="font-extrabold">{t('largeRemote')}</dt>
+              <dd className="mt-0.5 text-sm text-muted">
+                {t('largeRemoteText')}
+              </dd>
             </div>
           </dl>
         </div>
@@ -51,10 +57,8 @@ const TvPage = () => {
               1
             </span>
             <div>
-              <h2 className="text-lg font-extrabold">Turn on the TV</h2>
-              <p className="mt-1 text-muted">
-                Press power on the small remote.
-              </p>
+              <h2 className="text-lg font-extrabold">{t('step1Title')}</h2>
+              <p className="mt-1 text-muted">{t('step1Text')}</p>
             </div>
           </li>
 
@@ -63,8 +67,8 @@ const TvPage = () => {
               2
             </span>
             <div>
-              <h2 className="text-lg font-extrabold">Streaming</h2>
-              <p className="mt-1 text-muted">Pick an app on the home screen.</p>
+              <h2 className="text-lg font-extrabold">{t('step2Title')}</h2>
+              <p className="mt-1 text-muted">{t('step2Text')}</p>
               <ul role="list" className="mt-3 flex flex-wrap gap-2">
                 {apps.map((app) => (
                   <li
@@ -83,11 +87,8 @@ const TvPage = () => {
               3
             </span>
             <div>
-              <h2 className="text-lg font-extrabold">TV channels (EON)</h2>
-              <p className="mt-1 text-muted">
-                Select the HDMI icon to open EON — live channels and the EON
-                library.
-              </p>
+              <h2 className="text-lg font-extrabold">{t('step3Title')}</h2>
+              <p className="mt-1 text-muted">{t('step3Text')}</p>
             </div>
           </li>
         </ol>

@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import { Coffee, Droplet } from 'lucide-react';
+import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import capsuleHolderBack from '@/assets/coffee/capsule-holder-back.webp';
 import capsuleHolderLocation from '@/assets/coffee/capsule-holder-location.webp';
 import capsuleInserted from '@/assets/coffee/capsule-inserted.webp';
@@ -12,74 +14,42 @@ import PageHeader from '@/components/PageHeader';
 import StepCarousel from '@/components/StepCarousel';
 import PageTransition from '@/components/PageTransition';
 
-export const metadata: Metadata = {
-  title: 'Coffee maker',
+export const generateMetadata = async (): Promise<Metadata> => {
+  const t = await getTranslations('Coffee');
+
+  return { title: t('pageTitle') };
 };
 
-const steps = [
-  {
-    title: 'Turn on the machine',
-    text: 'Press the power button. The light will blink red while the machine heats up.',
-    image: powerRed,
-  },
-  {
-    title: 'Wait for the green light',
-    text: 'When the light turns green, the machine is ready to use.',
-    image: powerGreen,
-  },
-  {
-    title: 'Remove the capsule holder',
-    text: 'Lift the top cover and pull out the capsule holder.',
-    image: capsuleHolderLocation,
-  },
-  {
-    title: 'Insert a capsule',
-    text: 'Place a coffee capsule inside the holder.',
-    image: capsuleInserted,
-  },
-  {
-    title: 'Reinsert the holder',
-    text: 'Push the capsule holder back into the machine and close the top cover.',
-    image: capsuleHolderBack,
-  },
-  {
-    title: 'Select water level',
-    text: 'Move the selector up or down to match the number of bars shown on the capsule.',
-    image: waterLevel,
-  },
-  {
-    title: 'Place your cup',
-    text: 'Put your cup under the coffee outlet.',
-    image: cup,
-  },
-  {
-    title: 'Make your coffee',
-    text: 'Move the lever to the red side for hot drinks. The machine will stop automatically.',
-    image: startHot,
-  },
-  {
-    title: 'Wait for green again',
-    text: 'Wait until the power button turns green before removing the capsule holder.',
-    image: powerGreen,
-  },
-  {
-    title: 'Remove the used capsule',
-    text: 'Lift the top cover, remove the capsule holder and throw away the used capsule. Do not leave used capsules inside the machine.',
-    image: capsuleHolderLocation,
-  },
-];
+const stepImages = [
+  { id: 'power', image: powerRed },
+  { id: 'ready', image: powerGreen },
+  { id: 'holderOut', image: capsuleHolderLocation },
+  { id: 'capsule', image: capsuleInserted },
+  { id: 'holderIn', image: capsuleHolderBack },
+  { id: 'water', image: waterLevel },
+  { id: 'cup', image: cup },
+  { id: 'brew', image: startHot },
+  { id: 'readyAgain', image: powerGreen },
+  { id: 'cleanUp', image: capsuleHolderLocation },
+] as const;
 
 const CoffeePage = () => {
+  const t = useTranslations('Coffee');
+
+  const steps = stepImages.map((step) => ({
+    title: t(`steps.${step.id}.title`),
+    text: t(`steps.${step.id}.text`),
+    image: step.image,
+  }));
+
   return (
     <PageTransition>
-      <PageHeader title="Coffee maker" />
+      <PageHeader title={t('pageTitle')} />
 
       <main className="mx-auto w-full max-w-xl flex-1 px-5 pt-6 pb-10">
-        <h1 className="text-4xl font-extrabold">Make a coffee</h1>
+        <h1 className="text-4xl font-extrabold">{t('title')}</h1>
 
-        <p className="mt-2 text-muted">
-          Dolce Gusto · swipe through 10 short steps.
-        </p>
+        <p className="mt-2 text-muted">{t('subtitle')}</p>
 
         <div className="mt-6 space-y-3">
           <div className="flex gap-4 rounded-3xl border border-line bg-surface p-4">
@@ -88,11 +58,8 @@ const CoffeePage = () => {
             </span>
 
             <div>
-              <h2 className="font-extrabold">Water tank</h2>
-              <p className="mt-0.5 text-sm text-muted">
-                Push it fully in. Small air bubbles at the bottom mean it&apos;s
-                seated — otherwise no water comes out.
-              </p>
+              <h2 className="font-extrabold">{t('waterTitle')}</h2>
+              <p className="mt-0.5 text-sm text-muted">{t('waterText')}</p>
             </div>
           </div>
 
@@ -102,11 +69,8 @@ const CoffeePage = () => {
             </span>
 
             <div>
-              <h2 className="font-extrabold">Cappuccino & Chococino</h2>
-              <p className="mt-0.5 text-sm text-muted">
-                Use two capsules: milk first, wait for green, then coffee or
-                chocolate.
-              </p>
+              <h2 className="font-extrabold">{t('milkTitle')}</h2>
+              <p className="mt-0.5 text-sm text-muted">{t('milkText')}</p>
             </div>
           </div>
         </div>

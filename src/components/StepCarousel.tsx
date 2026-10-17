@@ -3,6 +3,7 @@
 import { useRef, useState } from 'react';
 import Image, { type StaticImageData } from 'next/image';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 export type CarouselStep = {
   title: string;
@@ -15,6 +16,7 @@ type StepCarouselProps = {
 };
 
 const StepCarousel = ({ steps }: StepCarouselProps) => {
+  const t = useTranslations('StepCarousel');
   const cardRef = useRef<HTMLElement>(null);
   const scrollerRef = useRef<HTMLDivElement>(null);
   const [current, setCurrent] = useState(0);
@@ -38,16 +40,16 @@ const StepCarousel = ({ steps }: StepCarouselProps) => {
     <>
       <section
         ref={cardRef}
-        aria-label="Steps"
+        aria-label={t('steps')}
         className="mt-6 rounded-3xl border border-line bg-surface p-5"
       >
         <p className="text-sm font-bold text-accent">
-          Step {current + 1} of {steps.length}
+          {t('stepOf', { current: current + 1, total: steps.length })}
         </p>
 
         <div
           role="progressbar"
-          aria-label="Progress"
+          aria-label={t('progress')}
           aria-valuemin={1}
           aria-valuemax={steps.length}
           aria-valuenow={current + 1}
@@ -104,7 +106,7 @@ const StepCarousel = ({ steps }: StepCarouselProps) => {
             className="flex h-14 cursor-pointer items-center gap-2 rounded-2xl bg-surface-2 px-5 font-bold transition-colors duration-200 hover:bg-line focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent disabled:cursor-not-allowed disabled:opacity-50"
           >
             <ChevronLeft className="size-5" />
-            Back
+            {t('back')}
           </button>
 
           <button
@@ -113,14 +115,14 @@ const StepCarousel = ({ steps }: StepCarouselProps) => {
             disabled={current === steps.length - 1}
             className="flex h-14 cursor-pointer items-center justify-center gap-2 rounded-2xl bg-accent font-bold text-on-accent transition-colors duration-200 hover:bg-accent-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent disabled:cursor-not-allowed disabled:opacity-50"
           >
-            Next step
+            {t('next')}
             <ChevronRight className="size-5" />
           </button>
         </div>
       </section>
 
       <h2 className="mt-8 text-xs font-bold tracking-wider text-muted uppercase">
-        All steps
+        {t('allSteps')}
       </h2>
 
       <ol

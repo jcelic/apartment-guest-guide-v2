@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import type { StaticImageData } from 'next/image';
 import { Navigation } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import PhotoButton from './PhotoButton';
 
 type Place = {
@@ -24,6 +25,8 @@ type ExploreListProps = {
 };
 
 const ExploreList = ({ categories }: ExploreListProps) => {
+  const t = useTranslations('ExploreList');
+  const tCommon = useTranslations('Common');
   const [selectedId, setSelectedId] = useState(categories[0].id);
 
   const selected =
@@ -38,7 +41,7 @@ const ExploreList = ({ categories }: ExploreListProps) => {
     <>
       <div
         role="group"
-        aria-label="Categories"
+        aria-label={t('categories')}
         className="-mx-5 mt-6 flex [scrollbar-width:none] gap-2 overflow-x-auto px-5 pb-1 [&::-webkit-scrollbar]:hidden"
       >
         {categories.map((category) => {
@@ -86,7 +89,7 @@ const ExploreList = ({ categories }: ExploreListProps) => {
             className="mt-4 inline-flex h-11 items-center gap-2 rounded-xl bg-accent-soft px-4 font-bold text-accent-ink transition-colors duration-200 hover:bg-line focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
           >
             <Navigation className="size-5" />
-            Directions
+            {tCommon('directions')}
           </a>
         </div>
       </div>
@@ -116,7 +119,7 @@ const ExploreList = ({ categories }: ExploreListProps) => {
               href={place.mapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={`Directions to ${place.name}`}
+              aria-label={tCommon('directionsTo', { place: place.name })}
               className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-accent-soft text-accent transition-colors duration-200 hover:bg-line focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
             >
               <Navigation className="size-5" />

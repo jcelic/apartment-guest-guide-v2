@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { LockKeyhole, MessageCircle, Wifi } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import { toast } from 'sonner';
 import DoorCodesDialog from './DoorCodesDialog';
 import QuickAction from './QuickAction';
@@ -10,14 +11,16 @@ const WIFI_PASSWORD = 'example-password';
 const WHATSAPP_URL = 'https://wa.me/YOUR_PHONE_NUMBER';
 
 const QuickActions = () => {
+  const t = useTranslations('QuickActions');
+  const tCommon = useTranslations('Common');
   const [codesDialogOpen, setCodesDialogOpen] = useState(false);
 
   const onCopyWifi = async () => {
     try {
       await navigator.clipboard.writeText(WIFI_PASSWORD);
-      toast.success('Wi-Fi password copied');
+      toast.success(tCommon('wifiCopied'));
     } catch {
-      toast.error(`Could not copy. Password: ${WIFI_PASSWORD}`);
+      toast.error(tCommon('copyFailed', { password: WIFI_PASSWORD }));
     }
   };
 
@@ -28,17 +31,21 @@ const QuickActions = () => {
   return (
     <>
       <div className="mx-5 mt-5 grid grid-cols-3 gap-3">
-        <QuickAction icon={<Wifi />} label="Copy Wi-Fi" onClick={onCopyWifi} />
+        <QuickAction
+          icon={<Wifi />}
+          label={t('copyWifi')}
+          onClick={onCopyWifi}
+        />
 
         <QuickAction
           icon={<LockKeyhole />}
-          label="Door codes"
+          label={t('doorCodes')}
           onClick={onShowCodes}
         />
 
         <QuickAction
           icon={<MessageCircle />}
-          label="Message us"
+          label={t('messageUs')}
           href={WHATSAPP_URL}
           variant="success"
         />

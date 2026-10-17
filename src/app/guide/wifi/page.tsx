@@ -1,25 +1,31 @@
 import type { Metadata } from 'next';
 import { ChevronRight, Router, Wifi } from 'lucide-react';
+import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import CopyPasswordButton from '@/components/CopyPasswordButton';
 import PageHeader from '@/components/PageHeader';
 import PageTransition from '@/components/PageTransition';
 
-export const metadata: Metadata = {
-  title: 'Wi-Fi',
+export const generateMetadata = async (): Promise<Metadata> => {
+  const t = await getTranslations('Wifi');
+
+  return { title: t('pageTitle') };
 };
 
 const WIFI_NETWORK = 'Example-WiFi';
 const WIFI_PASSWORD = 'example-password';
 
 const WifiPage = () => {
+  const t = useTranslations('Wifi');
+
   return (
     <PageTransition>
-      <PageHeader title="Wi-Fi" />
+      <PageHeader title={t('pageTitle')} />
 
       <main className="mx-auto w-full max-w-xl flex-1 px-5 pt-6 pb-10">
-        <h1 className="text-4xl font-extrabold">Get online</h1>
+        <h1 className="text-4xl font-extrabold">{t('title')}</h1>
 
-        <p className="mt-2 text-muted">Copy the password and connect.</p>
+        <p className="mt-2 text-muted">{t('subtitle')}</p>
 
         <div className="mt-6 space-y-5 rounded-3xl border border-line bg-surface p-5">
           <div className="flex items-center gap-4">
@@ -27,12 +33,12 @@ const WifiPage = () => {
               <Wifi />
             </span>
 
-            <h2 className="font-extrabold">Apartment Wi-Fi</h2>
+            <h2 className="font-extrabold">{t('apartmentWifi')}</h2>
           </div>
 
           <div>
             <h3 className="text-xs font-bold tracking-wider text-muted uppercase">
-              Network
+              {t('network')}
             </h3>
             <p className="mt-2 rounded-2xl bg-surface-2 px-5 py-4 text-lg font-bold break-all">
               {WIFI_NETWORK}
@@ -41,7 +47,7 @@ const WifiPage = () => {
 
           <div>
             <h3 className="text-xs font-bold tracking-wider text-muted uppercase">
-              Password
+              {t('password')}
             </h3>
             <p className="mt-2 rounded-2xl bg-surface-2 px-5 py-4 text-lg font-bold break-all">
               {WIFI_PASSWORD}
@@ -57,14 +63,10 @@ const WifiPage = () => {
               <Router />
             </span>
 
-            <h2 className="font-extrabold">Can&apos;t connect?</h2>
+            <h2 className="font-extrabold">{t('cantConnect')}</h2>
           </div>
 
-          <p className="mt-3 text-muted">
-            Restart the router, it&apos;s right behind the TV. Press the black
-            button on the back to turn it off, wait 10 seconds, then press it
-            again. Give it a couple of minutes to reconnect.
-          </p>
+          <p className="mt-3 text-muted">{t('cantConnectText')}</p>
         </div>
 
         <a
@@ -73,7 +75,7 @@ const WifiPage = () => {
           rel="noopener noreferrer"
           className="mt-6 flex items-center justify-center gap-2 rounded-2xl bg-success-soft p-4 font-bold text-success transition-colors duration-200 hover:bg-success/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
         >
-          Still not working? Message us
+          {t('stillNotWorking')}
           <ChevronRight className="size-5" />
         </a>
       </main>

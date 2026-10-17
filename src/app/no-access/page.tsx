@@ -1,11 +1,17 @@
 import type { Metadata } from 'next';
 import { LockKeyhole } from 'lucide-react';
+import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 
-export const metadata: Metadata = {
-  title: 'No access',
+export const generateMetadata = async (): Promise<Metadata> => {
+  const t = await getTranslations('NoAccess');
+
+  return { title: t('pageTitle') };
 };
 
 const Page = () => {
+  const t = useTranslations('NoAccess');
+
   return (
     <main className="flex flex-1 items-center justify-center p-5">
       <div className="w-full max-w-md rounded-3xl border border-line bg-surface p-6 text-center shadow-card">
@@ -13,13 +19,9 @@ const Page = () => {
           <LockKeyhole className="size-7" />
         </span>
 
-        <h1 className="mt-5 text-2xl font-extrabold">
-          This link isn&apos;t active
-        </h1>
+        <h1 className="mt-5 text-2xl font-extrabold">{t('title')}</h1>
 
-        <p className="mt-2 text-muted">
-          Please open the personal link we sent you.
-        </p>
+        <p className="mt-2 text-muted">{t('text')}</p>
       </div>
     </main>
   );

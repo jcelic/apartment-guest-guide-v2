@@ -1,10 +1,16 @@
 import type { Metadata } from 'next';
+import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 
-export const metadata: Metadata = {
-  title: 'Thank you',
+export const generateMetadata = async (): Promise<Metadata> => {
+  const t = await getTranslations('ThankYou');
+
+  return { title: t('pageTitle') };
 };
 
 const Page = () => {
+  const t = useTranslations('ThankYou');
+
   return (
     <main className="flex flex-1 items-center justify-center p-5">
       <div className="w-full max-w-md overflow-hidden rounded-3xl border border-line bg-surface text-center shadow-card">
@@ -44,13 +50,9 @@ const Page = () => {
         </svg>
 
         <div className="p-6 pt-4">
-          <h1 className="text-2xl font-extrabold text-balance">
-            Thank you for staying with us
-          </h1>
+          <h1 className="text-2xl font-extrabold text-balance">{t('title')}</h1>
 
-          <p className="mt-2 text-muted">
-            We hope you enjoyed Zadar and would love to welcome you back.
-          </p>
+          <p className="mt-2 text-muted">{t('text')}</p>
         </div>
       </div>
     </main>

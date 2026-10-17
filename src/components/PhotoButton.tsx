@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import Lightbox, { type Photo } from './Lightbox';
 
 type PhotoButtonProps = {
@@ -17,6 +18,7 @@ const PhotoButton = ({
   sizes,
   className = '',
 }: PhotoButtonProps) => {
+  const t = useTranslations('Photos');
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const photo = photos[index];
 
@@ -25,7 +27,7 @@ const PhotoButton = ({
       <button
         type="button"
         onClick={() => setOpenIndex(index)}
-        aria-label={`Open photo: ${photo.caption}`}
+        aria-label={t('open', { caption: photo.caption })}
         className={`group relative block cursor-pointer overflow-hidden bg-line focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${className}`}
       >
         <Image

@@ -1,4 +1,6 @@
 import type { Metadata } from 'next';
+import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import borik from '@/assets/explore/borik.webp';
 import bruschetta from '@/assets/explore/bruschetta.webp';
 import butler from '@/assets/explore/butler.webp';
@@ -25,33 +27,28 @@ import ExploreList from '@/components/ExploreList';
 import PageHeader from '@/components/PageHeader';
 import PageTransition from '@/components/PageTransition';
 
-export const metadata: Metadata = {
-  title: 'Explore Zadar',
+export const generateMetadata = async (): Promise<Metadata> => {
+  const t = await getTranslations('Explore');
+
+  return { title: t('pageTitle') };
 };
 
-const categories = [
+const categoryPlaces = [
   {
     id: 'beaches',
-    name: 'Beaches',
     places: [
       {
-        name: 'Kolovare Beach',
-        badge: '14 min walk',
-        text: 'The most popular city beach with crystal-clear water, shaded areas and cafés nearby.',
+        id: 'kolovare',
         mapsUrl: 'https://maps.google.com/?q=Kolovare+Beach+Zadar',
         image: kolovare,
       },
       {
-        name: 'Borik Beach',
-        badge: '13 min drive',
-        text: 'Family-friendly beach with shallow water, nearby restaurants and plenty of amenities.',
+        id: 'borik',
         mapsUrl: 'https://maps.google.com/?q=Borik+Beach+Zadar',
         image: borik,
       },
       {
-        name: 'Uskok Beach',
-        badge: '13 min drive',
-        text: 'A lively beach in the Puntamika area, popular for swimming, sunbathing and beach bars.',
+        id: 'uskok',
         mapsUrl: 'https://maps.app.goo.gl/WmZobm7i33KhZTTR8',
         image: uskok,
       },
@@ -59,48 +56,35 @@ const categories = [
   },
   {
     id: 'food',
-    name: 'Food & drinks',
     places: [
       {
-        name: 'Butler Gourmet & Cocktails',
-        badge: 'Cocktails & dining',
-        text: 'Modern restaurant and cocktail bar with a stylish atmosphere and creative dishes.',
+        id: 'butler',
         mapsUrl:
           'https://maps.google.com/?q=Butler+Gourmet+Cocktails+Garden+Zadar',
         image: butler,
       },
       {
-        name: 'Harbor CookHouse',
-        badge: 'Waterfront dining',
-        text: 'Popular waterfront restaurant known for excellent burgers, steaks and cocktails.',
+        id: 'harbor',
         mapsUrl: 'https://maps.google.com/?q=Harbor+CookHouse+Zadar',
         image: harbor,
       },
       {
-        name: 'Bruschetta',
-        badge: 'Mediterranean cuisine',
-        text: 'One of Zadar’s best-known restaurants, serving Mediterranean cuisine by the sea.',
+        id: 'bruschetta',
         mapsUrl: 'https://maps.google.com/?q=Restaurant+Bruschetta+Zadar',
         image: bruschetta,
       },
       {
-        name: 'Foša',
-        badge: 'Fine dining',
-        text: 'Fine dining restaurant located beside the historic city walls and harbour.',
+        id: 'fosa',
         mapsUrl: 'https://maps.google.com/?q=Restaurant+Fosa+Zadar',
         image: fosa,
       },
       {
-        name: '4 Kantuna',
-        badge: 'Dalmatian cuisine',
-        text: 'Traditional Dalmatian restaurant offering local dishes in the heart of the Old Town.',
+        id: 'kantuna',
         mapsUrl: 'https://maps.google.com/?q=4+Kantuna+Zadar',
         image: kantuna,
       },
       {
-        name: 'The Garden Lounge',
-        badge: 'Sunset cocktails',
-        text: 'The perfect place for sunset cocktails with panoramic sea views.',
+        id: 'garden',
         mapsUrl: 'https://maps.google.com/?q=The+Garden+Lounge+Zadar',
         image: garden,
       },
@@ -108,61 +92,44 @@ const categories = [
   },
   {
     id: 'sights',
-    name: 'Sights',
     places: [
       {
-        name: 'Sea Organ',
-        badge: 'Must visit',
-        text: 'A unique architectural installation that creates music using sea waves.',
+        id: 'seaOrgan',
         mapsUrl: 'https://maps.google.com/?q=Sea+Organ+Zadar',
         image: seaOrgan,
       },
       {
-        name: 'Greeting to the Sun',
-        badge: 'Sunset spot',
-        text: 'A solar-powered light installation best experienced at sunset.',
+        id: 'greetingSun',
         mapsUrl: 'https://maps.google.com/?q=Greeting+to+the+Sun+Zadar',
         image: greetingSun,
       },
       {
-        name: 'St. Donatus Church',
-        badge: 'Historic landmark',
-        text: 'The symbol of Zadar and one of Croatia’s most important pre-Romanesque churches.',
+        id: 'donat',
         mapsUrl: 'https://maps.google.com/?q=St+Donatus+Church+Zadar',
         image: donat,
       },
       {
-        name: 'Roman Forum',
-        badge: 'Ancient ruins',
-        text: 'The largest Roman forum on the eastern Adriatic coast.',
+        id: 'forum',
         mapsUrl: 'https://maps.google.com/?q=Roman+Forum+Zadar',
         image: forum,
       },
       {
-        name: 'People’s Square',
-        badge: 'City centre',
-        text: 'The historic heart of Zadar surrounded by cafés and local life.',
+        id: 'peoplesSquare',
         mapsUrl: 'https://maps.google.com/?q=Narodni+Trg+Zadar',
         image: peoplesSquare,
       },
       {
-        name: 'Kalelarga',
-        badge: 'Old Town',
-        text: 'Zadar’s most famous street and the centre of city life.',
+        id: 'kalelarga',
         mapsUrl: 'https://maps.app.goo.gl/zJ7NSCbcneK7XWR47',
         image: kalelarga,
       },
       {
-        name: 'St. Anastasia Cathedral',
-        badge: 'Cathedral',
-        text: 'The largest cathedral in Dalmatia with a bell tower offering city views.',
+        id: 'cathedral',
         mapsUrl: 'https://maps.google.com/?q=St+Anastasia+Cathedral+Zadar',
         image: cathedral,
       },
       {
-        name: 'Land Gate',
-        badge: 'Historic gate',
-        text: 'The historic entrance to the Old Town and part of Zadar’s Venetian fortifications.',
+        id: 'landGate',
         mapsUrl: 'https://maps.google.com/?q=Land+Gate+Zadar',
         image: landGate,
       },
@@ -170,56 +137,59 @@ const categories = [
   },
   {
     id: 'stores',
-    name: 'Stores',
     places: [
       {
-        name: 'Supernova Zadar',
-        badge: 'Shopping centre',
-        text: 'The largest shopping centre in Zadar, with a supermarket, cafés, McDonald’s and many stores.',
+        id: 'supernova',
         mapsUrl: 'https://maps.google.com/?q=Supernova+Zadar',
         image: supernova,
       },
       {
-        name: 'Lidl',
-        badge: 'Everyday groceries',
-        text: 'Popular supermarket for groceries, drinks and everyday essentials.',
+        id: 'lidl',
         mapsUrl: 'https://maps.google.com/?q=Lidl+Zadar',
         image: lidl,
       },
       {
-        name: 'Kaufland',
-        badge: 'Wide selection',
-        text: 'Large supermarket offering groceries, household items and fresh produce.',
+        id: 'kaufland',
         mapsUrl: 'https://maps.google.com/?q=Kaufland+Zadar',
         image: kaufland,
       },
       {
-        name: 'City Galleria',
-        badge: 'Shopping & market',
-        text: 'Shopping centre with stores, cafés and a local market.',
+        id: 'cityGalleria',
         mapsUrl: 'https://maps.google.com/?q=City+Galleria+Zadar',
         image: cityGalleria,
       },
       {
-        name: 'Farmacia City Galleria',
-        badge: 'No prescriptions',
-        text: 'For pain relief, vitamins, cosmetics, sunscreen and everyday health essentials. Prescription medication is not available.',
+        id: 'farmacia',
         mapsUrl: 'https://maps.google.com/?q=Farmacia+City+Galleria+Zadar',
         image: farmacia,
       },
     ],
   },
-];
+] as const;
 
 const ExplorePage = () => {
+  const t = useTranslations('Explore');
+
+  const categories = categoryPlaces.map((category) => ({
+    id: category.id,
+    name: t(`categories.${category.id}`),
+    places: category.places.map((place) => ({
+      name: t(`places.${place.id}.name`),
+      badge: t(`places.${place.id}.badge`),
+      text: t(`places.${place.id}.text`),
+      mapsUrl: place.mapsUrl,
+      image: place.image,
+    })),
+  }));
+
   return (
     <PageTransition>
-      <PageHeader title="Explore Zadar" />
+      <PageHeader title={t('pageTitle')} />
 
       <main className="mx-auto w-full max-w-xl flex-1 px-5 pt-6 pb-10">
-        <h1 className="text-4xl font-extrabold">Our Zadar picks</h1>
+        <h1 className="text-4xl font-extrabold">{t('title')}</h1>
 
-        <p className="mt-2 text-muted">Places we&apos;d send our friends to.</p>
+        <p className="mt-2 text-muted">{t('subtitle')}</p>
 
         <ExploreList categories={categories} />
       </main>

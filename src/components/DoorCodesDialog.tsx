@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, type PointerEvent, type ReactNode } from 'react';
 import { Building2, DoorClosedLocked, KeyRound, X } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 const CLOSE_DISTANCE = 100;
 
@@ -39,6 +40,8 @@ const CodeCard = ({ icon, title, description, children }: CodeCardProps) => {
 };
 
 const DoorCodesDialog = ({ open, onClose }: DoorCodesDialogProps) => {
+  const t = useTranslations('DoorCodes');
+  const tCommon = useTranslations('Common');
   const ref = useRef<HTMLDialogElement>(null);
   const dragRef = useRef<{ startY: number; offset: number } | null>(null);
 
@@ -109,12 +112,12 @@ const DoorCodesDialog = ({ open, onClose }: DoorCodesDialogProps) => {
       <div className="p-5 pt-2 pb-[max(1.25rem,env(safe-area-inset-bottom))] sm:p-6">
         <div className="flex items-center justify-between gap-4">
           <h2 id="door-codes-title" className="text-2xl font-extrabold">
-            Door codes
+            {t('title')}
           </h2>
 
           <button
             type="button"
-            aria-label="Close door codes"
+            aria-label={t('close')}
             className="flex size-11 shrink-0 cursor-pointer items-center justify-center rounded-2xl bg-surface-2 transition-colors duration-200 hover:bg-accent-soft focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
             onClick={onClose}
           >
@@ -122,18 +125,18 @@ const DoorCodesDialog = ({ open, onClose }: DoorCodesDialogProps) => {
           </button>
         </div>
 
-        <p className="mt-2 text-muted">You&apos;ll need both, in this order.</p>
+        <p className="mt-2 text-muted">{t('intro')}</p>
 
         <div className="mt-6 space-y-3">
           <CodeCard
             icon={<Building2 />}
-            title="1 · Building entrance"
-            description="Keypad at the building entrance"
+            title={t('buildingTitle')}
+            description={t('buildingText')}
           >
             <span>00</span>
             <span
               role="img"
-              aria-label="key button"
+              aria-label={tCommon('keyButton')}
               className="inline-flex size-9 items-center justify-center rounded-xl border border-line bg-surface text-accent"
             >
               <KeyRound className="size-5" />
@@ -143,8 +146,8 @@ const DoorCodesDialog = ({ open, onClose }: DoorCodesDialogProps) => {
 
           <CodeCard
             icon={<DoorClosedLocked />}
-            title="2 · Key lockbox"
-            description="On the wall next to the apartment door"
+            title={t('lockboxTitle')}
+            description={t('lockboxText')}
           >
             <span>0000</span>
           </CodeCard>

@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import Lightbox, { type Photo } from './Lightbox';
 
 type PhotoStripProps = {
@@ -10,6 +11,7 @@ type PhotoStripProps = {
 };
 
 const PhotoStrip = ({ label, photos }: PhotoStripProps) => {
+  const t = useTranslations('Photos');
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const hasMany = photos.length > 1;
@@ -17,13 +19,12 @@ const PhotoStrip = ({ label, photos }: PhotoStripProps) => {
   return (
     <div>
       <h3 className="text-xs font-bold tracking-wider text-muted uppercase">
-        {label}
-        {hasMany && ` · ${photos.length} photos`}
+        {hasMany ? t('stripTitle', { label, count: photos.length }) : label}
       </h3>
 
       <ul
         role="list"
-        aria-label={`${label} photos`}
+        aria-label={t('stripAria', { label })}
         className="mt-3 flex snap-x snap-mandatory gap-3 overflow-x-auto pb-1"
       >
         {photos.map((photo, index) => (
@@ -31,7 +32,10 @@ const PhotoStrip = ({ label, photos }: PhotoStripProps) => {
             <button
               type="button"
               onClick={() => setOpenIndex(index)}
-              aria-label={`Open photo ${index + 1}: ${photo.caption}`}
+              aria-label={t('openNumbered', {
+                number: index + 1,
+                caption: photo.caption,
+              })}
               className="group relative block cursor-pointer overflow-hidden rounded-2xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
             >
               <Image
