@@ -7,7 +7,7 @@ import {
   Search,
   SquareParking,
   Tv,
-  WashingMachine,
+  Utensils,
   Wifi,
 } from 'lucide-react';
 import { cookies } from 'next/headers';
@@ -117,7 +117,7 @@ const Page = async () => {
               </li>
               <li>
                 <GuideTile
-                  icon={<WashingMachine />}
+                  icon={<Utensils />}
                   title={t('dishwasher.title')}
                   description={t('dishwasher.description')}
                   href="/guide/dishwasher"
