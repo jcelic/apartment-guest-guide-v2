@@ -40,6 +40,7 @@ Without a token, the site shows the no-access page.
 - Dark mode that follows the system setting and remembers the guest's choice
 - Private access with personal guest links, no account needed
 - Thank-you page once a reservation is deactivated
+- Multilingual guide with a language picker that remembers the guest's choice (English and Croatian so far)
 
 ## Guest access
 
@@ -55,7 +56,7 @@ within that time.
 
 ## Planned
 
-- Language switcher (the EN button in the header is a placeholder for now)
+- More languages, added one by one
 
 ## Tech stack
 
@@ -64,6 +65,7 @@ within that time.
 - TypeScript
 - Tailwind CSS 4
 - Neon (serverless Postgres)
+- next-intl
 - next-themes
 - sonner
 - lucide-react
@@ -95,8 +97,13 @@ src/
 │   └── layout.tsx
 ├── assets/
 ├── components/
+├── i18n/
 ├── lib/
+├── global.d.ts
 └── proxy.ts
+messages/
+├── en.json
+└── hr.json
 public/
 └── manuals/
 docs/
