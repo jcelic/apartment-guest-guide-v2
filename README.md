@@ -41,6 +41,8 @@ Without a token, the site shows the no-access page.
 - Private access with personal guest links, no account needed
 - Thank-you page once a reservation is deactivated
 - Multilingual guide with a language picker that remembers the guest's choice (English and Croatian so far)
+- Share button that sends the guide link to the rest of the group or copies it
+- Link preview with a photo, title and description when the link is shared
 
 ## Guest access
 
@@ -94,7 +96,9 @@ src/
 │   ├── apple-icon.png
 │   ├── globals.css
 │   ├── icon.svg
-│   └── layout.tsx
+│   ├── layout.tsx
+│   ├── opengraph-image.alt.txt
+│   └── opengraph-image.jpg
 ├── assets/
 ├── components/
 ├── i18n/
