@@ -1,7 +1,9 @@
 {
   "Metadata": {
     "defaultTitle": "Vodič za goste | Apartment Matea",
-    "titleTemplate": "%s | Apartment Matea"
+    "titleTemplate": "%s | Apartment Matea",
+    "shareTitle": "Apartment Matea · Vodič za goste",
+    "description": "Sve što trebate za boravak: dolazak, Wi-Fi, parking i preporuke za Zadar."
   },
   "Common": {
     "backToHome": "Natrag na početnu",
@@ -30,6 +32,14 @@
     "copyWifi": "Kopiraj Wi-Fi",
     "doorCodes": "Šifre za ulaz",
     "messageUs": "Pišite nam"
+  },
+  "Share": {
+    "title": "Podijelite vodič",
+    "text": "Pošaljite link svima iz svoje grupe",
+    "shareTitle": "Apartment Matea · Vodič za goste",
+    "shareText": "Evo vodiča za goste za naš boravak.",
+    "copied": "Link je kopiran",
+    "copyFailed": "Kopiranje nije uspjelo. Link: {url}"
   },
   "DoorCodes": {
     "title": "Šifre za ulaz",

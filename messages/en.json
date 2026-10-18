@@ -1,7 +1,9 @@
 {
   "Metadata": {
     "defaultTitle": "Guest Guide | Apartment Matea",
-    "titleTemplate": "%s | Apartment Matea"
+    "titleTemplate": "%s | Apartment Matea",
+    "shareTitle": "Apartment Matea · Guest guide",
+    "description": "Everything you need for your stay: arrival, Wi-Fi, parking and tips for Zadar."
   },
   "Common": {
     "backToHome": "Back to home",
@@ -30,6 +32,14 @@
     "copyWifi": "Copy Wi-Fi",
     "doorCodes": "Door codes",
     "messageUs": "Message us"
+  },
+  "Share": {
+    "title": "Share this guide",
+    "text": "Send the link to everyone in your group",
+    "shareTitle": "Apartment Matea · Guest guide",
+    "shareText": "Here is the guest guide for our stay.",
+    "copied": "Link copied",
+    "copyFailed": "Could not copy. Link: {url}"
   },
   "DoorCodes": {
     "title": "Door codes",

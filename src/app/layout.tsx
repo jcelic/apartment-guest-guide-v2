@@ -20,6 +20,13 @@ export const generateMetadata = async (): Promise<Metadata> => {
       default: t('defaultTitle'),
       template: t('titleTemplate'),
     },
+    description: t('description'),
+    openGraph: {
+      title: t('shareTitle'),
+      description: t('description'),
+      siteName: 'Apartment Matea',
+      type: 'website',
+    },
     robots: {
       index: false,
       follow: false,

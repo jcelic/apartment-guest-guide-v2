@@ -18,6 +18,7 @@ import GuideSection from '@/components/GuideSection';
 import GuideTile from '@/components/GuideTile';
 import Header from '@/components/Header';
 import QuickActions from '@/components/QuickActions';
+import ShareGuide from '@/components/ShareGuide';
 import StayInfo from '@/components/StayInfo';
 import { SESSION_COOKIE, readSession } from '@/lib/session';
 import PageTransition from '@/components/PageTransition';
@@ -56,6 +57,8 @@ const Page = async () => {
           </div>
 
           <QuickActions />
+
+          {session && <ShareGuide token={session.token} />}
 
           <GuideSection title={t('gettingHere')}>
             <ul
