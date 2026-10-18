@@ -25,10 +25,13 @@ const PhotoStrip = ({ label, photos }: PhotoStripProps) => {
       <ul
         role="list"
         aria-label={t('stripAria', { label })}
-        className="mt-3 flex snap-x snap-mandatory gap-3 overflow-x-auto pb-1"
+        className="mt-3 flex snap-x snap-mandatory [scrollbar-width:none] gap-3 overflow-x-auto pb-1 [&::-webkit-scrollbar]:hidden"
       >
         {photos.map((photo, index) => (
-          <li key={photo.src.src} className="shrink-0 snap-start">
+          <li
+            key={photo.src.src}
+            className="max-w-[calc(100%-1.75rem)] shrink-0 snap-start"
+          >
             <button
               type="button"
               onClick={() => setOpenIndex(index)}
@@ -43,7 +46,7 @@ const PhotoStrip = ({ label, photos }: PhotoStripProps) => {
                 alt=""
                 placeholder="blur"
                 sizes="240px"
-                className="h-44 w-auto object-cover transition-transform duration-200 group-hover:scale-105"
+                className="h-44 w-auto max-w-full object-cover transition-transform duration-200 group-hover:scale-105"
               />
 
               {hasMany && (

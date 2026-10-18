@@ -111,7 +111,7 @@ const CheckoutChecklist = ({ items }: CheckoutChecklistProps) => {
                   className={`flex size-7 shrink-0 items-center justify-center rounded-lg border-2 transition-colors duration-200 peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-accent ${
                     isDone
                       ? 'border-success-soft bg-success-soft text-success'
-                      : 'border-line bg-surface'
+                      : 'border-muted/50 bg-surface'
                   }`}
                 >
                   {isDone && <Check className="size-4" strokeWidth={3} />}

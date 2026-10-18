@@ -97,7 +97,7 @@ const LanguageSheet = ({ className }: LanguageSheetProps) => {
                 <span
                   aria-hidden="true"
                   className={`flex size-6 shrink-0 items-center justify-center rounded-full border-2 transition-colors duration-200 ${
-                    isCurrent ? 'border-accent' : 'border-line'
+                    isCurrent ? 'border-accent' : 'border-muted/50'
                   }`}
                 >
                   {isCurrent && (
