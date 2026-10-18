@@ -52,7 +52,9 @@
     "stripTitle": "{label} · {count, plural, one {# fotografija} few {# fotografije} other {# fotografija}}",
     "stripAria": "{label}: fotografije",
     "open": "Otvori fotografiju: {caption}",
-    "openNumbered": "Otvori fotografiju {number}: {caption}"
+    "openNumbered": "Otvori fotografiju {number}: {caption}",
+    "previous": "Prethodne fotografije",
+    "next": "Sljedeće fotografije"
   },
   "Lightbox": {
     "viewer": "Pregled fotografija",

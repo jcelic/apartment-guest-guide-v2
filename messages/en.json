@@ -52,7 +52,9 @@
     "stripTitle": "{label} · {count} photos",
     "stripAria": "{label} photos",
     "open": "Open photo: {caption}",
-    "openNumbered": "Open photo {number}: {caption}"
+    "openNumbered": "Open photo {number}: {caption}",
+    "previous": "Previous photos",
+    "next": "Next photos"
   },
   "Lightbox": {
     "viewer": "Photo viewer",
