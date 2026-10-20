@@ -40,6 +40,7 @@ Without a token, the site shows the no-access page.
 - Dark mode that follows the system setting and remembers the guest's choice
 - Private access with personal guest links, no account needed
 - Thank-you page once a reservation is deactivated
+- Friendly not-found and error pages that match the guide
 - Multilingual guide with a language picker that remembers the guest's choice (English, Croatian, German, Italian, Polish and French so far)
 - Share button that sends the guide link to the rest of the group or copies it
 - Link preview with a photo, title and description when the link is shared
@@ -94,9 +95,13 @@ src/
 │   ├── no-access/
 │   ├── thank-you/
 │   ├── apple-icon.png
+│   ├── error.tsx
+│   ├── fonts.ts
+│   ├── global-error.tsx
 │   ├── globals.css
 │   ├── icon.svg
 │   ├── layout.tsx
+│   ├── not-found.tsx
 │   ├── opengraph-image.alt.txt
 │   └── opengraph-image.jpg
 ├── assets/
@@ -106,8 +111,12 @@ src/
 ├── global.d.ts
 └── proxy.ts
 messages/
+├── de.json
 ├── en.json
-└── hr.json
+├── fr.json
+├── hr.json
+├── it.json
+└── pl.json
 public/
 └── manuals/
 docs/
