@@ -1,6 +1,8 @@
+import type { NextResponse } from 'next/server';
+
 export const SESSION_COOKIE = 'guest_session';
 
-export const SESSION_COOKIE_MAX_AGE = 30 * 24 * 60 * 60;
+const SESSION_COOKIE_MAX_AGE = 30 * 24 * 60 * 60;
 
 export const TOKEN_PATTERN = /^[a-f0-9]{32}$/;
 
@@ -67,3 +69,19 @@ export const readSession = async (
 
 export const isSessionFresh = (session: Session) =>
   Date.now() - session.checkedAt < RECHECK_AFTER_MS;
+
+export const setSessionCookie = (response: NextResponse, value: string) => {
+  response.cookies.set(SESSION_COOKIE, value, {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === 'production',
+    sameSite: 'lax',
+    path: '/',
+    maxAge: SESSION_COOKIE_MAX_AGE,
+  });
+};
+
+export const getStayKey = async (token: string) => {
+  const digest = await crypto.subtle.digest('SHA-256', encoder.encode(token));
+
+  return Buffer.from(digest).toString('hex').slice(0, 16);
+};

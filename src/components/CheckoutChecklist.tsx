@@ -12,12 +12,13 @@ type ChecklistItem = {
 
 type CheckoutChecklistProps = {
   items: ChecklistItem[];
+  stayKey: string;
 };
 
-const STORAGE_KEY = 'checkout-checklist';
+const STORAGE_PREFIX = 'checkout-checklist';
 
 const listeners = new Set<() => void>();
-let snapshot: string | null = null;
+let cache: { key: string; value: string } | null = null;
 
 const subscribe = (listener: () => void) => {
   listeners.add(listener);
@@ -26,37 +27,54 @@ const subscribe = (listener: () => void) => {
   };
 };
 
-const getSnapshot = () => {
-  if (snapshot === null) {
+const readDone = (key: string) => {
+  if (cache?.key !== key) {
+    let value = '[]';
     try {
-      snapshot = localStorage.getItem(STORAGE_KEY) ?? '[]';
-    } catch {
-      snapshot = '[]';
-    }
+      value = localStorage.getItem(key) ?? '[]';
+    } catch {}
+    cache = { key, value };
   }
-  return snapshot;
+  return cache.value;
 };
 
 const getServerSnapshot = () => '[]';
 
-const saveDone = (done: string[]) => {
-  snapshot = JSON.stringify(done);
+const removeOtherStays = (key: string) => {
+  const staleKeys = Object.keys(localStorage).filter(
+    (storedKey) =>
+      storedKey !== key &&
+      (storedKey === STORAGE_PREFIX ||
+        storedKey.startsWith(`${STORAGE_PREFIX}:`)),
+  );
+  staleKeys.forEach((staleKey) => localStorage.removeItem(staleKey));
+};
+
+const saveDone = (key: string, done: string[]) => {
+  cache = { key, value: JSON.stringify(done) };
   try {
-    localStorage.setItem(STORAGE_KEY, snapshot);
+    localStorage.setItem(key, cache.value);
+    removeOtherStays(key);
   } catch {}
   listeners.forEach((listener) => listener());
 };
 
-const CheckoutChecklist = ({ items }: CheckoutChecklistProps) => {
+const CheckoutChecklist = ({ items, stayKey }: CheckoutChecklistProps) => {
   const t = useTranslations('Checklist');
+  const storageKey = `${STORAGE_PREFIX}:${stayKey}`;
   const done: string[] = JSON.parse(
-    useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot),
+    useSyncExternalStore(
+      subscribe,
+      () => readDone(storageKey),
+      getServerSnapshot,
+    ),
   );
 
   const doneCount = items.filter((item) => done.includes(item.id)).length;
 
   const toggle = (id: string) => {
     saveDone(
+      storageKey,
       done.includes(id)
         ? done.filter((doneId) => doneId !== id)
         : [...done, id],

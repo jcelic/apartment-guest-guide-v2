@@ -1,10 +1,6 @@
 import { NextResponse, type NextRequest } from 'next/server';
-import { findReservation } from '@/lib/guest';
-import {
-  SESSION_COOKIE,
-  SESSION_COOKIE_MAX_AGE,
-  createSession,
-} from '@/lib/session';
+import { checkGuestAccess } from '@/lib/guest';
+import { SESSION_COOKIE, setSessionCookie } from '@/lib/session';
 
 const getNextPath = (request: NextRequest) => {
   const next = request.nextUrl.searchParams.get('next');
@@ -17,34 +13,21 @@ export const GET = async (
   ctx: RouteContext<'/guide/[token]'>,
 ) => {
   const { token } = await ctx.params;
-  const reservation = await findReservation(token);
+  const access = await checkGuestAccess(token);
 
-  if (!reservation?.active) {
+  if (!access.allowed) {
     const response = NextResponse.redirect(
-      new URL(reservation ? '/thank-you' : '/no-access', request.url),
+      new URL(access.redirectTo, request.url),
     );
     response.cookies.delete(SESSION_COOKIE);
 
     return response;
   }
 
-  const session = await createSession({
-    token,
-    name: reservation.guest_name,
-    language: reservation.language,
-    checkedAt: Date.now(),
-  });
-
   const response = NextResponse.redirect(
     new URL(getNextPath(request), request.url),
   );
-  response.cookies.set(SESSION_COOKIE, session, {
-    httpOnly: true,
-    secure: process.env.NODE_ENV === 'production',
-    sameSite: 'lax',
-    path: '/',
-    maxAge: SESSION_COOKIE_MAX_AGE,
-  });
+  setSessionCookie(response, access.session);
 
   return response;
 };

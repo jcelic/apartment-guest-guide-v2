@@ -1,13 +1,15 @@
 import { NextResponse, type NextRequest } from 'next/server';
+import { checkGuestAccess } from '@/lib/guest';
 import {
   SESSION_COOKIE,
   TOKEN_PATTERN,
   isSessionFresh,
   readSession,
+  setSessionCookie,
 } from '@/lib/session';
 
 export const proxy = async (request: NextRequest) => {
-  const { pathname, search } = request.nextUrl;
+  const { pathname } = request.nextUrl;
   const [, , segment, ...rest] = pathname.split('/');
 
   if (segment && rest.length === 0 && TOKEN_PATTERN.test(segment)) {
@@ -20,21 +22,29 @@ export const proxy = async (request: NextRequest) => {
     return NextResponse.redirect(new URL('/no-access', request.url));
   }
 
-  if (!isSessionFresh(session)) {
-    const recheckUrl = new URL(`/guide/${session.token}`, request.url);
-    recheckUrl.searchParams.set(
-      'next',
-      pathname === '/' ? '/guide' : pathname + search,
+  const access = isSessionFresh(session)
+    ? null
+    : await checkGuestAccess(session.token);
+
+  if (access && !access.allowed) {
+    const response = NextResponse.redirect(
+      new URL(access.redirectTo, request.url),
     );
+    response.cookies.delete(SESSION_COOKIE);
 
-    return NextResponse.redirect(recheckUrl);
+    return response;
   }
 
-  if (pathname === '/') {
-    return NextResponse.redirect(new URL('/guide', request.url));
+  const response =
+    pathname === '/'
+      ? NextResponse.redirect(new URL('/guide', request.url))
+      : NextResponse.next();
+
+  if (access) {
+    setSessionCookie(response, access.session);
   }
 
-  return NextResponse.next();
+  return response;
 };
 
 export const config = {
