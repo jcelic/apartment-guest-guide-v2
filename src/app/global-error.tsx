@@ -34,6 +34,12 @@ const errorMessages: Record<
     text: 'To je obično privremeno. Pokušajte ponovno za trenutak.',
     retry: 'Pokušajte ponovno',
   },
+  de: {
+    pageTitle: 'Etwas ist schiefgelaufen',
+    title: 'Etwas ist schiefgelaufen',
+    text: 'Das ist meist nur vorübergehend. Bitte versuchen Sie es gleich noch einmal.',
+    retry: 'Erneut versuchen',
+  },
 };
 
 const subscribe = () => () => {};

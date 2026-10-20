@@ -55,7 +55,8 @@
     "close": "Close language menu",
     "names": {
       "en": "English",
-      "hr": "Croatian"
+      "hr": "Croatian",
+      "de": "German"
     }
   },
   "Photos": {
