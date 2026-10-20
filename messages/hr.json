@@ -582,5 +582,16 @@
     "pageTitle": "Hvala",
     "title": "Hvala vam na boravku",
     "text": "Nadamo se da ste uživali u Zadru i bit će nam drago ponovno vas ugostiti."
+  },
+  "NotFound": {
+    "pageTitle": "Stranica nije pronađena",
+    "title": "Ova stranica ne postoji",
+    "text": "Link je možda pogrešan ili zastario.",
+    "back": "Natrag na vodič"
+  },
+  "Error": {
+    "title": "Nešto je pošlo po zlu",
+    "text": "To je obično privremeno. Pokušajte ponovno za trenutak.",
+    "retry": "Pokušajte ponovno"
   }
 }

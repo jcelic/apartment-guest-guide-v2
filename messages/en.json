@@ -582,5 +582,16 @@
     "pageTitle": "Thank you",
     "title": "Thank you for staying with us",
     "text": "We hope you enjoyed Zadar and would love to welcome you back."
+  },
+  "NotFound": {
+    "pageTitle": "Page not found",
+    "title": "This page doesn't exist",
+    "text": "The link may be wrong or out of date.",
+    "back": "Back to the guide"
+  },
+  "Error": {
+    "title": "Something went wrong",
+    "text": "It's usually temporary. Please try again in a moment.",
+    "retry": "Try again"
   }
 }

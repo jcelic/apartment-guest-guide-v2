@@ -1,16 +1,24 @@
 import type { Metadata } from 'next';
-import { Nunito } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
-import { getLocale, getTranslations } from 'next-intl/server';
+import { getLocale, getMessages, getTranslations } from 'next-intl/server';
 import { ThemeProvider } from 'next-themes';
 import Toaster from '@/components/Toaster';
+import { nunito } from './fonts';
 import './globals.css';
 
-const nunito = Nunito({
-  subsets: ['latin', 'latin-ext'],
-  variable: '--font-nunito',
-  display: 'swap',
-});
+const CLIENT_NAMESPACES = [
+  'Checklist',
+  'Common',
+  'DoorCodes',
+  'Error',
+  'ExploreList',
+  'LanguageMenu',
+  'Lightbox',
+  'Photos',
+  'QuickActions',
+  'Share',
+  'StepCarousel',
+] as const;
 
 export const generateMetadata = async (): Promise<Metadata> => {
   const t = await getTranslations('Metadata');
@@ -36,6 +44,10 @@ export const generateMetadata = async (): Promise<Metadata> => {
 
 const RootLayout = async ({ children }: LayoutProps<'/'>) => {
   const locale = await getLocale();
+  const messages = await getMessages();
+  const clientMessages = Object.fromEntries(
+    CLIENT_NAMESPACES.map((namespace) => [namespace, messages[namespace]]),
+  );
 
   return (
     <html
@@ -44,7 +56,7 @@ const RootLayout = async ({ children }: LayoutProps<'/'>) => {
       suppressHydrationWarning
     >
       <body className="flex min-h-full flex-col">
-        <NextIntlClientProvider>
+        <NextIntlClientProvider messages={clientMessages}>
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
