@@ -52,6 +52,12 @@ const errorMessages: Record<
     text: 'To zwykle chwilowy problem. Prosimy spróbować ponownie za moment.',
     retry: 'Spróbuj ponownie',
   },
+  fr: {
+    pageTitle: 'Un problème est survenu',
+    title: 'Un problème est survenu',
+    text: "C'est généralement temporaire. Réessayez dans un instant.",
+    retry: 'Réessayer',
+  },
 };
 
 const subscribe = () => () => {};

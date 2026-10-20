@@ -1,0 +1,604 @@
+{
+  "Metadata": {
+    "defaultTitle": "Guide des voyageurs | Apartment Matea",
+    "titleTemplate": "%s | Apartment Matea",
+    "shareTitle": "Apartment Matea · Guide des voyageurs",
+    "description": "Tout ce qu'il vous faut pour votre séjour : arrivée, Wi-Fi, parking et bonnes adresses à Zadar."
+  },
+  "Common": {
+    "backToHome": "Retour à l'accueil",
+    "toggleTheme": "Activer ou désactiver le mode sombre",
+    "changeLanguage": "Changer de langue ({language})",
+    "messageOnWhatsApp": "Écrivez-nous sur WhatsApp",
+    "directions": "Itinéraire",
+    "directionsTo": "Itinéraire vers {place}",
+    "call": "Appeler",
+    "keyButton": "touche clé",
+    "wifiCopied": "Mot de passe Wi-Fi copié",
+    "copyFailed": "Copie impossible. Mot de passe : {password}",
+    "copyPassword": "Copier le mot de passe"
+  },
+  "Header": {
+    "name": "Apartment Matea",
+    "city": "Zadar"
+  },
+  "StayInfo": {
+    "checkIn": "Arrivée",
+    "checkOut": "Départ",
+    "floor": "Étage",
+    "floorValue": "3e"
+  },
+  "QuickActions": {
+    "copyWifi": "Copier le mot de passe",
+    "doorCodes": "Codes d'accès",
+    "messageUs": "Nous écrire"
+  },
+  "Share": {
+    "title": "Partager le guide",
+    "text": "Envoyez le lien à tout votre groupe",
+    "shareTitle": "Apartment Matea · Guide des voyageurs",
+    "shareText": "Voici le guide de l'appartement pour notre séjour.",
+    "copied": "Lien copié",
+    "copyFailed": "Copie impossible. Lien : {url}"
+  },
+  "DoorCodes": {
+    "title": "Codes d'accès",
+    "close": "Fermer les codes d'accès",
+    "intro": "Vous aurez besoin des deux codes, dans cet ordre.",
+    "buildingTitle": "1 · Entrée de l'immeuble",
+    "buildingText": "Clavier à l'entrée de l'immeuble",
+    "lockboxTitle": "2 · Boîte à clés",
+    "lockboxText": "Au mur, à côté de la porte de l'appartement"
+  },
+  "LanguageMenu": {
+    "title": "Langue",
+    "close": "Fermer le choix de la langue",
+    "names": {
+      "en": "Anglais",
+      "hr": "Croate",
+      "de": "Allemand",
+      "it": "Italien",
+      "pl": "Polonais",
+      "fr": "Français"
+    }
+  },
+  "Photos": {
+    "stripTitle": "{label} · {count, plural, one {# photo} other {# photos}}",
+    "stripAria": "Photos : {label}",
+    "open": "Ouvrir la photo : {caption}",
+    "openNumbered": "Ouvrir la photo {number} : {caption}",
+    "previous": "Photos précédentes",
+    "next": "Photos suivantes"
+  },
+  "Lightbox": {
+    "viewer": "Visionneuse de photos",
+    "close": "Fermer la visionneuse",
+    "previous": "Photo précédente",
+    "next": "Photo suivante"
+  },
+  "StepCarousel": {
+    "steps": "Étapes",
+    "stepOf": "Étape {current} sur {total}",
+    "progress": "Progression",
+    "back": "Retour",
+    "next": "Étape suivante",
+    "allSteps": "Toutes les étapes"
+  },
+  "Checklist": {
+    "checkOutBy": "Départ avant",
+    "nextGuests": "Les prochains voyageurs arrivent le jour même. Merci de libérer l'appartement à l'heure !",
+    "doneCount": "{done} sur {total} terminées",
+    "progress": "Progression de la liste"
+  },
+  "ExploreList": {
+    "categories": "Catégories"
+  },
+  "ExploreCard": {
+    "title": "Découvrir Zadar",
+    "text": "Plages, restaurants et visites que nous vous recommandons.",
+    "imageAlt": "Vue aérienne du front de mer de Zadar avec l'Orgue marin et la Salutation au Soleil",
+    "beaches": "{count, plural, one {# plage} other {# plages}}",
+    "restaurants": "{count, plural, one {# restaurant} other {# restaurants}}",
+    "sights": "{count, plural, one {# visite} other {# visites}}"
+  },
+  "Home": {
+    "eyebrow": "Votre guide",
+    "welcome": "Bienvenue",
+    "welcomeName": "Bienvenue, {name}",
+    "subtitle": "Tout pour votre séjour, au même endroit.",
+    "gettingHere": "Comment venir",
+    "inTheApartment": "Dans l'appartement",
+    "aroundYou": "Aux alentours",
+    "arrival": {
+      "title": "Arrivée",
+      "description": "Entrée, boîte à clés, 3 étapes"
+    },
+    "parking": {
+      "title": "Parking",
+      "description": "Gratuit avec la carte de parking"
+    },
+    "wifi": {
+      "title": "Wi-Fi",
+      "description": "Réseau et mot de passe"
+    },
+    "essentials": {
+      "title": "Où trouver les équipements",
+      "description": "Tout ce qu'il faut savoir"
+    },
+    "tv": {
+      "title": "Télévision",
+      "description": "Netflix, EON"
+    },
+    "coffee": {
+      "title": "Café",
+      "description": "Dolce Gusto, 10 étapes"
+    },
+    "dishwasher": {
+      "title": "Lave-vaisselle",
+      "description": "Programmes P1–P4"
+    },
+    "houseRules": {
+      "title": "Règlement intérieur",
+      "description": "Heures de tranquillité"
+    },
+    "checkOut": {
+      "title": "Liste avant le départ",
+      "description": "6 choses à faire avant 10:00"
+    },
+    "emergency": {
+      "title": "Urgences · 112",
+      "description": "Numéros, pharmacie 24h/24, hôpital"
+    }
+  },
+  "Arrival": {
+    "pageTitle": "Arrivée",
+    "eyebrow": "3 étapes simples",
+    "title": "Comment entrer",
+    "subtitle": "De la rue à votre appartement en quelques minutes.",
+    "checkInTitle": "Arrivée à partir de 14:00",
+    "checkInText": "Si l'appartement est prêt plus tôt, nous vous préviendrons.",
+    "mapAlt": "Vue aérienne de l'immeuble avec le chemin à pied depuis la rue jusqu'à l'entrée",
+    "mapLink": "Rue Exemple 1 · Itinéraire",
+    "step1Title": "Entrez dans l'immeuble",
+    "step1Text": "L'entrée se trouve côté cour, pas côté rue.",
+    "entrancePath": "Chemin jusqu'à l'entrée",
+    "entranceCode": "Code d'entrée",
+    "step2Title": "Trouvez l'appartement",
+    "step2Text": "3e étage : en sortant de l'ascenseur, tournez à droite, la porte est juste à côté. Nom sur la porte : <strong>Surname</strong>.",
+    "wayToDoor": "Chemin jusqu'à la porte",
+    "keyLockbox": "Boîte à clés",
+    "step3Title": "Prévenez-nous de votre arrivée",
+    "step3Text": "Merci de nous écrire une fois sur place. Nous avons besoin de votre heure d'arrivée pour l'enregistrement officiel des voyageurs (eVisitor).",
+    "parkingLink": "Vous venez en voiture ? Voir le parking",
+    "photos": {
+      "exterior1": "Repérez cet immeuble.",
+      "exterior2": "L'immeuble vu sous un autre angle.",
+      "exterior3": "Dirigez-vous vers l'entrée latérale.",
+      "path1": "Passez par cette entrée de cour.",
+      "path2": "Continuez tout droit.",
+      "path3": "L'entrée se trouve dans la cour.",
+      "path4": "Entrez dans l'immeuble par cette porte.",
+      "path5": "Composez le code sur le clavier.",
+      "apartment1": "Une fois dans l'immeuble, dirigez-vous vers l'ascenseur.",
+      "apartment2": "Prenez l'ascenseur jusqu'au troisième étage.",
+      "apartment3": "En sortant de l'ascenseur, tournez à droite. La porte de l'appartement est à côté de l'ascenseur.",
+      "apartment4": "Repérez cette porte.",
+      "apartment5": "Le nom « Surname » figure sur la porte de l'appartement.",
+      "apartment6": "La boîte à clés à code est fixée au mur, à côté de la porte de l'appartement."
+    }
+  },
+  "CheckOut": {
+    "pageTitle": "Départ",
+    "goodbyeTitle": "Pour finir, prévenez-nous",
+    "goodbyeText": "Envoyez-nous un message au moment de partir, pour que nous puissions commencer le ménage.",
+    "items": {
+      "ac": {
+        "title": "Éteindre la climatisation",
+        "text": "Merci d'éteindre la climatisation."
+      },
+      "windows": {
+        "title": "Fermer fenêtres et portes de la terrasse",
+        "text": "Merci de fermer toutes les fenêtres et les portes de la terrasse."
+      },
+      "lights": {
+        "title": "Éteindre les lumières",
+        "text": "Dans toutes les pièces."
+      },
+      "door": {
+        "title": "Fermer la porte à clé",
+        "text": "Vérifiez que l'appartement est bien fermé à clé."
+      },
+      "key": {
+        "title": "Rendre la clé",
+        "text": "Remettez-la dans la boîte à clés, puis brouillez le code."
+      },
+      "parking": {
+        "title": "Déposer la carte de parking",
+        "text": "Dans la boîte aux lettres, seulement après être sorti du parking."
+      }
+    }
+  },
+  "Coffee": {
+    "pageTitle": "Machine à café",
+    "title": "Préparer un café",
+    "subtitle": "Dolce Gusto · un café en 10 étapes simples.",
+    "waterTitle": "Réservoir d'eau",
+    "waterText": "Enfoncez-le bien jusqu'au bout. De petites bulles d'air au fond indiquent qu'il est bien en place, sinon l'eau ne coule pas.",
+    "milkTitle": "Cappuccino et Chococino",
+    "milkText": "Il faut deux capsules : d'abord le lait, attendez le voyant vert, puis le café ou le chocolat.",
+    "steps": {
+      "power": {
+        "title": "Allumer la machine",
+        "text": "Appuyez sur le bouton marche/arrêt. Le voyant clignote en rouge pendant que la machine chauffe."
+      },
+      "ready": {
+        "title": "Attendre le voyant vert",
+        "text": "Quand le voyant passe au vert, la machine est prête."
+      },
+      "holderOut": {
+        "title": "Retirer le porte-capsule",
+        "text": "Soulevez le couvercle et retirez le porte-capsule."
+      },
+      "capsule": {
+        "title": "Mettre une capsule",
+        "text": "Placez une capsule de café dans le porte-capsule."
+      },
+      "holderIn": {
+        "title": "Remettre le porte-capsule",
+        "text": "Remettez le porte-capsule dans la machine et refermez le couvercle."
+      },
+      "water": {
+        "title": "Choisir la quantité d'eau",
+        "text": "Déplacez le sélecteur vers le haut ou le bas selon le nombre de barres indiqué sur la capsule."
+      },
+      "cup": {
+        "title": "Placer la tasse",
+        "text": "Placez votre tasse sous la sortie du café."
+      },
+      "brew": {
+        "title": "Préparer le café",
+        "text": "Basculez le levier côté rouge pour les boissons chaudes. La machine s'arrête toute seule."
+      },
+      "readyAgain": {
+        "title": "Attendre à nouveau le voyant vert",
+        "text": "Attendez que le bouton marche/arrêt passe au vert avant de retirer le porte-capsule."
+      },
+      "cleanUp": {
+        "title": "Retirer la capsule usagée",
+        "text": "Soulevez le couvercle, retirez le porte-capsule et jetez la capsule usagée. Merci de ne pas laisser de capsules usagées dans la machine."
+      }
+    }
+  },
+  "Dishwasher": {
+    "pageTitle": "Lave-vaisselle",
+    "title": "Lancer le lave-vaisselle",
+    "subtitle": "Une pastille, trois boutons.",
+    "step1Title": "Mettre une pastille",
+    "step1Text": "Mettez une pastille dans le compartiment à détergent et refermez le couvercle. Les pastilles sont sous l'évier.",
+    "capsule": "Pastille",
+    "step2Title": "Allumer",
+    "step2Text": "Appuyez sur le bouton marche/arrêt <button>1</button>.",
+    "step2Alt": "Bouton marche/arrêt du lave-vaisselle, marqué 1",
+    "step3Title": "Choisir un programme",
+    "step3Text": "Appuyez sur PROGR. <button>2</button> jusqu'au programme souhaité. Voir la liste ci-dessous.",
+    "step3Alt": "Bouton de programme du lave-vaisselle, marqué 2",
+    "step4Title": "Lancer et fermer",
+    "step4Text": "Appuyez sur START <button>3</button>, puis fermez la porte.",
+    "step4Alt": "Bouton de démarrage du lave-vaisselle, marqué 3",
+    "step5Title": "Une fois terminé",
+    "step5Text": "Maintenez START <start>3</start> enfoncé quelques secondes pour réinitialiser, puis appuyez sur le bouton marche/arrêt <power>1</power> pour l'éteindre.",
+    "whichProgram": "Quel programme ?",
+    "recommended": "Recommandé",
+    "manualTitle": "Notice complète (PDF)",
+    "manualText": "Autres programmes · version papier dans le placard de la cuisine",
+    "photos": {
+      "capsules": "Les pastilles sont sous l'évier.",
+      "compartment1": "Mettez une pastille dans le compartiment à détergent.",
+      "compartment2": "Refermez le couvercle avant de lancer le lave-vaisselle."
+    },
+    "programs": {
+      "P1": {
+        "name": "Intensif · 75 °C",
+        "use": "Vaisselle très sale"
+      },
+      "P2": {
+        "name": "Universel · 50–60 °C",
+        "use": "Pour la plupart des lavages"
+      },
+      "P3": {
+        "name": "ECO · 45 °C",
+        "use": "Économie d'énergie"
+      },
+      "P4": {
+        "name": "Rapide",
+        "use": "Lavage express"
+      }
+    }
+  },
+  "Emergency": {
+    "pageTitle": "Aide et urgences",
+    "title": "Besoin d'aide ?",
+    "anyEmergency": "En cas d'urgence",
+    "emergencyText": "Police, ambulance et pompiers, on y parle aussi anglais.",
+    "call112": "Appeler le 112",
+    "callingFrom": "Vous appelez depuis l'appartement ?",
+    "address": "Rue Exemple 1, Zadar · 3e étage",
+    "medicalNearby": "Aide médicale à proximité",
+    "somethingWrong": "Un problème dans l'appartement ?",
+    "messageHost": "Écrire à votre hôte",
+    "messageHostText": "Appareil en panne, porte claquée, fuite d'eau : par WhatsApp",
+    "numbers": {
+      "ambulance": "Ambulance",
+      "police": "Police",
+      "fire": "Pompiers"
+    },
+    "medical": {
+      "pharmacy": {
+        "name": "Pharmacie Jadran",
+        "status": "Ouverte 24h/24",
+        "text": "Ouverte jour et nuit, y compris le week-end et les jours fériés. Médicaments avec ou sans ordonnance."
+      },
+      "hospital": {
+        "name": "Urgences",
+        "status": "Hôpital général de Zadar",
+        "text": "Pour les situations médicales urgentes nécessitant une prise en charge immédiate à l'Hôpital général de Zadar."
+      },
+      "clinic": {
+        "name": "Dispensaire pour touristes",
+        "status": "Soins non urgents, même le week-end",
+        "text": "Soins médicaux pour les touristes et visiteurs en cas de problème de santé non urgent, y compris le week-end et les jours fériés."
+      }
+    }
+  },
+  "Essentials": {
+    "pageTitle": "Équipements",
+    "title": "Où trouver les équipements ?",
+    "subtitle": "Touchez un objet pour voir sur une photo où il se trouve exactement.",
+    "groups": {
+      "kitchen": "Cuisine",
+      "bathroom": "Salle de bain",
+      "hallway": "Couloir",
+      "livingRoom": "Salon"
+    },
+    "items": {
+      "ironingBoard": {
+        "title": "Planche à repasser",
+        "text": "Derrière la porte de la cuisine, à côté de la poubelle."
+      },
+      "manuals": {
+        "title": "Notices des appareils",
+        "text": "Dans le placard de gauche de la cuisine."
+      },
+      "hairDryer": {
+        "title": "Sèche-cheveux",
+        "text": "Dans la salle de bain, dans le tiroir du milieu sous le lavabo."
+      },
+      "capsules": {
+        "title": "Capsules de lessive",
+        "text": "Dans la salle de bain, dans le premier tiroir sous le lavabo."
+      },
+      "iron": {
+        "title": "Fer à repasser",
+        "text": "Dans l'armoire du couloir à côté de la salle de bain, à gauche."
+      },
+      "towels": {
+        "title": "Serviettes supplémentaires",
+        "text": "Dans l'armoire du couloir à côté de la salle de bain, à droite."
+      },
+      "firstAid": {
+        "title": "Trousse de secours",
+        "text": "Dans le meuble TV, à droite, derrière la porte vitrée."
+      }
+    }
+  },
+  "Explore": {
+    "pageTitle": "Découvrir Zadar",
+    "title": "Nos adresses à Zadar",
+    "subtitle": "Les endroits que nous recommandons à nos amis.",
+    "categories": {
+      "beaches": "Plages",
+      "food": "Manger et boire",
+      "sights": "À voir",
+      "stores": "Magasins"
+    },
+    "places": {
+      "kolovare": {
+        "name": "Plage de Kolovare",
+        "badge": "14 min à pied",
+        "text": "La plage la plus populaire de la ville, avec une eau cristalline, des coins d'ombre et des cafés à proximité."
+      },
+      "borik": {
+        "name": "Plage de Borik",
+        "badge": "13 min en voiture",
+        "text": "Une plage idéale pour les familles, avec une eau peu profonde, des restaurants et de nombreux services."
+      },
+      "uskok": {
+        "name": "Plage d'Uskok",
+        "badge": "13 min en voiture",
+        "text": "Une plage animée dans le quartier de Puntamika, idéale pour se baigner, bronzer et profiter des bars de plage."
+      },
+      "butler": {
+        "name": "Butler Gourmet & Cocktails",
+        "badge": "Cocktails et cuisine",
+        "text": "Restaurant moderne et bar à cocktails, à l'ambiance élégante et aux plats créatifs."
+      },
+      "harbor": {
+        "name": "Harbor CookHouse",
+        "badge": "Au bord de l'eau",
+        "text": "Un restaurant très apprécié au bord de l'eau, réputé pour ses excellents burgers, steaks et cocktails."
+      },
+      "bruschetta": {
+        "name": "Bruschetta",
+        "badge": "Cuisine méditerranéenne",
+        "text": "L'un des restaurants les plus connus de Zadar, avec une cuisine méditerranéenne en bord de mer."
+      },
+      "fosa": {
+        "name": "Foša",
+        "badge": "Gastronomique",
+        "text": "Restaurant gastronomique au pied des remparts historiques, face au petit port."
+      },
+      "kantuna": {
+        "name": "4 Kantuna",
+        "badge": "Cuisine dalmate",
+        "text": "Restaurant dalmate traditionnel aux plats locaux, au cœur de la vieille ville."
+      },
+      "garden": {
+        "name": "The Garden Lounge",
+        "badge": "Cocktails au coucher du soleil",
+        "text": "L'endroit parfait pour un cocktail au coucher du soleil, avec une vue panoramique sur la mer."
+      },
+      "seaOrgan": {
+        "name": "Orgue marin",
+        "badge": "Incontournable",
+        "text": "Une installation architecturale unique qui joue de la musique grâce aux vagues."
+      },
+      "greetingSun": {
+        "name": "Salutation au Soleil",
+        "badge": "Au coucher du soleil",
+        "text": "Une installation lumineuse alimentée à l'énergie solaire, à voir au coucher du soleil."
+      },
+      "donat": {
+        "name": "Église Saint-Donat",
+        "badge": "Monument historique",
+        "text": "Le symbole de Zadar et l'une des églises préromanes les plus importantes de Croatie."
+      },
+      "forum": {
+        "name": "Forum romain",
+        "badge": "Vestiges antiques",
+        "text": "Le plus grand forum romain de la côte est de l'Adriatique."
+      },
+      "peoplesSquare": {
+        "name": "Place du Peuple",
+        "badge": "Centre-ville",
+        "text": "Le cœur historique de Zadar, animé par ses cafés et la vie locale."
+      },
+      "kalelarga": {
+        "name": "Kalelarga",
+        "badge": "Vieille ville",
+        "text": "La rue la plus célèbre de Zadar et le centre de la vie en ville."
+      },
+      "cathedral": {
+        "name": "Cathédrale Sainte-Anastasie",
+        "badge": "Cathédrale",
+        "text": "La plus grande cathédrale de Dalmatie, dont le clocher offre une vue sur toute la ville."
+      },
+      "landGate": {
+        "name": "Porte de la Terre Ferme",
+        "badge": "Porte historique",
+        "text": "L'ancienne entrée de la vieille ville, qui fait partie des fortifications vénitiennes de Zadar."
+      },
+      "supernova": {
+        "name": "Supernova Zadar",
+        "badge": "Centre commercial",
+        "text": "Le plus grand centre commercial de Zadar, avec un supermarché, des cafés, un McDonald’s et de nombreuses boutiques."
+      },
+      "lidl": {
+        "name": "Lidl",
+        "badge": "Courses du quotidien",
+        "text": "Supermarché très fréquenté pour l'alimentation, les boissons et les produits de tous les jours."
+      },
+      "kaufland": {
+        "name": "Kaufland",
+        "badge": "Grand choix",
+        "text": "Grand supermarché avec alimentation, articles pour la maison et fruits et légumes frais."
+      },
+      "cityGalleria": {
+        "name": "City Galleria",
+        "badge": "Boutiques et marché",
+        "text": "Centre commercial avec boutiques, cafés et un marché local."
+      },
+      "farmacia": {
+        "name": "Farmacia City Galleria",
+        "badge": "Sans ordonnance",
+        "text": "Antidouleurs, vitamines, cosmétiques, crème solaire et produits de santé du quotidien. Les médicaments sur ordonnance n'y sont pas disponibles."
+      }
+    }
+  },
+  "HouseRules": {
+    "pageTitle": "Règlement intérieur",
+    "title": "Règlement intérieur",
+    "subtitle": "Quelques règles simples pour que tout le monde soit bien.",
+    "checkIn": "Arrivée",
+    "from": "à partir de",
+    "checkOut": "Départ",
+    "by": "avant",
+    "timesNote": "Ces horaires nous laissent le temps de préparer l'appartement pour les prochains voyageurs.",
+    "quietHours": "Heures de tranquillité",
+    "quietText": "D'autres personnes vivent à l'année dans l'immeuble : le bruit se propage facilement dans les couloirs, les escaliers et l'ascenseur.",
+    "afternoon": "Après-midi",
+    "night": "Nuit",
+    "kidsNote": "Vous voyagez avec des enfants ? Merci de ne pas laisser les enfants courir ou jouer bruyamment dans le couloir et l'ascenseur.",
+    "inTheApartment": "Dans l'appartement",
+    "rules": {
+      "smoking": {
+        "title": "Interdiction de fumer à l'intérieur",
+        "text": "Vous pouvez fumer sur la terrasse."
+      },
+      "door": {
+        "title": "Gardez la porte fermée à clé",
+        "text": "Même quand vous êtes à l'intérieur."
+      },
+      "breaks": {
+        "title": "Prévenez-nous si quelque chose se casse",
+        "text": "Pas d'inquiétude, dites-le-nous simplement dès que possible."
+      }
+    }
+  },
+  "Parking": {
+    "pageTitle": "Parking",
+    "title": "Parking",
+    "guestsOnly": "Réservé aux voyageurs",
+    "guestsOnlyText": "Les informations sur le parking sont réservées aux voyageurs dans la version réelle."
+  },
+  "Tv": {
+    "pageTitle": "Télévision",
+    "title": "Regarder la télévision",
+    "subtitle": "Deux télécommandes, deux rôles. Voici comment les utiliser.",
+    "smallRemote": "Petite télécommande",
+    "smallRemoteText": "Pour tout : marche/arrêt, applis, Netflix",
+    "largeRemote": "Grande télécommande",
+    "largeRemoteText": "Uniquement dans EON",
+    "step1Title": "Allumer la télévision",
+    "step1Text": "Appuyez sur le bouton marche/arrêt de la petite télécommande.",
+    "step2Title": "Streaming",
+    "step2Text": "Choisissez une appli sur l'écran d'accueil.",
+    "step3Title": "Chaînes TV (EON)",
+    "step3Text": "Sélectionnez l'icône HDMI pour ouvrir EON, avec les chaînes en direct et la vidéothèque EON.",
+    "photos": {
+      "smallRemote": "Petite télécommande (Samsung) : allume la télévision et ouvre les applis.",
+      "largeRemote": "Grande télécommande (EON) : uniquement pour les chaînes TV dans EON."
+    }
+  },
+  "Wifi": {
+    "pageTitle": "Wi-Fi",
+    "title": "Se connecter",
+    "subtitle": "Copiez le mot de passe et connectez-vous.",
+    "apartmentWifi": "Wi-Fi de l'appartement",
+    "network": "Réseau",
+    "password": "Mot de passe",
+    "cantConnect": "Impossible de se connecter ?",
+    "cantConnectText": "Redémarrez le routeur, il se trouve juste derrière la télévision. Appuyez sur le bouton noir à l'arrière pour l'éteindre, attendez 10 secondes, puis appuyez de nouveau. Laissez-lui quelques minutes pour se reconnecter.",
+    "stillNotWorking": "Toujours rien ? Écrivez-nous"
+  },
+  "NoAccess": {
+    "pageTitle": "Accès refusé",
+    "title": "Ce lien n'est pas actif",
+    "text": "Merci d'ouvrir le lien personnel que nous vous avons envoyé."
+  },
+  "ThankYou": {
+    "pageTitle": "Merci",
+    "title": "Merci d'avoir séjourné chez nous",
+    "text": "Nous espérons que Zadar vous a plu et serons ravis de vous accueillir à nouveau."
+  },
+  "NotFound": {
+    "pageTitle": "Page introuvable",
+    "title": "Cette page n'existe pas",
+    "text": "Le lien est peut-être erroné ou n'est plus valable.",
+    "back": "Retour au guide"
+  },
+  "Error": {
+    "title": "Un problème est survenu",
+    "text": "C'est généralement temporaire. Réessayez dans un instant.",
+    "retry": "Réessayer"
+  }
+}
