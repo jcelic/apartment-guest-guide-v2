@@ -46,6 +46,12 @@ const errorMessages: Record<
     text: 'Di solito è un problema temporaneo. Riprovate tra poco.',
     retry: 'Riprova',
   },
+  pl: {
+    pageTitle: 'Coś poszło nie tak',
+    title: 'Coś poszło nie tak',
+    text: 'To zwykle chwilowy problem. Prosimy spróbować ponownie za moment.',
+    retry: 'Spróbuj ponownie',
+  },
 };
 
 const subscribe = () => () => {};
