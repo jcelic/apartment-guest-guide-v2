@@ -1,0 +1,602 @@
+{
+  "Metadata": {
+    "defaultTitle": "Guida per gli ospiti | Apartment Matea",
+    "titleTemplate": "%s | Apartment Matea",
+    "shareTitle": "Apartment Matea · Guida per gli ospiti",
+    "description": "Tutto ciò che serve per il vostro soggiorno: arrivo, Wi-Fi, parcheggio e consigli su Zara."
+  },
+  "Common": {
+    "backToHome": "Torna alla home",
+    "toggleTheme": "Attiva/disattiva la modalità scura",
+    "changeLanguage": "Cambia lingua ({language})",
+    "messageOnWhatsApp": "Scriveteci su WhatsApp",
+    "directions": "Indicazioni",
+    "directionsTo": "Indicazioni per {place}",
+    "call": "Chiama",
+    "keyButton": "tasto chiave",
+    "wifiCopied": "Password del Wi-Fi copiata",
+    "copyFailed": "Impossibile copiare. Password: {password}",
+    "copyPassword": "Copia la password"
+  },
+  "Header": {
+    "name": "Apartment Matea",
+    "city": "Zara"
+  },
+  "StayInfo": {
+    "checkIn": "Check-in",
+    "checkOut": "Check-out",
+    "floor": "Piano",
+    "floorValue": "3°"
+  },
+  "QuickActions": {
+    "copyWifi": "Copia password",
+    "doorCodes": "Codici porta",
+    "messageUs": "Scriveteci"
+  },
+  "Share": {
+    "title": "Condividi la guida",
+    "text": "Inviate il link a tutto il vostro gruppo",
+    "shareTitle": "Apartment Matea · Guida per gli ospiti",
+    "shareText": "Ecco la guida per gli ospiti del nostro soggiorno.",
+    "copied": "Link copiato",
+    "copyFailed": "Impossibile copiare. Link: {url}"
+  },
+  "DoorCodes": {
+    "title": "Codici porta",
+    "close": "Chiudi i codici porta",
+    "intro": "Vi servono entrambi i codici, in quest'ordine.",
+    "buildingTitle": "1 · Ingresso dell'edificio",
+    "buildingText": "Tastierino all'ingresso dell'edificio",
+    "lockboxTitle": "2 · Cassetta delle chiavi",
+    "lockboxText": "Sul muro accanto alla porta dell'appartamento"
+  },
+  "LanguageMenu": {
+    "title": "Lingua",
+    "close": "Chiudi il menu lingua",
+    "names": {
+      "en": "Inglese",
+      "hr": "Croato",
+      "de": "Tedesco",
+      "it": "Italiano"
+    }
+  },
+  "Photos": {
+    "stripTitle": "{label} · {count, plural, one {# foto} other {# foto}}",
+    "stripAria": "Foto: {label}",
+    "open": "Apri la foto: {caption}",
+    "openNumbered": "Apri la foto {number}: {caption}",
+    "previous": "Foto precedenti",
+    "next": "Foto successive"
+  },
+  "Lightbox": {
+    "viewer": "Visualizzatore foto",
+    "close": "Chiudi il visualizzatore",
+    "previous": "Foto precedente",
+    "next": "Foto successiva"
+  },
+  "StepCarousel": {
+    "steps": "Passaggi",
+    "stepOf": "Passaggio {current} di {total}",
+    "progress": "Avanzamento",
+    "back": "Indietro",
+    "next": "Avanti",
+    "allSteps": "Tutti i passaggi"
+  },
+  "Checklist": {
+    "checkOutBy": "Check-out entro le",
+    "nextGuests": "I prossimi ospiti arrivano lo stesso giorno: vi chiediamo di lasciare l'appartamento in orario. Grazie!",
+    "doneCount": "{done} di {total} fatti",
+    "progress": "Avanzamento della checklist"
+  },
+  "ExploreList": {
+    "categories": "Categorie"
+  },
+  "ExploreCard": {
+    "title": "Scoprite Zara",
+    "text": "Spiagge, cibo e luoghi da vedere che vi consigliamo.",
+    "imageAlt": "Veduta aerea del lungomare di Zara con l'Organo marino e il Saluto al Sole",
+    "beaches": "{count, plural, one {# spiaggia} other {# spiagge}}",
+    "restaurants": "{count, plural, one {# ristorante} other {# ristoranti}}",
+    "sights": "{count, plural, one {# luogo da vedere} other {# luoghi da vedere}}"
+  },
+  "Home": {
+    "eyebrow": "La vostra guida",
+    "welcome": "Benvenuti",
+    "welcomeName": "Benvenuti, {name}",
+    "subtitle": "Tutto per il vostro soggiorno, in un unico posto.",
+    "gettingHere": "Come arrivare",
+    "inTheApartment": "Nell'appartamento",
+    "aroundYou": "Nei dintorni",
+    "arrival": {
+      "title": "Arrivo",
+      "description": "Ingresso, cassetta delle chiavi, 3 passaggi"
+    },
+    "parking": {
+      "title": "Parcheggio",
+      "description": "Gratis con la tessera dell'appartamento"
+    },
+    "wifi": {
+      "title": "Wi-Fi",
+      "description": "Rete e password"
+    },
+    "essentials": {
+      "title": "Dove trovare tutto",
+      "description": "Tutto quello che serve"
+    },
+    "tv": {
+      "title": "TV",
+      "description": "Netflix, EON"
+    },
+    "coffee": {
+      "title": "Caffè",
+      "description": "Dolce Gusto, 10 passaggi"
+    },
+    "dishwasher": {
+      "title": "Lavastoviglie",
+      "description": "Programmi P1–P4"
+    },
+    "houseRules": {
+      "title": "Regole della casa",
+      "description": "Orari di silenzio"
+    },
+    "checkOut": {
+      "title": "Checklist per il check-out",
+      "description": "6 cose da fare prima delle 10:00"
+    },
+    "emergency": {
+      "title": "Emergenze · 112",
+      "description": "Numeri utili, farmacia 24 ore, ospedale"
+    }
+  },
+  "Arrival": {
+    "pageTitle": "Arrivo",
+    "eyebrow": "3 semplici passaggi",
+    "title": "Come entrare",
+    "subtitle": "Dalla strada al vostro appartamento in pochi minuti.",
+    "checkInTitle": "Check-in dalle 14:00",
+    "checkInText": "Se l'appartamento è pronto prima, vi avviseremo.",
+    "mapAlt": "Veduta aerea dell'edificio con il percorso a piedi dalla strada all'ingresso",
+    "mapLink": "Via Esempio 1 · Indicazioni",
+    "step1Title": "Entrate nell'edificio",
+    "step1Text": "L'ingresso si trova sul lato interno dell'edificio, nel cortile, non sul lato strada.",
+    "entrancePath": "Percorso per l'ingresso",
+    "entranceCode": "Codice d'ingresso",
+    "step2Title": "Trovate l'appartamento",
+    "step2Text": "3° piano: uscite dall'ascensore e girate a destra, la porta è proprio lì accanto. Nome sulla porta: <strong>Surname</strong>.",
+    "wayToDoor": "Percorso fino alla porta",
+    "keyLockbox": "Cassetta delle chiavi",
+    "step3Title": "Fateci sapere che siete arrivati",
+    "step3Text": "Scriveteci quando siete entrati. Ci serve l'orario di arrivo per la registrazione ufficiale degli ospiti (eVisitor).",
+    "parkingLink": "Arrivate in auto? Ecco il parcheggio",
+    "photos": {
+      "exterior1": "Individuate questo edificio.",
+      "exterior2": "L'edificio da un'altra prospettiva.",
+      "exterior3": "Andate verso l'ingresso laterale.",
+      "path1": "Entrate da questo passo carrabile.",
+      "path2": "Proseguite dritto.",
+      "path3": "L'ingresso si trova nel cortile.",
+      "path4": "Entrate nell'edificio da questa porta.",
+      "path5": "Digitate il codice sul tastierino.",
+      "apartment1": "Una volta dentro, andate verso l'ascensore.",
+      "apartment2": "Prendete l'ascensore fino al terzo piano.",
+      "apartment3": "Uscite dall'ascensore e girate a destra. La porta dell'appartamento è accanto all'ascensore.",
+      "apartment4": "Cercate questa porta.",
+      "apartment5": "Cercate il nome \"Surname\" sulla porta dell'appartamento.",
+      "apartment6": "La cassetta di sicurezza per le chiavi è fissata al muro accanto alla porta dell'appartamento."
+    }
+  },
+  "CheckOut": {
+    "pageTitle": "Check-out",
+    "goodbyeTitle": "Prima di partire, avvisateci",
+    "goodbyeText": "Mandateci un messaggio quando partite, così possiamo iniziare le pulizie.",
+    "items": {
+      "ac": {
+        "title": "Spegnete l'aria condizionata",
+        "text": "Spegnete il climatizzatore."
+      },
+      "windows": {
+        "title": "Chiudete finestre e porte del terrazzo",
+        "text": "Chiudete tutte le finestre e le porte del terrazzo."
+      },
+      "lights": {
+        "title": "Spegnete le luci",
+        "text": "In tutte le stanze."
+      },
+      "door": {
+        "title": "Chiudete la porta a chiave",
+        "text": "Controllate che l'appartamento sia chiuso a chiave."
+      },
+      "key": {
+        "title": "Restituite la chiave",
+        "text": "Rimettetela nella cassetta delle chiavi, poi cambiate la combinazione numerica."
+      },
+      "parking": {
+        "title": "Lasciate la tessera del parcheggio",
+        "text": "Nella cassetta della posta, solo dopo essere usciti con l'auto."
+      }
+    }
+  },
+  "Coffee": {
+    "pageTitle": "Macchina del caffè",
+    "title": "Preparate un caffè",
+    "subtitle": "Dolce Gusto · 10 brevi passaggi da scorrere.",
+    "waterTitle": "Serbatoio dell'acqua",
+    "waterText": "Inseritelo fino in fondo. Delle piccole bolle d'aria sul fondo indicano che è ben inserito, altrimenti non esce acqua.",
+    "milkTitle": "Cappuccino e Chococino",
+    "milkText": "Servono due capsule: prima il latte, aspettate la luce verde, poi il caffè o la cioccolata.",
+    "steps": {
+      "power": {
+        "title": "Accendete la macchina",
+        "text": "Premete il pulsante di accensione. La luce lampeggia in rosso mentre la macchina si scalda."
+      },
+      "ready": {
+        "title": "Aspettate la luce verde",
+        "text": "Quando la luce diventa verde, la macchina è pronta."
+      },
+      "holderOut": {
+        "title": "Estraete il porta-capsula",
+        "text": "Sollevate il coperchio superiore ed estraete il porta-capsula."
+      },
+      "capsule": {
+        "title": "Inserite una capsula",
+        "text": "Mettete una capsula di caffè nel porta-capsula."
+      },
+      "holderIn": {
+        "title": "Reinserite il porta-capsula",
+        "text": "Spingete il porta-capsula nella macchina e chiudete il coperchio."
+      },
+      "water": {
+        "title": "Scegliete la quantità d'acqua",
+        "text": "Spostate il selettore in su o in giù fino al numero di tacche indicato sulla capsula."
+      },
+      "cup": {
+        "title": "Posizionate la tazza",
+        "text": "Mettete la tazza sotto l'erogatore del caffè."
+      },
+      "brew": {
+        "title": "Preparate il caffè",
+        "text": "Spostate la leva sul lato rosso per le bevande calde. La macchina si ferma da sola."
+      },
+      "readyAgain": {
+        "title": "Aspettate di nuovo il verde",
+        "text": "Aspettate che il pulsante di accensione diventi verde prima di estrarre il porta-capsula."
+      },
+      "cleanUp": {
+        "title": "Togliete la capsula usata",
+        "text": "Sollevate il coperchio, estraete il porta-capsula e buttate la capsula usata. Non lasciate capsule usate nella macchina."
+      }
+    }
+  },
+  "Dishwasher": {
+    "pageTitle": "Lavastoviglie",
+    "title": "Avviate la lavastoviglie",
+    "subtitle": "Una pastiglia, tre pulsanti.",
+    "step1Title": "Mettete una pastiglia",
+    "step1Text": "Mettete una pastiglia nella vaschetta del detersivo e chiudete il coperchio. Le pastiglie sono sotto il lavello.",
+    "capsule": "Pastiglia",
+    "step2Title": "Accendetela",
+    "step2Text": "Premete il pulsante di accensione <button>1</button>.",
+    "step2Alt": "Pulsante di accensione della lavastoviglie, contrassegnato con 1",
+    "step3Title": "Scegliete un programma",
+    "step3Text": "Premete PROGR. <button>2</button> finché non appare il programma desiderato. Consultate l'elenco qui sotto.",
+    "step3Alt": "Pulsante dei programmi della lavastoviglie, contrassegnato con 2",
+    "step4Title": "Avviate e chiudete",
+    "step4Text": "Premete START <button>3</button>, poi chiudete lo sportello.",
+    "step4Alt": "Pulsante di avvio della lavastoviglie, contrassegnato con 3",
+    "step5Title": "Quando ha finito",
+    "step5Text": "Tenete premuto START <start>3</start> per qualche secondo per azzerare il programma, poi premete il pulsante di accensione <power>1</power> per spegnerla.",
+    "whichProgram": "Quale programma?",
+    "recommended": "Consigliato",
+    "manualTitle": "Manuale completo (PDF)",
+    "manualText": "Altri programmi · copia cartacea nel mobile della cucina",
+    "photos": {
+      "capsules": "Le pastiglie sono sotto il lavello.",
+      "compartment1": "Mettete una pastiglia nella vaschetta del detersivo.",
+      "compartment2": "Chiudete il coperchio prima di avviare la lavastoviglie."
+    },
+    "programs": {
+      "P1": {
+        "name": "Intensivo · 75 °C",
+        "use": "Stoviglie molto sporche"
+      },
+      "P2": {
+        "name": "Universale · 50–60 °C",
+        "use": "Per la maggior parte dei lavaggi"
+      },
+      "P3": {
+        "name": "ECO · 45 °C",
+        "use": "Risparmio energetico"
+      },
+      "P4": {
+        "name": "Rapido",
+        "use": "Lavaggio veloce"
+      }
+    }
+  },
+  "Emergency": {
+    "pageTitle": "Aiuto ed emergenze",
+    "title": "Avete bisogno di aiuto?",
+    "anyEmergency": "Per qualsiasi emergenza",
+    "emergencyText": "Polizia, ambulanza e vigili del fuoco, si parla anche inglese.",
+    "call112": "Chiama il 112",
+    "callingFrom": "Chiamate dall'appartamento?",
+    "address": "Via Esempio 1, Zadar · 3° piano",
+    "medicalNearby": "Assistenza medica nelle vicinanze",
+    "somethingWrong": "Problemi nell'appartamento?",
+    "messageHost": "Scrivete al proprietario",
+    "messageHostText": "Elettrodomestico guasto, chiusi fuori, perdite d'acqua: via WhatsApp",
+    "numbers": {
+      "ambulance": "Ambulanza",
+      "police": "Polizia",
+      "fire": "Pompieri"
+    },
+    "medical": {
+      "pharmacy": {
+        "name": "Farmacia Jadran",
+        "status": "Aperta 24 ore su 24",
+        "text": "Aperta giorno e notte, anche nei fine settimana e nei giorni festivi. Farmaci con e senza ricetta."
+      },
+      "hospital": {
+        "name": "Pronto soccorso",
+        "status": "Ospedale generale di Zara",
+        "text": "Per situazioni mediche urgenti che richiedono cure immediate all'Ospedale generale di Zara."
+      },
+      "clinic": {
+        "name": "Ambulatorio per turisti",
+        "status": "Casi non urgenti, anche nel weekend",
+        "text": "Assistenza medica per turisti e visitatori con problemi di salute non urgenti, anche nei fine settimana e nei giorni festivi."
+      }
+    }
+  },
+  "Essentials": {
+    "pageTitle": "Dove trovare tutto",
+    "title": "Dove si trova?",
+    "subtitle": "Toccate un oggetto per vedere in foto dove si trova esattamente.",
+    "groups": {
+      "kitchen": "Cucina",
+      "bathroom": "Bagno",
+      "hallway": "Corridoio",
+      "livingRoom": "Soggiorno"
+    },
+    "items": {
+      "ironingBoard": {
+        "title": "Asse da stiro",
+        "text": "Dietro la porta della cucina, accanto alla pattumiera."
+      },
+      "manuals": {
+        "title": "Manuali degli elettrodomestici",
+        "text": "Nel mobile a sinistra della cucina."
+      },
+      "hairDryer": {
+        "title": "Asciugacapelli",
+        "text": "In bagno, nel cassetto centrale sotto il lavandino."
+      },
+      "capsules": {
+        "title": "Capsule per la lavatrice",
+        "text": "In bagno, nel primo cassetto sotto il lavandino."
+      },
+      "iron": {
+        "title": "Ferro da stiro",
+        "text": "Nell'armadio del corridoio accanto al bagno, sul lato sinistro."
+      },
+      "towels": {
+        "title": "Asciugamani extra",
+        "text": "Nell'armadio del corridoio accanto al bagno, sul lato destro."
+      },
+      "firstAid": {
+        "title": "Kit di pronto soccorso",
+        "text": "Nel mobile della TV, sul lato destro, dietro l'anta di vetro."
+      }
+    }
+  },
+  "Explore": {
+    "pageTitle": "Scoprite Zara",
+    "title": "I nostri consigli su Zara",
+    "subtitle": "I posti dove manderemmo i nostri amici.",
+    "categories": {
+      "beaches": "Spiagge",
+      "food": "Mangiare e bere",
+      "sights": "Da vedere",
+      "stores": "Negozi"
+    },
+    "places": {
+      "kolovare": {
+        "name": "Spiaggia di Kolovare",
+        "badge": "14 min a piedi",
+        "text": "La spiaggia cittadina più amata, con acqua cristallina, zone d'ombra e bar nelle vicinanze."
+      },
+      "borik": {
+        "name": "Spiaggia di Borik",
+        "badge": "13 min in auto",
+        "text": "Spiaggia adatta alle famiglie, con acqua bassa, ristoranti vicini e tanti servizi."
+      },
+      "uskok": {
+        "name": "Spiaggia di Uskok",
+        "badge": "13 min in auto",
+        "text": "Una spiaggia vivace nella zona di Puntamika, ideale per nuotare, prendere il sole e rilassarsi nei bar sulla spiaggia."
+      },
+      "butler": {
+        "name": "Butler Gourmet & Cocktails",
+        "badge": "Cocktail e cucina",
+        "text": "Ristorante moderno con cocktail bar, atmosfera elegante e piatti creativi."
+      },
+      "harbor": {
+        "name": "Harbor CookHouse",
+        "badge": "Sul mare",
+        "text": "Ristorante sul mare molto apprezzato, famoso per ottimi hamburger, bistecche e cocktail."
+      },
+      "bruschetta": {
+        "name": "Bruschetta",
+        "badge": "Cucina mediterranea",
+        "text": "Uno dei ristoranti più noti di Zara, con cucina mediterranea in riva al mare."
+      },
+      "fosa": {
+        "name": "Foša",
+        "badge": "Alta cucina",
+        "text": "Ristorante raffinato accanto alle mura storiche della città e al porticciolo."
+      },
+      "kantuna": {
+        "name": "4 Kantuna",
+        "badge": "Cucina dalmata",
+        "text": "Ristorante dalmata tradizionale con piatti locali nel cuore del centro storico."
+      },
+      "garden": {
+        "name": "The Garden Lounge",
+        "badge": "Cocktail al tramonto",
+        "text": "Il posto perfetto per un cocktail al tramonto con vista panoramica sul mare."
+      },
+      "seaOrgan": {
+        "name": "Organo marino",
+        "badge": "Da non perdere",
+        "text": "Un'installazione architettonica unica che crea musica con le onde del mare."
+      },
+      "greetingSun": {
+        "name": "Saluto al Sole",
+        "badge": "Per il tramonto",
+        "text": "Un'installazione luminosa alimentata a energia solare, da vedere al tramonto."
+      },
+      "donat": {
+        "name": "Chiesa di San Donato",
+        "badge": "Monumento storico",
+        "text": "Il simbolo di Zara e una delle chiese preromaniche più importanti della Croazia."
+      },
+      "forum": {
+        "name": "Foro romano",
+        "badge": "Rovine antiche",
+        "text": "Il più grande foro romano della costa orientale dell'Adriatico."
+      },
+      "peoplesSquare": {
+        "name": "Piazza del Popolo",
+        "badge": "Centro città",
+        "text": "Il cuore storico di Zara, animato da bar e dalla vita cittadina."
+      },
+      "kalelarga": {
+        "name": "Kalelarga",
+        "badge": "Centro storico",
+        "text": "La via più famosa di Zara e il centro della vita cittadina."
+      },
+      "cathedral": {
+        "name": "Cattedrale di Sant'Anastasia",
+        "badge": "Cattedrale",
+        "text": "La cattedrale più grande della Dalmazia, con un campanile da cui si vede tutta la città."
+      },
+      "landGate": {
+        "name": "Porta di Terraferma",
+        "badge": "Porta storica",
+        "text": "L'antico ingresso al centro storico, parte delle fortificazioni veneziane di Zara."
+      },
+      "supernova": {
+        "name": "Supernova Zadar",
+        "badge": "Centro commerciale",
+        "text": "Il centro commerciale più grande di Zara, con supermercato, bar, McDonald’s e tanti negozi."
+      },
+      "lidl": {
+        "name": "Lidl",
+        "badge": "Spesa di tutti i giorni",
+        "text": "Supermercato molto frequentato per alimentari, bevande e prodotti di uso quotidiano."
+      },
+      "kaufland": {
+        "name": "Kaufland",
+        "badge": "Ampia scelta",
+        "text": "Grande supermercato con alimentari, articoli per la casa e frutta e verdura fresca."
+      },
+      "cityGalleria": {
+        "name": "City Galleria",
+        "badge": "Negozi e mercato",
+        "text": "Centro commerciale con negozi, bar e un mercato locale."
+      },
+      "farmacia": {
+        "name": "Farmacia City Galleria",
+        "badge": "Senza ricetta",
+        "text": "Per antidolorifici, vitamine, cosmetici, creme solari e prodotti per la salute di tutti i giorni. I farmaci con ricetta non sono disponibili."
+      }
+    }
+  },
+  "HouseRules": {
+    "pageTitle": "Regole della casa",
+    "title": "Regole della casa",
+    "subtitle": "Poche cose semplici per far stare bene tutti.",
+    "checkIn": "Check-in",
+    "from": "dalle",
+    "checkOut": "Check-out",
+    "by": "entro le",
+    "timesNote": "Questi orari ci danno il tempo di preparare l'appartamento per i prossimi ospiti.",
+    "quietHours": "Orari di silenzio",
+    "quietText": "È un condominio abitato da residenti fissi: nel corridoio, sulle scale e in ascensore i rumori si sentono molto.",
+    "afternoon": "Pomeriggio",
+    "night": "Notte",
+    "kidsNote": "Viaggiate con bambini? Vi chiediamo di evitare corse e giochi rumorosi nel corridoio e in ascensore.",
+    "inTheApartment": "Nell'appartamento",
+    "rules": {
+      "smoking": {
+        "title": "Vietato fumare all'interno",
+        "text": "Sul terrazzo si può fumare."
+      },
+      "door": {
+        "title": "Tenete la porta chiusa a chiave",
+        "text": "Anche quando siete dentro."
+      },
+      "breaks": {
+        "title": "Diteci se si rompe qualcosa",
+        "text": "Nessun problema, fatecelo sapere appena possibile."
+      }
+    }
+  },
+  "Parking": {
+    "pageTitle": "Parcheggio",
+    "title": "Parcheggio",
+    "guestsOnly": "Solo per gli ospiti",
+    "guestsOnlyText": "Le informazioni sul parcheggio sono disponibili per gli ospiti nella versione reale."
+  },
+  "Tv": {
+    "pageTitle": "TV",
+    "title": "Guardare la TV",
+    "subtitle": "Due telecomandi, due compiti. Ecco come usarli.",
+    "smallRemote": "Telecomando piccolo",
+    "smallRemoteText": "Per tutto: accensione, app, Netflix",
+    "largeRemote": "Telecomando grande",
+    "largeRemoteText": "Solo dentro EON",
+    "step1Title": "Accendete la TV",
+    "step1Text": "Premete il tasto di accensione sul telecomando piccolo.",
+    "step2Title": "Streaming",
+    "step2Text": "Scegliete un'app nella schermata iniziale.",
+    "step3Title": "Canali TV (EON)",
+    "step3Text": "Selezionate l'icona HDMI per aprire EON, con i canali in diretta e la videoteca EON.",
+    "photos": {
+      "smallRemote": "Telecomando piccolo (Samsung): accende la TV e apre le app.",
+      "largeRemote": "Telecomando grande (EON): solo per i canali TV dentro EON."
+    }
+  },
+  "Wifi": {
+    "pageTitle": "Wi-Fi",
+    "title": "Connettetevi",
+    "subtitle": "Copiate la password e connettetevi.",
+    "apartmentWifi": "Wi-Fi dell'appartamento",
+    "network": "Rete",
+    "password": "Password",
+    "cantConnect": "Non riuscite a connettervi?",
+    "cantConnectText": "Riavviate il router, si trova proprio dietro la TV. Premete il pulsante nero sul retro per spegnerlo, aspettate 10 secondi e premetelo di nuovo. Dategli un paio di minuti per riconnettersi.",
+    "stillNotWorking": "Ancora niente? Scriveteci"
+  },
+  "NoAccess": {
+    "pageTitle": "Accesso non consentito",
+    "title": "Questo link non è attivo",
+    "text": "Aprite il link personale che vi abbiamo inviato."
+  },
+  "ThankYou": {
+    "pageTitle": "Grazie",
+    "title": "Grazie per aver soggiornato da noi",
+    "text": "Speriamo che Zara vi sia piaciuta e saremo felici di accogliervi di nuovo."
+  },
+  "NotFound": {
+    "pageTitle": "Pagina non trovata",
+    "title": "Questa pagina non esiste",
+    "text": "Il link potrebbe essere sbagliato o non più valido.",
+    "back": "Torna alla guida"
+  },
+  "Error": {
+    "title": "Qualcosa è andato storto",
+    "text": "Di solito è un problema temporaneo. Riprovate tra poco.",
+    "retry": "Riprova"
+  }
+}

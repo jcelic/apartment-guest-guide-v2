@@ -40,6 +40,12 @@ const errorMessages: Record<
     text: 'Das ist meist nur vorübergehend. Bitte versuchen Sie es gleich noch einmal.',
     retry: 'Erneut versuchen',
   },
+  it: {
+    pageTitle: 'Qualcosa è andato storto',
+    title: 'Qualcosa è andato storto',
+    text: 'Di solito è un problema temporaneo. Riprovate tra poco.',
+    retry: 'Riprova',
+  },
 };
 
 const subscribe = () => () => {};

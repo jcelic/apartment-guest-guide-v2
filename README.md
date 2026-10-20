@@ -40,7 +40,7 @@ Without a token, the site shows the no-access page.
 - Dark mode that follows the system setting and remembers the guest's choice
 - Private access with personal guest links, no account needed
 - Thank-you page once a reservation is deactivated
-- Multilingual guide with a language picker that remembers the guest's choice (English, Croatian and German so far)
+- Multilingual guide with a language picker that remembers the guest's choice (English, Croatian, German and Italian so far)
 - Share button that sends the guide link to the rest of the group or copies it
 - Link preview with a photo, title and description when the link is shared
 
