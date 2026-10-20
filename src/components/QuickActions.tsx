@@ -4,23 +4,28 @@ import { useState } from 'react';
 import { LockKeyhole, MessageCircle, Wifi } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { toast } from 'sonner';
+import type { DoorCodes } from '@/lib/apartment';
 import DoorCodesDialog from './DoorCodesDialog';
 import QuickAction from './QuickAction';
 
-const WIFI_PASSWORD = 'example-password';
 const WHATSAPP_URL = 'https://wa.me/YOUR_PHONE_NUMBER';
 
-const QuickActions = () => {
+type QuickActionsProps = {
+  wifiPassword: string;
+  doorCodes: DoorCodes;
+};
+
+const QuickActions = ({ wifiPassword, doorCodes }: QuickActionsProps) => {
   const t = useTranslations('QuickActions');
   const tCommon = useTranslations('Common');
   const [codesDialogOpen, setCodesDialogOpen] = useState(false);
 
   const onCopyWifi = async () => {
     try {
-      await navigator.clipboard.writeText(WIFI_PASSWORD);
+      await navigator.clipboard.writeText(wifiPassword);
       toast.success(tCommon('wifiCopied'));
     } catch {
-      toast.error(tCommon('copyFailed', { password: WIFI_PASSWORD }));
+      toast.error(tCommon('copyFailed', { password: wifiPassword }));
     }
   };
 
@@ -53,6 +58,7 @@ const QuickActions = () => {
 
       <DoorCodesDialog
         open={codesDialogOpen}
+        codes={doorCodes}
         onClose={() => setCodesDialogOpen(false)}
       />
     </>

@@ -5,15 +5,13 @@ import { getTranslations } from 'next-intl/server';
 import CopyPasswordButton from '@/components/CopyPasswordButton';
 import PageHeader from '@/components/PageHeader';
 import PageTransition from '@/components/PageTransition';
+import { WIFI_NETWORK, WIFI_PASSWORD } from '@/lib/apartment';
 
 export const generateMetadata = async (): Promise<Metadata> => {
   const t = await getTranslations('Wifi');
 
   return { title: t('pageTitle') };
 };
-
-const WIFI_NETWORK = 'Example-WiFi';
-const WIFI_PASSWORD = 'example-password';
 
 const WifiPage = () => {
   const t = useTranslations('Wifi');

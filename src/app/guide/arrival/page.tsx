@@ -29,6 +29,7 @@ import PageHeader from '@/components/PageHeader';
 import PhotoStrip from '@/components/PhotoStrip';
 import Step from '@/components/Step';
 import PageTransition from '@/components/PageTransition';
+import { DOOR_CODES } from '@/lib/apartment';
 
 export const generateMetadata = async (): Promise<Metadata> => {
   const t = await getTranslations('Arrival');
@@ -129,7 +130,7 @@ const ArrivalPage = () => {
                 {t('entranceCode')}
               </h3>
               <p className="mt-3 flex items-center gap-2 rounded-2xl bg-accent-soft px-5 py-4 text-3xl leading-none font-extrabold tracking-wider tabular-nums">
-                <span>00</span>
+                <span>{DOOR_CODES.building.prefix}</span>
                 <span
                   role="img"
                   aria-label={tCommon('keyButton')}
@@ -137,7 +138,7 @@ const ArrivalPage = () => {
                 >
                   <KeyRound className="size-5" />
                 </span>
-                <span>0000</span>
+                <span>{DOOR_CODES.building.code}</span>
               </p>
             </div>
           </Step>
@@ -164,7 +165,7 @@ const ArrivalPage = () => {
                 photos={withCaptions(lockboxPhotos)}
               />
               <p className="mt-3 flex items-center gap-2 rounded-2xl bg-accent-soft px-5 py-4 text-3xl leading-none font-extrabold tracking-wider tabular-nums">
-                <span>0000</span>
+                <span>{DOOR_CODES.lockbox}</span>
               </p>
             </div>
           </Step>

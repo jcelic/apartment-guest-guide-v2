@@ -3,10 +3,12 @@
 import type { ReactNode } from 'react';
 import { Building2, DoorClosedLocked, KeyRound } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+import type { DoorCodes } from '@/lib/apartment';
 import Sheet from './Sheet';
 
 type DoorCodesDialogProps = {
   open: boolean;
+  codes: DoorCodes;
   onClose: () => void;
 };
 
@@ -38,7 +40,7 @@ const CodeCard = ({ icon, title, description, children }: CodeCardProps) => {
   );
 };
 
-const DoorCodesDialog = ({ open, onClose }: DoorCodesDialogProps) => {
+const DoorCodesDialog = ({ open, codes, onClose }: DoorCodesDialogProps) => {
   const t = useTranslations('DoorCodes');
   const tCommon = useTranslations('Common');
 
@@ -57,7 +59,7 @@ const DoorCodesDialog = ({ open, onClose }: DoorCodesDialogProps) => {
           title={t('buildingTitle')}
           description={t('buildingText')}
         >
-          <span>00</span>
+          <span>{codes.building.prefix}</span>
           <span
             role="img"
             aria-label={tCommon('keyButton')}
@@ -65,7 +67,7 @@ const DoorCodesDialog = ({ open, onClose }: DoorCodesDialogProps) => {
           >
             <KeyRound className="size-5" />
           </span>
-          <span>0000</span>
+          <span>{codes.building.code}</span>
         </CodeCard>
 
         <CodeCard
@@ -73,7 +75,7 @@ const DoorCodesDialog = ({ open, onClose }: DoorCodesDialogProps) => {
           title={t('lockboxTitle')}
           description={t('lockboxText')}
         >
-          <span>0000</span>
+          <span>{codes.lockbox}</span>
         </CodeCard>
       </div>
     </Sheet>

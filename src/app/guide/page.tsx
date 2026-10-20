@@ -20,6 +20,7 @@ import Header from '@/components/Header';
 import QuickActions from '@/components/QuickActions';
 import ShareGuide from '@/components/ShareGuide';
 import StayInfo from '@/components/StayInfo';
+import { DOOR_CODES, WIFI_PASSWORD } from '@/lib/apartment';
 import { SESSION_COOKIE, readSession } from '@/lib/session';
 import PageTransition from '@/components/PageTransition';
 
@@ -56,7 +57,7 @@ const Page = async () => {
             <StayInfo />
           </div>
 
-          <QuickActions />
+          <QuickActions wifiPassword={WIFI_PASSWORD} doorCodes={DOOR_CODES} />
 
           {session && <ShareGuide token={session.token} />}
 
