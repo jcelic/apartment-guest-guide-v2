@@ -550,7 +550,6 @@
     "pageTitle": "TV",
     "title": "Watching TV",
     "subtitle": "Two remotes, two jobs. Here's which is which.",
-    "photoPlaceholder": "Photo of both remotes",
     "smallRemote": "Small remote",
     "smallRemoteText": "Everything: power, apps, Netflix",
     "largeRemote": "Large remote",
@@ -560,7 +559,11 @@
     "step2Title": "Streaming",
     "step2Text": "Pick an app on the home screen.",
     "step3Title": "TV channels (EON)",
-    "step3Text": "Select the HDMI icon to open EON — live channels and the EON library."
+    "step3Text": "Select the HDMI icon to open EON — live channels and the EON library.",
+    "photos": {
+      "smallRemote": "Small remote (Samsung): turns on the TV and opens the apps.",
+      "largeRemote": "Large remote (EON): only for TV channels inside EON."
+    }
   },
   "Wifi": {
     "pageTitle": "Wi-Fi",
