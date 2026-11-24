@@ -23,15 +23,15 @@
     "city": "Zara"
   },
   "StayInfo": {
-    "checkIn": "Check-in",
-    "checkOut": "Check-out",
+    "checkIn": "Check‑in",
+    "checkOut": "Check‑out",
     "floor": "Piano",
     "floorValue": "3°"
   },
   "QuickActions": {
-    "copyWifi": "Copia password",
+    "copyWifi": "Password Wi‑Fi",
     "doorCodes": "Codici porta",
-    "messageUs": "Scriveteci"
+    "messageUs": "Contatto"
   },
   "Share": {
     "title": "Condividi la guida",
@@ -277,7 +277,7 @@
     "step1Text": "Mettete una pastiglia nella vaschetta del detersivo e chiudete il coperchio. Le pastiglie sono sotto il lavello.",
     "capsule": "Pastiglia",
     "step2Title": "Accendetela",
-    "step2Text": "Premete il pulsante di accensione <button>1</button>.",
+    "step2Text": "Premete il pulsante di accensione <button>1</button>",
     "step2Alt": "Pulsante di accensione della lavastoviglie, contrassegnato con 1",
     "step3Title": "Scegliete un programma",
     "step3Text": "Premete PROGR. <button>2</button> finché non appare il programma desiderato. Consultate l'elenco qui sotto.",
@@ -302,7 +302,7 @@
         "use": "Stoviglie molto sporche"
       },
       "P2": {
-        "name": "Universale · 50–60 °C",
+        "name": "Universale · 50–\u206060\u00a0°C",
         "use": "Per la maggior parte dei lavaggi"
       },
       "P3": {
@@ -316,7 +316,7 @@
     }
   },
   "Emergency": {
-    "pageTitle": "Aiuto ed emergenze",
+    "pageTitle": "Emergenze",
     "title": "Avete bisogno di aiuto?",
     "anyEmergency": "Per qualsiasi emergenza",
     "emergencyText": "Polizia, ambulanza e vigili del fuoco, si parla anche inglese.",
@@ -577,8 +577,7 @@
     "network": "Rete",
     "password": "Password",
     "cantConnect": "Non riuscite a connettervi?",
-    "cantConnectText": "Riavviate il router, si trova proprio dietro la TV. Premete il pulsante nero sul retro per spegnerlo, aspettate 10 secondi e premetelo di nuovo. Dategli un paio di minuti per riconnettersi.",
-    "stillNotWorking": "Ancora niente? Scriveteci"
+    "cantConnectText": "Riavviate il router, si trova proprio dietro la TV. Premete il pulsante nero sul retro per spegnerlo, aspettate 10 secondi e premetelo di nuovo. Dategli un paio di minuti per riconnettersi."
   },
   "NoAccess": {
     "pageTitle": "Accesso non consentito",

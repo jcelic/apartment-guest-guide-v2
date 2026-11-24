@@ -24,7 +24,9 @@ const PageHeader = ({ title }: PageHeaderProps) => {
           <ArrowLeft className="size-5" />
         </Link>
 
-        <p className="ml-2 flex-1 truncate text-lg font-extrabold">{title}</p>
+        <p className="ml-2 line-clamp-2 min-w-0 flex-1 text-lg leading-tight font-extrabold">
+          {title}
+        </p>
 
         <ThemeToggle className="flex size-11 cursor-pointer items-center justify-center rounded-2xl border border-line bg-surface transition-colors duration-200 hover:bg-surface-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent" />
         <LanguageSheet className="h-11 cursor-pointer rounded-2xl border border-line bg-surface px-3 text-sm font-bold transition-colors duration-200 hover:bg-surface-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent" />

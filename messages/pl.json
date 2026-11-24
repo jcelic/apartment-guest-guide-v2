@@ -29,9 +29,9 @@
     "floorValue": "3."
   },
   "QuickActions": {
-    "copyWifi": "Kopiuj hasło",
+    "copyWifi": "Hasło do Wi‑Fi",
     "doorCodes": "Kody do drzwi",
-    "messageUs": "Napisz do nas"
+    "messageUs": "Kontakt"
   },
   "Share": {
     "title": "Udostępnij przewodnik",
@@ -277,7 +277,7 @@
     "step1Text": "Proszę włożyć jedną tabletkę do pojemnika na detergent i zamknąć klapkę. Tabletki są pod zlewem.",
     "capsule": "Tabletka",
     "step2Title": "Włączyć zmywarkę",
-    "step2Text": "Proszę nacisnąć przycisk zasilania <button>1</button>.",
+    "step2Text": "Proszę nacisnąć przycisk zasilania <button>1</button>",
     "step2Alt": "Przycisk zasilania zmywarki, oznaczony cyfrą 1",
     "step3Title": "Wybrać program",
     "step3Text": "Proszę naciskać PROGR. <button>2</button>, aż pojawi się wybrany program. Lista programów jest poniżej.",
@@ -302,7 +302,7 @@
         "use": "Bardzo brudne naczynia"
       },
       "P2": {
-        "name": "Uniwersalny · 50–60°C",
+        "name": "Uniwersalny · 50–\u206060°C",
         "use": "Do codziennego zmywania"
       },
       "P3": {
@@ -518,9 +518,9 @@
     "pageTitle": "Regulamin",
     "title": "Regulamin",
     "subtitle": "Kilka prostych zasad, dzięki którym wszystkim jest dobrze.",
-    "checkIn": "Zameldowanie",
+    "checkIn": "Przyjazd",
     "from": "od",
-    "checkOut": "Wymeldowanie",
+    "checkOut": "Wyjazd",
     "by": "do",
     "timesNote": "Dzięki tym godzinom mamy czas przygotować apartament dla kolejnych gości.",
     "quietHours": "Cisza",
@@ -577,8 +577,7 @@
     "network": "Sieć",
     "password": "Hasło",
     "cantConnect": "Nie można się połączyć?",
-    "cantConnectText": "Proszę zrestartować router, stoi tuż za telewizorem. Proszę nacisnąć czarny przycisk z tyłu, żeby go wyłączyć, odczekać 10 sekund i nacisnąć go ponownie. Po kilku minutach połączenie powinno wrócić.",
-    "stillNotWorking": "Nadal nie działa? Napisz do nas"
+    "cantConnectText": "Proszę zrestartować router, stoi tuż za telewizorem. Proszę nacisnąć czarny przycisk z tyłu, żeby go wyłączyć, odczekać 10 sekund i nacisnąć go ponownie. Po kilku minutach połączenie powinno wrócić."
   },
   "NoAccess": {
     "pageTitle": "Brak dostępu",

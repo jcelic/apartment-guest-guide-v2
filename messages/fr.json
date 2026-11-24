@@ -29,9 +29,9 @@
     "floorValue": "3e"
   },
   "QuickActions": {
-    "copyWifi": "Copier le mot de passe",
+    "copyWifi": "Mot de passe Wi‑Fi",
     "doorCodes": "Codes d'accès",
-    "messageUs": "Nous écrire"
+    "messageUs": "Contact"
   },
   "Share": {
     "title": "Partager le guide",
@@ -277,7 +277,7 @@
     "step1Text": "Mettez une pastille dans le compartiment à détergent et refermez le couvercle. Les pastilles sont sous l'évier.",
     "capsule": "Pastille",
     "step2Title": "Allumer",
-    "step2Text": "Appuyez sur le bouton marche/arrêt <button>1</button>.",
+    "step2Text": "Appuyez sur le bouton marche/arrêt <button>1</button>",
     "step2Alt": "Bouton marche/arrêt du lave-vaisselle, marqué 1",
     "step3Title": "Choisir un programme",
     "step3Text": "Appuyez sur PROGR. <button>2</button> jusqu'au programme souhaité. Voir la liste ci-dessous.",
@@ -302,7 +302,7 @@
         "use": "Vaisselle très sale"
       },
       "P2": {
-        "name": "Universel · 50–60 °C",
+        "name": "Universel · 50–\u206060\u00a0°C",
         "use": "Pour la plupart des lavages"
       },
       "P3": {
@@ -515,7 +515,7 @@
     }
   },
   "HouseRules": {
-    "pageTitle": "Règlement intérieur",
+    "pageTitle": "Règlement",
     "title": "Règlement intérieur",
     "subtitle": "Quelques règles simples pour que tout le monde soit bien.",
     "checkIn": "Arrivée",
@@ -577,8 +577,7 @@
     "network": "Réseau",
     "password": "Mot de passe",
     "cantConnect": "Impossible de se connecter ?",
-    "cantConnectText": "Redémarrez le routeur, il se trouve juste derrière la télévision. Appuyez sur le bouton noir à l'arrière pour l'éteindre, attendez 10 secondes, puis appuyez de nouveau. Laissez-lui quelques minutes pour se reconnecter.",
-    "stillNotWorking": "Toujours rien ? Écrivez-nous"
+    "cantConnectText": "Redémarrez le routeur, il se trouve juste derrière la télévision. Appuyez sur le bouton noir à l'arrière pour l'éteindre, attendez 10 secondes, puis appuyez de nouveau. Laissez-lui quelques minutes pour se reconnecter."
   },
   "NoAccess": {
     "pageTitle": "Accès refusé",

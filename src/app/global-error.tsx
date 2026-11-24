@@ -93,7 +93,7 @@ const GlobalError = ({ retry }: GlobalErrorProps) => {
       className={`${nunito.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <body className="flex min-h-full flex-col">
+      <body className="flex min-h-full flex-col wrap-break-word">
         <title>{messages.pageTitle}</title>
         <NextIntlClientProvider locale={locale} messages={{ Error: messages }}>
           <ThemeProvider

@@ -55,7 +55,7 @@ const RootLayout = async ({ children }: LayoutProps<'/'>) => {
       className={`${nunito.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <body className="flex min-h-full flex-col">
+      <body className="flex min-h-full flex-col wrap-break-word">
         <NextIntlClientProvider messages={clientMessages}>
           <ThemeProvider
             attribute="class"

@@ -42,7 +42,7 @@ const TvPage = () => {
             {remotes.map((remote, index) => (
               <div
                 key={remote.id}
-                className="flex flex-col overflow-hidden rounded-2xl bg-surface-2"
+                className="flex flex-col overflow-hidden rounded-2xl bg-surface-2 [&:lang(de)]:hyphens-auto [&:lang(it)]:hyphens-auto"
               >
                 <dt className="px-4 pt-4 font-extrabold">{t(remote.id)}</dt>
                 <dd className="mt-0.5 px-4 pb-4 text-sm text-pretty text-muted">

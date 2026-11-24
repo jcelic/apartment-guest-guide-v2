@@ -180,10 +180,15 @@ const DishwasherPage = () => {
                   <p className="mt-0.5 text-sm text-muted">
                     {t(`programs.${program.code}.use`)}
                   </p>
+                  {recommended && (
+                    <p className="mt-1 text-xs font-bold tracking-wider text-accent uppercase min-[360px]:hidden">
+                      {t('recommended')}
+                    </p>
+                  )}
                 </div>
 
                 {recommended && (
-                  <span className="text-xs font-bold tracking-wider text-accent uppercase">
+                  <span className="text-xs font-bold tracking-wider text-accent uppercase max-[359px]:hidden">
                     {t('recommended')}
                   </span>
                 )}

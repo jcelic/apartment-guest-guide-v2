@@ -59,7 +59,7 @@ const EssentialsList = ({ groups }: EssentialsListProps) => {
                     />
                   </span>
 
-                  <span className="min-w-0 flex-1">
+                  <span className="min-w-0 flex-1 [&:lang(de)]:hyphens-auto [&:lang(it)]:hyphens-auto">
                     <span className="block font-extrabold">{item.title}</span>
                     <span className="mt-0.5 block text-sm text-muted">
                       {item.text}

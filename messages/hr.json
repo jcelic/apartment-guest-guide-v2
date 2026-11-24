@@ -16,7 +16,7 @@
     "keyButton": "tipka s ključem",
     "wifiCopied": "Lozinka za Wi-Fi je kopirana",
     "copyFailed": "Kopiranje nije uspjelo. Lozinka: {password}",
-    "copyPassword": "Kopiraj lozinku"
+    "copyPassword": "Kopirajte lozinku"
   },
   "Header": {
     "name": "Apartment Matea",
@@ -29,9 +29,9 @@
     "floorValue": "3."
   },
   "QuickActions": {
-    "copyWifi": "Kopiraj Wi-Fi",
+    "copyWifi": "Wi‑Fi lozinka",
     "doorCodes": "Šifre za ulaz",
-    "messageUs": "Pišite nam"
+    "messageUs": "Kontakt"
   },
   "Share": {
     "title": "Podijelite vodič",
@@ -115,7 +115,7 @@
     },
     "parking": {
       "title": "Parking",
-      "description": "Besplatno uz karticu apartmana"
+      "description": "Besplatno uz karticu iz apartmana"
     },
     "wifi": {
       "title": "Wi-Fi",
@@ -210,10 +210,10 @@
       },
       "key": {
         "title": "Vratite ključ",
-        "text": "U kutiju s ključem, a zatim okrenite brojčanike kako šifra ne bi ostala vidljiva."
+        "text": "Vratite ga u kutiju za ključ, a zatim okrenite brojčanike kako šifra ne bi ostala vidljiva."
       },
       "parking": {
-        "title": "Ostavite parkirnu karticu",
+        "title": "Ostavite karticu iz apartmana",
         "text": "U poštanski sandučić — tek nakon što izađete s parkirališta."
       }
     }
@@ -277,7 +277,7 @@
     "step1Text": "Stavite jednu kapsulu u pretinac za deterdžent i zatvorite poklopac. Kapsule su ispod sudopera.",
     "capsule": "Kapsula",
     "step2Title": "Uključite perilicu",
-    "step2Text": "Pritisnite tipku za uključivanje <button>1</button>.",
+    "step2Text": "Pritisnite tipku za uključivanje <button>1</button>",
     "step2Alt": "Tipka za uključivanje perilice, označena brojem 1",
     "step3Title": "Odaberite program",
     "step3Text": "Pritišćite PROGR. <button>2</button> dok ne dođete do željenog programa, pogledajte popis ispod.",
@@ -302,7 +302,7 @@
         "use": "Jako prljavo posuđe"
       },
       "P2": {
-        "name": "Univerzalni · 50–60°C",
+        "name": "Univerzalni · 50–\u206060°C",
         "use": "Za većinu pranja"
       },
       "P3": {
@@ -316,7 +316,7 @@
     }
   },
   "Emergency": {
-    "pageTitle": "Pomoć i hitni slučajevi",
+    "pageTitle": "Pomoć",
     "title": "Trebate pomoć?",
     "anyEmergency": "Za sve hitne slučajeve",
     "emergencyText": "Policija, hitna pomoć i vatrogasci — jedan broj za sve.",
@@ -527,7 +527,7 @@
     "quietText": "Ovo je stambena zgrada sa stalnim stanarima — buka se čuje u hodniku, na stubištu i u dizalu.",
     "afternoon": "Popodne",
     "night": "Noću",
-    "kidsNote": "Putujete s djecom? Molimo vas da pripazite na trčanje i glasnu igru u hodniku i dizalu.",
+    "kidsNote": "Putujete s djecom? Molimo vas da djeca ne trče u hodniku i dizalu.",
     "inTheApartment": "U apartmanu",
     "rules": {
       "smoking": {
@@ -577,8 +577,7 @@
     "network": "Mreža",
     "password": "Lozinka",
     "cantConnect": "Ne možete se spojiti?",
-    "cantConnectText": "Ponovno pokrenite router koji se nalazi odmah iza televizora. Pritisnite crnu tipku sa stražnje strane da ga isključite, pričekajte 10 sekundi pa je ponovno pritisnite. Pričekajte nekoliko minuta da se ponovno spoji.",
-    "stillNotWorking": "I dalje ne radi? Pišite nam"
+    "cantConnectText": "Ponovno pokrenite router koji se nalazi odmah iza televizora. Pritisnite crnu tipku sa stražnje strane da ga isključite, pričekajte 10 sekundi pa je ponovno pritisnite. Pričekajte nekoliko minuta da se ponovno spoji."
   },
   "NoAccess": {
     "pageTitle": "Nema pristupa",

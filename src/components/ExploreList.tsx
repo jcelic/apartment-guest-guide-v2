@@ -107,7 +107,7 @@ const ExploreList = ({ categories }: ExploreListProps) => {
               className="size-24 shrink-0 rounded-2xl"
             />
 
-            <div className="min-w-0 flex-1">
+            <div className="min-w-0 flex-1 [&:lang(de)]:hyphens-auto [&:lang(it)]:hyphens-auto">
               <span className="inline-block rounded-xl bg-surface-2 px-2.5 py-1 text-xs font-bold">
                 {place.badge}
               </span>

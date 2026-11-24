@@ -95,7 +95,7 @@ const EmergencyPage = () => {
             <li key={item.number}>
               <a
                 href={`tel:${item.number}`}
-                className="flex h-full flex-col items-center rounded-3xl border border-line bg-surface px-2 py-4 text-center transition-colors duration-200 hover:bg-accent-soft focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+                className="flex h-full flex-col items-center rounded-3xl border border-line bg-surface px-2 py-4 text-center transition-colors duration-200 hover:bg-accent-soft focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent [&:lang(de)]:hyphens-auto [&:lang(it)]:hyphens-auto"
               >
                 <span className="text-sm text-muted">
                   {t(`numbers.${item.id}`)}
@@ -141,7 +141,7 @@ const EmergencyPage = () => {
                 className="size-16 shrink-0 rounded-2xl"
               />
 
-              <div className="min-w-0 flex-1">
+              <div className="min-w-0 flex-1 [&:lang(de)]:hyphens-auto [&:lang(it)]:hyphens-auto">
                 <h3 className="font-extrabold">{place.name}</h3>
                 <p
                   className={`mt-0.5 text-sm ${index === 0 ? 'font-bold text-success' : 'text-muted'}`}

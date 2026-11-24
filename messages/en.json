@@ -23,15 +23,15 @@
     "city": "Zadar"
   },
   "StayInfo": {
-    "checkIn": "Check-in",
-    "checkOut": "Check-out",
+    "checkIn": "Check‑in",
+    "checkOut": "Check‑out",
     "floor": "Floor",
     "floorValue": "3rd"
   },
   "QuickActions": {
-    "copyWifi": "Copy Wi-Fi",
+    "copyWifi": "Wi‑Fi password",
     "doorCodes": "Door codes",
-    "messageUs": "Message us"
+    "messageUs": "Contact"
   },
   "Share": {
     "title": "Share this guide",
@@ -277,7 +277,7 @@
     "step1Text": "Put one capsule in the detergent compartment and close the lid. Capsules are under the sink.",
     "capsule": "Capsule",
     "step2Title": "Turn it on",
-    "step2Text": "Press the power button <button>1</button>.",
+    "step2Text": "Press the power button <button>1</button>",
     "step2Alt": "Dishwasher power button, marked 1",
     "step3Title": "Choose a program",
     "step3Text": "Press PROGR. <button>2</button> until you reach the program you want, see the list below.",
@@ -302,7 +302,7 @@
         "use": "Very dirty dishes"
       },
       "P2": {
-        "name": "Universal · 50–60°C",
+        "name": "Universal · 50–\u206060°C",
         "use": "Most loads"
       },
       "P3": {
@@ -577,8 +577,7 @@
     "network": "Network",
     "password": "Password",
     "cantConnect": "Can't connect?",
-    "cantConnectText": "Restart the router, it's right behind the TV. Press the black button on the back to turn it off, wait 10 seconds, then press it again. Give it a couple of minutes to reconnect.",
-    "stillNotWorking": "Still not working? Message us"
+    "cantConnectText": "Restart the router, it's right behind the TV. Press the black button on the back to turn it off, wait 10 seconds, then press it again. Give it a couple of minutes to reconnect."
   },
   "NoAccess": {
     "pageTitle": "No access",

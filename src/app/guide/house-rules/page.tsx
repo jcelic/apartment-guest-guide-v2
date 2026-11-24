@@ -34,7 +34,9 @@ const HouseRulesPage = () => {
             <dt className="text-xs font-bold tracking-wider text-muted uppercase">
               {t('checkIn')}
             </dt>
-            <dd className="mt-2 text-4xl font-extrabold tabular-nums">14:00</dd>
+            <dd className="mt-2 text-3xl font-extrabold tabular-nums min-[360px]:text-4xl">
+              14:00
+            </dd>
             <dd className="mt-1 text-sm text-muted">{t('from')}</dd>
           </div>
 
@@ -42,7 +44,9 @@ const HouseRulesPage = () => {
             <dt className="text-xs font-bold tracking-wider text-muted uppercase">
               {t('checkOut')}
             </dt>
-            <dd className="mt-2 text-4xl font-extrabold tabular-nums">10:00</dd>
+            <dd className="mt-2 text-3xl font-extrabold tabular-nums min-[360px]:text-4xl">
+              10:00
+            </dd>
             <dd className="mt-1 text-sm text-muted">{t('by')}</dd>
           </div>
         </dl>
@@ -66,7 +70,7 @@ const HouseRulesPage = () => {
                 <Sun className="size-5 text-accent" />
                 {t('afternoon')}
               </dt>
-              <dd className="text-xl font-extrabold whitespace-nowrap tabular-nums">
+              <dd className="text-lg font-extrabold whitespace-nowrap tabular-nums min-[360px]:text-xl">
                 14:00–16:00
               </dd>
             </div>
@@ -76,7 +80,7 @@ const HouseRulesPage = () => {
                 <Moon className="size-5 text-accent" />
                 {t('night')}
               </dt>
-              <dd className="text-xl font-extrabold whitespace-nowrap tabular-nums">
+              <dd className="text-lg font-extrabold whitespace-nowrap tabular-nums min-[360px]:text-xl">
                 23:00–07:00
               </dd>
             </div>

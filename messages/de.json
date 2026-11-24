@@ -23,15 +23,15 @@
     "city": "Zadar"
   },
   "StayInfo": {
-    "checkIn": "Check-in",
-    "checkOut": "Check-out",
+    "checkIn": "Check‑in",
+    "checkOut": "Check‑out",
     "floor": "Etage",
     "floorValue": "3."
   },
   "QuickActions": {
-    "copyWifi": "Passwort kopieren",
+    "copyWifi": "WLAN‑Passwort",
     "doorCodes": "Türcodes",
-    "messageUs": "Nachricht"
+    "messageUs": "Kontakt"
   },
   "Share": {
     "title": "Gästeinfo teilen",
@@ -277,7 +277,7 @@
     "step1Text": "Legen Sie einen Tab in das Reinigerfach und schließen Sie den Deckel. Die Tabs finden Sie unter der Spüle.",
     "capsule": "Tab",
     "step2Title": "Einschalten",
-    "step2Text": "Drücken Sie die Ein-/Aus-Taste <button>1</button>.",
+    "step2Text": "Drücken Sie die Ein-/Aus-Taste <button>1</button>",
     "step2Alt": "Ein-/Aus-Taste der Spülmaschine, markiert mit 1",
     "step3Title": "Programm wählen",
     "step3Text": "Drücken Sie PROGR. <button>2</button>, bis das gewünschte Programm erscheint, siehe Liste unten.",
@@ -302,7 +302,7 @@
         "use": "Stark verschmutztes Geschirr"
       },
       "P2": {
-        "name": "Universal · 50–60 °C",
+        "name": "Universal · 50–\u206060\u00a0°C",
         "use": "Für die meisten Spülgänge"
       },
       "P3": {
@@ -577,8 +577,7 @@
     "network": "Netzwerk",
     "password": "Passwort",
     "cantConnect": "Keine Verbindung?",
-    "cantConnectText": "Starten Sie den Router neu, er steht direkt hinter dem Fernseher. Drücken Sie den schwarzen Knopf auf der Rückseite zum Ausschalten, warten Sie 10 Sekunden und drücken Sie ihn erneut. Nach ein paar Minuten ist die Verbindung wieder da.",
-    "stillNotWorking": "Klappt es immer noch nicht? Schreiben Sie uns"
+    "cantConnectText": "Starten Sie den Router neu, er steht direkt hinter dem Fernseher. Drücken Sie den schwarzen Knopf auf der Rückseite zum Ausschalten, warten Sie 10 Sekunden und drücken Sie ihn erneut. Nach ein paar Minuten ist die Verbindung wieder da."
   },
   "NoAccess": {
     "pageTitle": "Kein Zugriff",

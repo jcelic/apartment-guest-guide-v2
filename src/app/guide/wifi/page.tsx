@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { ChevronRight, Router, Wifi } from 'lucide-react';
+import { Router, Wifi } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 import CopyPasswordButton from '@/components/CopyPasswordButton';
@@ -66,16 +66,6 @@ const WifiPage = () => {
 
           <p className="mt-3 text-muted">{t('cantConnectText')}</p>
         </div>
-
-        <a
-          href="https://wa.me/YOUR_PHONE_NUMBER"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-6 flex items-center justify-center gap-2 rounded-2xl bg-success-soft p-4 font-bold text-success transition-colors duration-200 hover:bg-success/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
-        >
-          {t('stillNotWorking')}
-          <ChevronRight className="size-5" />
-        </a>
       </main>
     </PageTransition>
   );

@@ -87,6 +87,8 @@
     color: var(--foreground);
     font-size: 15px;
     line-height: 1.5;
+    hyphens: auto;
+    hyphenate-limit-chars: 10 4 4;
   }
 
   html:has(dialog[open]:modal) {
