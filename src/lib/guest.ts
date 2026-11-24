@@ -1,6 +1,8 @@
 import 'server-only';
+import { NextResponse, type NextRequest } from 'next/server';
+import { LOCALE_COOKIE, LOCALE_COOKIE_OPTIONS, isLocale } from '@/i18n/config';
 import getSql from './db';
-import { TOKEN_PATTERN, createSession } from './session';
+import { SESSION_COOKIE, TOKEN_PATTERN, createSession } from './session';
 
 type Reservation = {
   guest_name: string | null;
@@ -8,13 +10,15 @@ type Reservation = {
   active: boolean;
 };
 
-type GuestAccess =
-  | { allowed: true; session: string }
-  | { allowed: false; redirectTo: '/no-access' | '/thank-you' };
+type DeniedAccess = {
+  allowed: false;
+  redirectTo: '/no-access' | '/thank-you';
+  language?: string;
+};
 
-const findReservation = async (
-  token: string,
-): Promise<Reservation | null> => {
+type GuestAccess = { allowed: true; session: string } | DeniedAccess;
+
+const findReservation = async (token: string): Promise<Reservation | null> => {
   if (!TOKEN_PATTERN.test(token)) return null;
 
   const sql = getSql();
@@ -32,7 +36,13 @@ export const checkGuestAccess = async (token: string): Promise<GuestAccess> => {
   const reservation = await findReservation(token);
 
   if (!reservation) return { allowed: false, redirectTo: '/no-access' };
-  if (!reservation.active) return { allowed: false, redirectTo: '/thank-you' };
+  if (!reservation.active) {
+    return {
+      allowed: false,
+      redirectTo: '/thank-you',
+      language: reservation.language,
+    };
+  }
 
   const session = await createSession({
     token,
@@ -42,4 +52,17 @@ export const checkGuestAccess = async (token: string): Promise<GuestAccess> => {
   });
 
   return { allowed: true, session };
+};
+
+export const denyAccess = (request: NextRequest, access: DeniedAccess) => {
+  const response = NextResponse.redirect(
+    new URL(access.redirectTo, request.url),
+  );
+  response.cookies.delete(SESSION_COOKIE);
+
+  if (isLocale(access.language) && !request.cookies.has(LOCALE_COOKIE)) {
+    response.cookies.set(LOCALE_COOKIE, access.language, LOCALE_COOKIE_OPTIONS);
+  }
+
+  return response;
 };

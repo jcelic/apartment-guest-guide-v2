@@ -1,5 +1,5 @@
 import { NextResponse, type NextRequest } from 'next/server';
-import { checkGuestAccess } from '@/lib/guest';
+import { checkGuestAccess, denyAccess } from '@/lib/guest';
 import {
   SESSION_COOKIE,
   TOKEN_PATTERN,
@@ -8,12 +8,25 @@ import {
   setSessionCookie,
 } from '@/lib/session';
 
+const openGuestLink = async (request: NextRequest, token: string) => {
+  const access = await checkGuestAccess(token);
+
+  if (!access.allowed) {
+    return denyAccess(request, access);
+  }
+
+  const response = NextResponse.redirect(new URL('/guide', request.url));
+  setSessionCookie(response, access.session);
+
+  return response;
+};
+
 export const proxy = async (request: NextRequest) => {
   const { pathname } = request.nextUrl;
   const [, , segment, ...rest] = pathname.split('/');
 
   if (segment && rest.length === 0 && TOKEN_PATTERN.test(segment)) {
-    return NextResponse.next();
+    return openGuestLink(request, segment);
   }
 
   const session = await readSession(request.cookies.get(SESSION_COOKIE)?.value);
@@ -27,12 +40,7 @@ export const proxy = async (request: NextRequest) => {
     : await checkGuestAccess(session.token);
 
   if (access && !access.allowed) {
-    const response = NextResponse.redirect(
-      new URL(access.redirectTo, request.url),
-    );
-    response.cookies.delete(SESSION_COOKIE);
-
-    return response;
+    return denyAccess(request, access);
   }
 
   const response =
